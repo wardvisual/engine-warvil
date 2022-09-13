@@ -28,14 +28,13 @@ const GlobalStyle = createGlobalStyle`
     input, button {
         padding: 1em;
         border: none;
-        width: 100%;
+        color: var(--color-black);
     }
 
     button {
         cursor: pointer;
-        background: var(--color-blue);
-        padding: 1em 2em 1em 2em;
-        font-weight: bold;
+        background: var(--color-purple);
+        font-weight: 400;
         color: var(--color-grey);
         border-radius: 5px;
 

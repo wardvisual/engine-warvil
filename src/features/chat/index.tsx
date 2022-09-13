@@ -18,7 +18,11 @@ const Chat: NextPage = (props) => {
       body: JSON.stringify({ userRequest: userRequest.trim() }),
     });
 
-    console.log({ response });
+    setUserRequest('');
+
+    const result = await response.json();
+
+    console.log({ result });
   };
 
   return (
@@ -31,9 +35,10 @@ const Chat: NextPage = (props) => {
             placeholder="Enter your question"
             name="userRequest"
             onChange={(event) => setUserRequest(event.target.value)}
+            defaultValue={userRequest}
           />
+          <button type="submit">Request</button>
         </form>
-        <button type="submit">Request</button>
       </Style.SubWrapper>
     </Style.Wrapper>
   );
