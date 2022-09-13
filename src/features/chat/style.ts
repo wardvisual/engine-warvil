@@ -6,6 +6,7 @@ const Style = {
     display: grid;
     place-items: center;
     margin: 0 2em 0 2em;
+    position: relative;
 
     @media screen and (max-width: 375px) {
       margin: 0 1em 0 1em;

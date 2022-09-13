@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 import Style from './style';
 import Header from 'src/features/chat/components/header/index';
+import Footer from 'src/components/footer';
 
 const Chat: NextPage = (props) => {
   const [userRequest, setUserRequest] = useState('');
@@ -49,6 +50,7 @@ const Chat: NextPage = (props) => {
           <button type="submit">Ask</button>
         </form>
       </Style.SubWrapper>
+      <Footer />
     </Style.Wrapper>
   );
 };

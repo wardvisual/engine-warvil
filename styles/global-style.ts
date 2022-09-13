@@ -14,10 +14,6 @@ const GlobalStyle = createGlobalStyle`
         margin: 0;
     }
 
-    a {
-        text-decoration: none;
-    }
-
     body {
         background: var(--color-grey);
         color: var(--color-black);
