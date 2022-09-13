@@ -10,7 +10,7 @@ const Header: NextPage = (props) => {
       <hr />
       <p>
         <strong>Warvil</strong> is an AI bot that seeks to respond to your
-        queries about Javascript.
+        queries about programming.
       </p>
     </Style.Wrapper>
   );
