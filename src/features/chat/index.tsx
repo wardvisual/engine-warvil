@@ -2,15 +2,17 @@ import { NextPage } from "next";
 import { useState } from "react";
 
 const Chat: NextPage = (props) => {
-  const [userRequest, setUserRequest] = useState("what is javascript?");
+  const [userRequest, setUserRequest] = useState("");
 
-  const getData = async () => {
-    const response = await fetch("/api/ai-bot", {
+  const handleOnSubmit = async (e: { preventDefault: () => void }) => {
+    e.preventDefault();
+
+    const response = await fetch("api/ai-bot", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ userRequest }),
+      body: JSON.stringify({ userRequest: userRequest.trim() }),
     });
 
     console.log({ response });
@@ -18,7 +20,7 @@ const Chat: NextPage = (props) => {
 
   return (
     <main>
-      <form>
+      <form onSubmit={handleOnSubmit}>
         <input
           type="text"
           placeholder="Enter your question"
@@ -28,7 +30,7 @@ const Chat: NextPage = (props) => {
         <button type="submit">Ask</button>
       </form>
       <h1>Welcome to AIBot</h1>
-      <button onClick={getData}>Request</button>
+      <button type="submit">Request</button>
     </main>
   );
 };

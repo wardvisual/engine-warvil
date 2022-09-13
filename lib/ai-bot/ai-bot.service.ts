@@ -3,7 +3,6 @@ import { Configuration, CreateCompletionRequest, OpenAIApi } from "openai";
 import { JsChatBot } from "./ai-bot.prompt";
 
 export class AiBot {
-  private model: CreateCompletionRequest["model"] = "text-davinci-002";
   private configuration;
   private openai;
   private prompt: Promptable;
@@ -19,7 +18,7 @@ export class AiBot {
   public async createCompletion(userRequest: string) {
     try {
       const completion = await this.openai.createCompletion({
-        model: this.model,
+        model: "text-davinci-002",
         prompt: this.prompt.generatePrompt(userRequest),
         temperature: 0,
         max_tokens: 60,
@@ -28,10 +27,11 @@ export class AiBot {
         presence_penalty: 0.0,
       });
 
-      console.log({ completion });
-      //   return completion.data.choices[0].text;
+      if (completion.data.choices?.length) {
+        return completion.data.choices[0].text;
+      }
     } catch (error) {
-      return "i don't understand your question";
+      return "i don't understand your question\n " + error;
     }
   }
 }
