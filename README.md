@@ -16,7 +16,7 @@
 
   <h3 align="center">Warvil Bot</h3>
 
-  <p align="center">Warvil is an AI bot that seeks to respond to your queries about Javascript.
+  <p align="center">Warvil is an AI bot that seeks to respond to your queries about programming.
     <br />
     <br />
     <a href="https://github.com/wardvisual/warvil-bot"><strong>View Project »</strong></a>

@@ -10,7 +10,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="author" content="Edward Fernandez" />
         <meta
           name="description"
-          content="Warvil bot is an AI bot the seeks to respond to your queries about Javascript."
+          content="Warvil is an AI bot that seeks to respond to your queries about programming."
         />
       </Head>
       <GlobalStyle />
