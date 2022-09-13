@@ -8,7 +8,7 @@ const Style = {
     margin: 0 2em 0 2em;
     position: relative;
 
-    @media screen and (max-width: 500px) {
+    @media screen and (max-width: 570px) {
       margin: 0 1em 0 1em;
       > div {
         padding: 0;
@@ -24,7 +24,8 @@ const Style = {
     box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
     width: 100%;
     max-width: 25em;
-
+    z-index: 9;
+    background: var(--color-grey);
     form {
       display: flex;
       flex-direction: column;
