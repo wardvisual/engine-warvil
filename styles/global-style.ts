@@ -19,14 +19,30 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        background: var(--color-black);
-        color: var(--color-grey);
-        font-family: 'Poppins', sans-serif;;
+        background: var(--color-grey);
+        color: var(--color-black);
+        font-family: 'Poppins', sans-serif;
+        font-size: 16px;
     } 
 
     input, button {
         padding: 1em;
         border: none;
+        width: 100%;
+    }
+
+    button {
+        cursor: pointer;
+        background: var(--color-blue);
+        padding: 1em 2em 1em 2em;
+        font-weight: bold;
+        color: var(--color-grey);
+        border-radius: 5px;
+
+        &:hover {
+            opacity: 80%;
+            transition: all .3s;
+        }
     }
 `;
 

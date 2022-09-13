@@ -1,6 +1,9 @@
 import { NextPage } from 'next';
 import { useState } from 'react';
 
+import Style from './style';
+import Header from 'src/features/chat/components/header/index';
+
 const Chat: NextPage = (props) => {
   const [userRequest, setUserRequest] = useState('');
 
@@ -19,19 +22,20 @@ const Chat: NextPage = (props) => {
   };
 
   return (
-    <main>
-      <form onSubmit={handleOnSubmit}>
-        <input
-          type="text"
-          placeholder="Enter your question"
-          name="userRequest"
-          onChange={(event) => setUserRequest(event.target.value)}
-        />
-        <button type="submit">Ask</button>
-      </form>
-      <h1>Welcome to AIBot</h1>
-      <button type="submit">Request</button>
-    </main>
+    <Style.Wrapper>
+      <Style.SubWrapper>
+        <Header />
+        <form onSubmit={handleOnSubmit}>
+          <input
+            type="text"
+            placeholder="Enter your question"
+            name="userRequest"
+            onChange={(event) => setUserRequest(event.target.value)}
+          />
+        </form>
+        <button type="submit">Request</button>
+      </Style.SubWrapper>
+    </Style.Wrapper>
   );
 };
 
