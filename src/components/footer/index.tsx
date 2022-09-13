@@ -13,7 +13,7 @@ const Footer: NextPage = () => {
           rel="noreferrer"
           title="Edward Fernandez"
         >
-          &nbsp;@wardvisual
+          &nbsp;Edward Fernandez{' '}
         </a>
       </p>
     </Style.Wrapper>
