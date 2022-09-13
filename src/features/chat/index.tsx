@@ -1,4 +1,4 @@
-import { NextPage } from 'next';
+import { NextPage } from "next";
 
 const Chat: NextPage = () => {
   return <main></main>;
