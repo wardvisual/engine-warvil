@@ -6,8 +6,11 @@ import Style from './style';
 const Header: NextPage = (props) => {
   return (
     <Style.Wrapper>
-      <h3>Welcome, Guest!</h3>
-      <p>Here's WaviL-AIBot to help you!</p>
+      <h2>Welcome, Guest!</h2>
+      <p>
+        <strong>Warvil</strong> is an AI Bot that aims to answer your Javascript
+        questions
+      </p>
     </Style.Wrapper>
   );
 };

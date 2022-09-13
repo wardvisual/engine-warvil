@@ -29,6 +29,7 @@ const GlobalStyle = createGlobalStyle`
         padding: 1em;
         border: none;
         color: var(--color-black);
+        font-size: inherit;
     }
 
     button {

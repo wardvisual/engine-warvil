@@ -6,6 +6,7 @@ import Header from 'src/features/chat/components/header/index';
 
 const Chat: NextPage = (props) => {
   const [userRequest, setUserRequest] = useState('');
+  const [botResponse, setBotResponse] = useState('');
 
   const handleOnSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
@@ -18,11 +19,10 @@ const Chat: NextPage = (props) => {
       body: JSON.stringify({ userRequest: userRequest.trim() }),
     });
 
-    setUserRequest('');
-
     const result = await response.json();
 
-    console.log({ result });
+    setUserRequest('');
+    setBotResponse(result?.response);
   };
 
   return (
@@ -35,8 +35,14 @@ const Chat: NextPage = (props) => {
             placeholder="Enter your question"
             name="userRequest"
             onChange={(event) => setUserRequest(event.target.value)}
-            defaultValue={userRequest}
+            value={userRequest}
           />
+          {botResponse && (
+            <p>
+              {' '}
+              <strong>Warvil Bot: </strong> {botResponse}
+            </p>
+          )}
           <button type="submit">Request</button>
         </form>
       </Style.SubWrapper>
