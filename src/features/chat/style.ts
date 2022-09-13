@@ -8,7 +8,7 @@ const Style = {
     margin: 0 2em 0 2em;
     position: relative;
 
-    @media screen and (max-width: 375px) {
+    @media screen and (max-width: 500px) {
       margin: 0 1em 0 1em;
       > div {
         padding: 0;
