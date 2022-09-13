@@ -28,7 +28,8 @@ export class AiBot {
         presence_penalty: 0.0,
       });
 
-      return completion.data.choices[0].text;
+      console.log({ completion });
+      //   return completion.data.choices[0].text;
     } catch (error) {
       return "i don't understand your question";
     }

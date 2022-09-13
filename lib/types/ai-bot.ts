@@ -1,3 +1,3 @@
 export interface Promptable {
-  generatePrompt: (req, string) => string;
+  generatePrompt: (userRequest: string) => string;
 }
