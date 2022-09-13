@@ -1,16 +1,16 @@
-import { NextPage } from "next";
-import { useState } from "react";
+import { NextPage } from 'next';
+import { useState } from 'react';
 
 const Chat: NextPage = (props) => {
-  const [userRequest, setUserRequest] = useState("");
+  const [userRequest, setUserRequest] = useState('');
 
   const handleOnSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
 
-    const response = await fetch("api/ai-bot", {
-      method: "POST",
+    const response = await fetch('api/ai-bot', {
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({ userRequest: userRequest.trim() }),
     });

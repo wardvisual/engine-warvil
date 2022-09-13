@@ -1,4 +1,4 @@
-import { Promptable } from "../types/ai-bot";
+import { Promptable } from '../types/ai-bot';
 
 export class JsChatBot implements Promptable {
   constructor() {}

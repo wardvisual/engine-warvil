@@ -1,6 +1,6 @@
-import { Promptable } from "lib/types/ai-bot";
-import { Configuration, CreateCompletionRequest, OpenAIApi } from "openai";
-import { JsChatBot } from "./ai-bot.prompt";
+import { Promptable } from 'lib/types/ai-bot';
+import { Configuration, CreateCompletionRequest, OpenAIApi } from 'openai';
+import { JsChatBot } from './ai-bot.prompt';
 
 export class AiBot {
   private configuration;
@@ -18,7 +18,7 @@ export class AiBot {
   public async createCompletion(userRequest: string) {
     try {
       const completion = await this.openai.createCompletion({
-        model: "text-davinci-002",
+        model: 'text-davinci-002',
         prompt: this.prompt.generatePrompt(userRequest),
         temperature: 0,
         max_tokens: 60,
