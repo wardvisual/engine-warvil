@@ -7,7 +7,9 @@ import Footer from 'src/components/footer';
 
 const Chat: NextPage = (props) => {
   const [userRequest, setUserRequest] = useState('');
-  const [botResponse, setBotResponse] = useState('');
+  const [botResponse, setBotResponse] = useState(
+    "Hey there! It's nice to meet you here. You can ask me anything about JavaScript."
+  );
 
   const handleOnSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
