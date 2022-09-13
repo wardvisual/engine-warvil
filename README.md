@@ -57,4 +57,5 @@
 ## Contact
 
 Edward Fernandez - [@wardvisual](https://twitter.com/wardvisual)
-Project Link: [warvil-bot](https://github.com/wardvisual/warvil-bot)
+
+Project Link: [warvil-bot](https://warvil.vercel.app)
