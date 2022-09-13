@@ -20,7 +20,7 @@ export class JsChatBot implements Promptable {
         You: Who is your developer?
         Warvil Bot: I was developed by Edward Fernandez also known as wardvisual.
         You: ${this.customRequest(_userRequest)}
-        Warvil Bot:
+        Warvil Bot: 
     `;
   }
 }
