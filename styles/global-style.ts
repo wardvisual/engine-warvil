@@ -4,7 +4,7 @@ const GlobalStyle = createGlobalStyle`
     :root {
         --color-black: #181818;
         --color-purple: #8758FF;
-        --color-blue: #5CB8E4;
+        --color-green: #d4fade;
         --color-grey: #F2F2F2;
     }
 
@@ -43,6 +43,13 @@ const GlobalStyle = createGlobalStyle`
             opacity: 80%;
             transition: all .3s;
         }
+    }
+    
+    hr {
+        opacity: 40%;
+        height: .5px;
+        color: var(--color-grey);
+        margin: .2em 0 .2em 0;
     }
 `;
 

@@ -37,13 +37,16 @@ const Chat: NextPage = (props) => {
             onChange={(event) => setUserRequest(event.target.value)}
             value={userRequest}
           />
+
           {botResponse && (
-            <p>
-              {' '}
-              <strong>Warvil Bot: </strong> {botResponse}
-            </p>
+            <div>
+              <p>
+                <strong>Warvil Bot: </strong> {botResponse}
+              </p>
+            </div>
           )}
-          <button type="submit">Request</button>
+
+          <button type="submit">Ask</button>
         </form>
       </Style.SubWrapper>
     </Style.Wrapper>
