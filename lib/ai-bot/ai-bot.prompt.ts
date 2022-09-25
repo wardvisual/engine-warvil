@@ -4,7 +4,7 @@ export class JsChatBot implements Promptable {
   constructor() {}
 
   private customRequest(userRequest: string): string {
-    let userQuestion =
+    const userQuestion =
       userRequest[0].toLocaleUpperCase() +
       userRequest.slice(1).toLocaleLowerCase();
 
