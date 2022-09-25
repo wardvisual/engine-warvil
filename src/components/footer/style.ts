@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const Style = {
   Wrapper: styled.footer`
     position: absolute;
-    bottom: 4em;
+    bottom: 2em;
     opacity: 70%;
   `,
 };

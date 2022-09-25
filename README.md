@@ -16,7 +16,7 @@
 
   <h3 align="center">Warvil Bot</h3>
 
-  <p align="center">Warvil is an AI bot that seeks to respond to your queries about programming.
+  <p align="center">WWarvil is an AI bot that seeks to respond to your queries about programming. It is programmed to provide you with information about various programming concepts, tools, and languages. Additionally, Warvil can answer questions about the development process and the different stages of creating a program. </p>
     <br />
     <br />
     <a href="https://github.com/wardvisual/warvil-bot"><strong>View Project »</strong></a>
@@ -27,7 +27,7 @@
     <a href="https://github.com/wardvisual/warvil-bot/issues">Report Bug</a>
     ·
     <a href="https://github.com/wardvisual/warvil-bot/issues">Request Feature</a>
-  </p>
+  
 </div>
 
 ### Built With
