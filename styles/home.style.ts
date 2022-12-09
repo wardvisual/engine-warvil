@@ -43,6 +43,11 @@ const Wrapper = {
         border: none;
         transition: all 0.3s ease-in-out;
         min-width: max-content;
+
+        &:first-child {
+          background-color: var(--color-black-400);
+        }
+
         &:hover {
           border-radius: var(--radius-15);
           background-color: var(--color-black-400);

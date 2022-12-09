@@ -2,12 +2,11 @@
 import { NextPage } from 'next';
 import { useEffect, useRef, useState } from 'react';
 
-import Wrapper from './style';
-import { Layout } from '../../../styles/global-style';
+import { Layout } from '../../../styles/global.style';
 import MessageBox from '../../components/message-box/index';
 
-import { chats } from './data';
 import { IMessageBox } from 'src/types/message';
+import Wrapper from '../../../styles/home.style';
 
 const Home: NextPage = (props) => {
   const [appRequests, setAppRequests] = useState<IMessageBox[]>([]);
