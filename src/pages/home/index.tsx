@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import { NextPage } from 'next';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import Wrapper from './style';
 import { Layout } from '../../../styles/global-style';
@@ -9,6 +9,31 @@ import MessageBox from '../../components/message-box/index';
 import { chats } from './data';
 
 const Home: NextPage = (props) => {
+  const [userRequestPrompt, setUserRequestPrompt] = useState('');
+  const [aiResponse, setAiResponse] = useState<any>([]);
+
+  const getUserInput = (event: any) => {
+    setUserRequestPrompt(event.target.value);
+  };
+
+  const submitRequest = async (e: { preventDefault: () => void }) => {
+    e.preventDefault();
+
+    const response = await fetch('api/openai', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ userRequest: userRequestPrompt.trim() }),
+    });
+
+    const result = await response.json();
+
+    setUserRequestPrompt('');
+    setAiResponse([...aiResponse, result.response]);
+    console.log({ result });
+  };
+
   return (
     <Layout>
       <Wrapper.Home>
@@ -79,10 +104,18 @@ const Home: NextPage = (props) => {
               {/* <textarea></textarea> */}
             </Wrapper.EngineArea>
 
-            <Wrapper.UserArea>
+            <Wrapper.UserArea onSubmit={submitRequest}>
               <div>
-                <input type="text" placeholder="What's on your mind?" />
-                <i className="fas fa-paper-plane"></i>
+                <input
+                  type="text"
+                  placeholder="What's on your mind?"
+                  name="userRequest"
+                  onChange={getUserInput}
+                  value={userRequestPrompt}
+                />
+                <button type="submit">
+                  <i className="fas fa-paper-plane"> </i>
+                </button>
               </div>
             </Wrapper.UserArea>
           </Wrapper.Playground>

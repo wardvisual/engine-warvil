@@ -96,6 +96,7 @@ const GlobalStyle = createGlobalStyle`
 
     input, teaxtarea, select, option, button {
         border-radius: var(--radius-10);
+        padding: 1em;
     }
 
     input, textarea {

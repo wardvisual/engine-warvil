@@ -86,7 +86,7 @@ const Wrapper = {
     border-radius: var(--radius-15);
     background-color: var(--color-black-300);
   `,
-  UserArea: styled.div`
+  UserArea: styled.form`
     border-radius: var(--radius-15);
     background-color: var(--color-black-300);
     padding: 1em;
@@ -95,6 +95,10 @@ const Wrapper = {
       display: flex;
       align-items: center;
       gap: .8em;
+
+      button {
+        all: unset;
+      }
 
       i {
         font-size: 1.8rem;

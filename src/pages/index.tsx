@@ -1,11 +1,11 @@
 import type { NextPage } from 'next';
 
-import Chat from 'src/features/chat';
+import HomeView from './home/index';
 
 const Home: NextPage = () => {
   return (
     <>
-      <Chat />
+      <HomeView />
     </>
   );
 };
