@@ -10,23 +10,24 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/wardvisual/warvil-bot">
+  <a href="https://github.com/wardvisual/engine-warvil">
     <img src="./public/warvil.svg" alt="banner">
   </a>
 
-  <h3 align="center">Warvil Bot</h3>
+  <h3 align="center">Engine Warvil</h3>
 
-  <p align="center">WWarvil is an AI bot that seeks to respond to your queries about programming. It is programmed to provide you with information about various programming concepts, tools, and languages. Additionally, Warvil can answer questions about the development process and the different stages of creating a program. </p>
+  <p align=" center">Warvil is an intelligent chatbot powered by artificial intelligence. It is designed to provide helpful and insightful answers to your questions. Warvil can learn from its conversations with you, allowing it to become increasingly efficient and knowledgeable over time.</p>
+  <p>THIS PROJECT IS UNDER DEVELOPMENT</p>
     <br />
     <br />
-    <a href="https://github.com/wardvisual/warvil-bot"><strong>View Project »</strong></a>
+    <a href="https://engine-warvil.vercel.app/"><strong>View Project »</strong></a>
     <br />    
     <br />
-    <a href="https://github.com/wardvisual/warvil-bot">View Demo</a>
+    <a href="https://github.com/wardvisual/engine-warvil">View Demo</a>
     ·
-    <a href="https://github.com/wardvisual/warvil-bot/issues">Report Bug</a>
+    <a href="https://github.com/wardvisual/engine-warvil/issues">Report Bug</a>
     ·
-    <a href="https://github.com/wardvisual/warvil-bot/issues">Request Feature</a>
+    <a href="https://github.com/wardvisual/engine-warvil/issues">Request Feature</a>
   
 </div>
 
@@ -43,7 +44,7 @@
 1. Clone the repo
 
    ```sh
-   git clone https://github.com/wardvisual/warvil-bot.git
+   git clone https://github.com/wardvisual/engine-warvil.git
    ```
 
 2. Install NPM packages
@@ -58,4 +59,4 @@
 
 Edward Fernandez - [@wardvisual](https://twitter.com/wardvisual)
 
-Project Link: [warvil-bot](https://warvil.vercel.app)
+Project Link: [warvil-bot](https://engine-warvil.vercel.app/)
