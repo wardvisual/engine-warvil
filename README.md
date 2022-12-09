@@ -11,7 +11,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/wardvisual/engine-warvil">
-    <img src="./public/warvil.svg" alt="banner">
+    <img src="./public/banner.svg" alt="banner">
   </a>
 
   <h3 align="center">Engine Warvil</h3>
