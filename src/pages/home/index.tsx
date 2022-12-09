@@ -1,15 +1,17 @@
 /* eslint-disable react/no-unescaped-entities */
 import { NextPage } from 'next';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import Wrapper from './style';
 import { Layout } from '../../../styles/global-style';
 import MessageBox from '../../components/message-box/index';
 
+import { chats } from './data';
 import { IMessageBox } from 'src/types/message';
 
 const Home: NextPage = (props) => {
   const [appRequests, setAppRequests] = useState<IMessageBox[]>([]);
+  const messagesContainerRef = useRef(null);
 
   const [userInput, setUserInput] = useState('');
   const [command, setCommand] = useState('');
@@ -69,6 +71,14 @@ const Home: NextPage = (props) => {
   useEffect(() => {
     console.log({ appRequests });
   }, [appRequests]);
+
+  useEffect(() => {
+    if (messagesContainerRef && messagesContainerRef.current) {
+      const container: any = messagesContainerRef.current;
+      container.scrollTop = container.scrollHeight;
+    }
+  }, [appRequests]);
+
   return (
     <Layout>
       <Wrapper.Home>
@@ -127,7 +137,7 @@ const Home: NextPage = (props) => {
               </div>
             </Wrapper.Header>
             <Wrapper.EngineArea>
-              <Wrapper.MessageBoxContainer>
+              <Wrapper.MessageBoxContainer ref={messagesContainerRef}>
                 {appRequests.map((el, i) => (
                   <MessageBox
                     key={i}
