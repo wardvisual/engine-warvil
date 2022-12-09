@@ -94,6 +94,25 @@ const GlobalStyle = createGlobalStyle`
         }
     }
 
+    input, teaxtarea, select, option, button {
+        border-radius: var(--radius-10);
+    }
+
+    input, textarea {
+        ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: var(--color-white-100);
+            opacity: 1; /* Firefox */
+        }
+
+        :-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color: var(--color-white-100);
+        }
+
+        ::-ms-input-placeholder { /* Microsoft Edge */
+            color: var(--color-white-100);
+        }
+    }
+
     input {
         background-color: var(--color-black-400);
         outline: none;

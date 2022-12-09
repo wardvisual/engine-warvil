@@ -90,12 +90,11 @@ const Wrapper = {
     > div {
       display: flex;
       align-items: center;
-      gap: 1em;
+      gap: .8em;
 
       i {
-        font-size: 2rem;
+        font-size: 1.8rem;
         &:hover {
-          background-color: var(--color-black-400);
           cursor: pointer;
           color: var(--color-blue-400);
         &:active {

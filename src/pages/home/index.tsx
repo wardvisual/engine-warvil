@@ -60,7 +60,7 @@ const Home: NextPage = (props) => {
             <Wrapper.Header>
               <div>
                 <h2>Basic Question</h2>
-                <p>Your OpenAI Assistant | Edward Fernandez</p>
+                <p>Answers at your fingertips</p>
               </div>
             </Wrapper.Header>
             <Wrapper.EngineArea>
