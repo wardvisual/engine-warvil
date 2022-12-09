@@ -6,6 +6,8 @@ import Wrapper from './style';
 import { Layout } from '../../../styles/global-style';
 import MessageBox from '../../components/message-box/index';
 
+import { chats } from './data';
+
 const Home: NextPage = (props) => {
   return (
     <Layout>
@@ -59,16 +61,20 @@ const Home: NextPage = (props) => {
           </Wrapper.Commands>
           <Wrapper.Playground>
             <Wrapper.Header>
-              <div>
+              <div className="message-box">
                 <h2>Basic Question</h2>
                 <p>Answers at your fingertips</p>
               </div>
             </Wrapper.Header>
             <Wrapper.EngineArea>
               <Wrapper.MessageBoxContainer>
-                <MessageBox isFromUser={true} />
-                <MessageBox />
-                <MessageBox />
+                {chats.map((el, i) => (
+                  <MessageBox
+                    key={i}
+                    isFromUser={el.isFromUser}
+                    message={el.message}
+                  />
+                ))}
               </Wrapper.MessageBoxContainer>
               {/* <textarea></textarea> */}
             </Wrapper.EngineArea>

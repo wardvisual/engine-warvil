@@ -9,6 +9,10 @@ const Wrapper = {
   Header: styled.header`
     div {
       padding: 2em;
+
+      &.message-box {
+        border-bottom: 1px var(--color-black-400) solid;
+      }
     }
   `,
   Container: styled.div`

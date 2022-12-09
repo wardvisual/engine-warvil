@@ -5,8 +5,10 @@ const Wrapper = {
     > div.user {
       text-align: end;
       > div {
+        display: flex;
+        justify-content: flex-end;
+
         p {
-          text-align: end;
           background: var(--color-blue-400);
           color: var(--color-black-400);
         }

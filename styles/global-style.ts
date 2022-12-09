@@ -31,7 +31,7 @@ const GlobalStyle = createGlobalStyle`
 
     /* customize the scrollbar color */
     &::-webkit-scrollbar-thumb {
-        background-color: var(--color-white-200);
+        background-color: var(--color-blue-400);
     }
 
     &::-webkit-scrollbar-track {
