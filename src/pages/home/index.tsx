@@ -63,10 +63,10 @@ const Home: NextPage = (props) => {
                 <p>Your OpenAI Assistant | Edward Fernandez</p>
               </div>
             </Wrapper.Header>
-            <Wrapper.TextArea>
-              <div>
-                <div>
-                  <p>Warvil</p>
+            <Wrapper.EngineArea>
+              <Wrapper.MessageBoxContainer>
+                <Wrapper.MessageBox>
+                  <p>🤖 Warvil</p>
                   <div>
                     <p>
                       Lorem Ipsum is simply dummy text of the printing and
@@ -82,10 +82,65 @@ const Home: NextPage = (props) => {
                       Ipsum.
                     </p>
                   </div>
-                </div>
-              </div>
+                </Wrapper.MessageBox>
+
+                <Wrapper.MessageBox>
+                  <p>🤖 Warvil</p>
+                  <div>
+                    <p>
+                      Lorem Ipsum is simply dummy text of the printing and
+                      typesetting industry. Lorem Ipsum has been the industry's
+                      standard dummy text ever since the 1500s, when an unknown
+                      printer took a galley of type and scrambled it to make a
+                      type specimen book. It has survived not only five
+                      centuries, but also the leap into electronic typesetting,
+                      remaining essentially unchanged. It was popularised in the
+                      1960s with the release of Letraset sheets containing Lorem
+                      Ipsum passages, and more recently with desktop publishing
+                      software like Aldus PageMaker including versions of Lorem
+                      Ipsum.
+                    </p>
+                  </div>
+                </Wrapper.MessageBox>
+
+                <Wrapper.MessageBox>
+                  <p>🤖 Warvil</p>
+                  <div>
+                    <p>
+                      Lorem Ipsum is simply dummy text of the printing and
+                      typesetting industry. Lorem Ipsum has been the industry's
+                      standard dummy text ever since the 1500s, when an unknown
+                      printer took a galley of type and scrambled it to make a
+                      type specimen book. It has survived not only five
+                      centuries, but also the leap into electronic typesetting,
+                      remaining essentially unchanged. It was popularised in the
+                      1960s with the release of Letraset sheets containing Lorem
+                      Ipsum passages, and more recently with desktop publishing
+                      software like Aldus PageMaker including versions of Lorem
+                      Ipsum. Lorem Ipsum is simply dummy text of the printing
+                      and typesetting industry. Lorem Ipsum has been the
+                      industry's standard dummy text ever since the 1500s, when
+                      an unknown printer took a galley of type and scrambled it
+                      to make a type specimen book. It has survived not only
+                      five centuries, but also the leap into electronic
+                      typesetting, remaining essentially unchanged. It was
+                      popularised in the 1960s with the release of Letraset
+                      sheets containing Lorem Ipsum passages, and more recently
+                      with desktop publishing software like Aldus PageMaker
+                      including versions of Lorem Ipsum.
+                    </p>
+                  </div>
+                </Wrapper.MessageBox>
+              </Wrapper.MessageBoxContainer>
               {/* <textarea></textarea> */}
-            </Wrapper.TextArea>
+            </Wrapper.EngineArea>
+
+            <Wrapper.UserArea>
+              <div>
+                <input type="text" placeholder="What's on your mind?" />
+                <i className="fas fa-paper-plane"></i>
+              </div>
+            </Wrapper.UserArea>
           </Wrapper.Playground>
         </Wrapper.Container>
       </Wrapper.Home>

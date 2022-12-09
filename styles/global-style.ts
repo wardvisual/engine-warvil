@@ -28,6 +28,21 @@ const GlobalStyle = createGlobalStyle`
         --radius-20: 20px;
     }
 
+
+    /* customize the scrollbar color */
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--color-white-200);
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: var(--color-black-400);
+    }
+
+    /* customize the scrollbar width */
+    &::-webkit-scrollbar {
+        width: 5px;
+    }
+
     body {
       background-color: var(--color-black-400);
       font-size: 16px;
@@ -37,41 +52,25 @@ const GlobalStyle = createGlobalStyle`
       color: var(--color-blue-400);
     }
 
+    p {
+      line-height: 1.8;
+    }
+
     * {
         padding: 0;
         margin: 0;
         font-family: 'Poppins', sans-serif;
         color: var(--color-white-400);
+        overflow-x: hidden;
     }
 
     ul, li {
         list-style-type: none;
     }
 
-    input, button {
-        padding: 1em;
-        border: none;
-        color: var(--color-black);
-        font-size: inherit;
-    }
-
-    button {
-        cursor: pointer;
-        background: var(--color-purple);
-        font-weight: 400;
-        color: var(--color-grey);
-        border-radius: 5px;
-
-        &:hover {
-            opacity: 80%;
-            transition: all .3s;
-        }
-    }
-    
     hr {
         opacity: 40%;
         height: .5px;
-        color: var(--color-grey);
         margin: .2em 0 .2em 0;
     }
 
@@ -97,6 +96,9 @@ const GlobalStyle = createGlobalStyle`
 
     input {
         background-color: var(--color-black-400);
+        outline: none;
+        border: none;
+        width: 100%;
     }
 
     textarea {
@@ -112,15 +114,6 @@ const GlobalStyle = createGlobalStyle`
         min-width: 40em;
         max-width: 60em;
 
-        /* customize the scrollbar color */
-        &::-webkit-scrollbar-thumb {
-            background-color: var(--color-white-400);
-        }
-
-        /* customize the scrollbar width */
-        &::-webkit-scrollbar {
-            width: 5px;
-        }
     }
 
     h1 {

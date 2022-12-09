@@ -4,12 +4,11 @@ const Wrapper = {
   Home: styled.section`
     height: 100vh;
     margin: 0 auto;
-    margin: 0 auto;
     max-width: 1660px;
   `,
   Header: styled.header`
     div {
-      padding: 1em;
+      padding: 2em;
     }
   `,
   Container: styled.div`
@@ -27,6 +26,7 @@ const Wrapper = {
     padding: 1em;
     outline: none;
     user-select: none;
+    min-width: max-content;
 
     div {
       padding: 1em;
@@ -74,17 +74,57 @@ const Wrapper = {
     }
   `,
   Playground: styled.div`
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
     background-color: var(--color-black-300);
     border-radius: var(--radius-15);
     width: 100%;
   `,
-  TextArea: styled.div`
-    padding: 1em;
+  EngineArea: styled.div`
     border-radius: var(--radius-15);
     background-color: var(--color-black-300);
+  `,
+  UserArea: styled.div`
+    border-radius: var(--radius-15);
+    background-color: var(--color-black-300);
+    padding: 1em;
+
+    > div {
+      display: flex;
+      align-items: center;
+      gap: 1em;
+
+      i {
+        font-size: 2rem;
+        &:hover {
+          background-color: var(--color-black-400);
+          cursor: pointer;
+          color: var(--color-blue-400);
+        &:active {
+          transform: scale(0.95);
+        }
+    }
+  `,
+  MessageBoxContainer: styled.div`
+    display: grid;
+    grid-gap: 1em;
+    overflow: auto;
+    max-height: 32em;
+  `,
+  MessageBox: styled.div`
+    padding: 1em;
+    > p {
+      color: var(--color-white-200);
+      font-weight: 600;
+      padding-left: 0.2em;
+    }
+    > div {
+      p {
+        margin-top: 0.5em;
+        background: var(--color-black-400);
+        padding: 1em;
+        color: var(--color-white-300);
+        border-radius: var(--radius-10);
+      }
+    }
   `,
 };
 
