@@ -39,6 +39,8 @@ const Home: NextPage = (props) => {
         body: JSON.stringify({ userRequest: userInput, command }),
       });
 
+      setUserInput('');
+
       const result = await response.json();
 
       if (result) {
@@ -64,8 +66,6 @@ const Home: NextPage = (props) => {
         },
       ]);
     }
-
-    setUserInput('');
   };
 
   useEffect(() => {
@@ -146,7 +146,6 @@ const Home: NextPage = (props) => {
                   />
                 ))}
               </Wrapper.MessageBoxContainer>
-              {/* <textarea></textarea> */}
             </Wrapper.EngineArea>
 
             <Wrapper.UserArea onSubmit={submitRequest}>
