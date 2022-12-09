@@ -7,7 +7,6 @@ const Style = {
     place-items: center;
     margin: 0 2em 0 2em;
     position: relative;
-
     @media screen and (max-width: 570px) {
       margin: 0 1em 0 1em;
       > div {
@@ -25,7 +24,7 @@ const Style = {
     width: 100%;
     max-width: 25em;
     z-index: 9;
-    background: var(--color-grey);
+    background: var(--color-black-300);
     form {
       display: flex;
       flex-direction: column;
@@ -39,6 +38,10 @@ const Style = {
           opacity: 0.8;
           padding: 0 0.2em 0 0.2em;
         }
+      }
+      button {
+        background: var(--color-blue-400);
+        color: var(--color-black-400);
       }
     }
   `,
