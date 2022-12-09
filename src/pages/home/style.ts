@@ -117,6 +117,7 @@ const Wrapper = {
     }
     > div {
       p {
+        /* text-align: end; */
         margin-top: 0.5em;
         background: var(--color-black-400);
         padding: 1em;
