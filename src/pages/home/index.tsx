@@ -7,33 +7,61 @@ import { Layout } from '../../../styles/global-style';
 import MessageBox from '../../components/message-box/index';
 
 import { chats } from './data';
+import { IMessageBox } from 'src/types/message';
 
 const Home: NextPage = (props) => {
-  const [userRequestPrompt, setUserRequestPrompt] = useState('');
-  const [aiResponse, setAiResponse] = useState<any>([]);
+  const [userRequestPrompt, setUserRequestPrompt] = useState<IMessageBox[]>([]);
+
+  const [userInput, setUserInput] = useState('');
+  const [command, setCommand] = useState('');
 
   const getUserInput = (event: any) => {
-    setUserRequestPrompt(event.target.value);
+    setUserInput(event.target.value);
   };
 
   const submitRequest = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
 
-    const response = await fetch('api/openai', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ userRequest: userRequestPrompt.trim() }),
-    });
+    setUserRequestPrompt([
+      { isFromUser: true, message: userInput },
+      ...userRequestPrompt,
+    ]);
 
-    const result = await response.json();
+    try {
+      const response = await fetch('api/openai', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ userRequest: userInput, command }),
+      });
 
-    setUserRequestPrompt('');
-    setAiResponse([...aiResponse, result.response]);
-    console.log({ result });
+      const result = await response.json();
+
+      if (result) {
+        setUserRequestPrompt([
+          ...[{ isFromUser: false, message: result.response }],
+          ...userRequestPrompt,
+        ]);
+      } else {
+        setUserRequestPrompt([
+          { isFromUser: false, message: 'Error: No response from OpenAI API' },
+          ...userRequestPrompt,
+        ]);
+      }
+    } catch (error: any) {
+      setUserRequestPrompt([
+        { isFromUser: false, message: `Error: ${error?.message}` },
+        ...userRequestPrompt,
+      ]);
+    }
+
+    setUserInput('');
   };
 
+  useEffect(() => {
+    console.log({ userRequestPrompt });
+  }, [userRequestPrompt]);
   return (
     <Layout>
       <Wrapper.Home>
@@ -111,7 +139,8 @@ const Home: NextPage = (props) => {
                   placeholder="What's on your mind?"
                   name="userRequest"
                   onChange={getUserInput}
-                  value={userRequestPrompt}
+                  value={userInput}
+                  required
                 />
                 <button type="submit">
                   <i className="fas fa-paper-plane"> </i>

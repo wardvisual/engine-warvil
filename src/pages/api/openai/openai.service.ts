@@ -1,7 +1,7 @@
 import { Configuration, OpenAIApi } from 'openai';
 
 import { Promptable } from './openai.types';
-import { Prompt } from './openai.helper';
+import { Prompt } from './openai.prompt';
 
 class OpenAIClient {
   private configuration: Configuration;
@@ -18,11 +18,11 @@ class OpenAIClient {
     this.openai = new OpenAIApi(this.configuration);
   }
 
-  public async createCompletion(userRequest: string) {
+  public async createCompletion(command: string, userRequest: string) {
     try {
       const completion = await this.openai.createCompletion({
         model: this.defaultModel,
-        prompt: this.prompt.trainPrompt(userRequest),
+        prompt: this.prompt.trainPrompt(command, userRequest),
         temperature: 0.86,
         max_tokens: 1896,
         top_p: 1,

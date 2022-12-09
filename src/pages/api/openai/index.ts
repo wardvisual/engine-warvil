@@ -9,7 +9,10 @@ export default async function handler(
   res: NextApiResponse<any>
 ) {
   if (req.method === 'POST') {
-    const request = await openAIClient.createCompletion(req.body.userRequest);
+    const request = await openAIClient.createCompletion(
+      req.body.command,
+      req.body.userRequest
+    );
 
     res.status(200).json({ response: request, date: Date.now() });
   }

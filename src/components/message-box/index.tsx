@@ -1,13 +1,9 @@
 /* eslint-disable react/no-unescaped-entities */
 
 import { NextPage } from 'next';
+import { IMessageBox } from 'src/types/message';
 
 import Wrapper from './style';
-
-interface IMessageBox {
-  isFromUser: boolean;
-  message: string;
-}
 
 const MessageBox: NextPage<IMessageBox> = ({
   isFromUser,
