@@ -6,11 +6,10 @@ import Wrapper from './style';
 import { Layout } from '../../../styles/global-style';
 import MessageBox from '../../components/message-box/index';
 
-import { chats } from './data';
 import { IMessageBox } from 'src/types/message';
 
 const Home: NextPage = (props) => {
-  const [userRequestPrompt, setUserRequestPrompt] = useState<IMessageBox[]>([]);
+  const [appRequests, setAppRequests] = useState<IMessageBox[]>([]);
 
   const [userInput, setUserInput] = useState('');
   const [command, setCommand] = useState('');
@@ -22,10 +21,12 @@ const Home: NextPage = (props) => {
   const submitRequest = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
 
-    setUserRequestPrompt([
+    const newUserRequestPrompt = [
+      ...appRequests,
       { isFromUser: true, message: userInput },
-      ...userRequestPrompt,
-    ]);
+    ];
+
+    setAppRequests(newUserRequestPrompt);
 
     try {
       const response = await fetch('api/openai', {
@@ -39,20 +40,26 @@ const Home: NextPage = (props) => {
       const result = await response.json();
 
       if (result) {
-        setUserRequestPrompt([
-          ...[{ isFromUser: false, message: result.response }],
-          ...userRequestPrompt,
+        setAppRequests([
+          ...newUserRequestPrompt,
+          { isFromUser: false, message: result.response },
         ]);
       } else {
-        setUserRequestPrompt([
-          { isFromUser: false, message: 'Error: No response from OpenAI API' },
-          ...userRequestPrompt,
+        setAppRequests([
+          ...newUserRequestPrompt,
+          {
+            isFromUser: false,
+            message: 'Error: No response from OpenAI API',
+          },
         ]);
       }
     } catch (error: any) {
-      setUserRequestPrompt([
-        { isFromUser: false, message: `Error: ${error?.message}` },
-        ...userRequestPrompt,
+      setAppRequests([
+        ...newUserRequestPrompt,
+        {
+          isFromUser: false,
+          message: `Error: ${error?.message}`,
+        },
       ]);
     }
 
@@ -60,8 +67,8 @@ const Home: NextPage = (props) => {
   };
 
   useEffect(() => {
-    console.log({ userRequestPrompt });
-  }, [userRequestPrompt]);
+    console.log({ appRequests });
+  }, [appRequests]);
   return (
     <Layout>
       <Wrapper.Home>
@@ -121,7 +128,7 @@ const Home: NextPage = (props) => {
             </Wrapper.Header>
             <Wrapper.EngineArea>
               <Wrapper.MessageBoxContainer>
-                {chats.map((el, i) => (
+                {appRequests.map((el, i) => (
                   <MessageBox
                     key={i}
                     isFromUser={el.isFromUser}

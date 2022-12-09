@@ -81,6 +81,9 @@ const Wrapper = {
     background-color: var(--color-black-300);
     border-radius: var(--radius-15);
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   `,
   EngineArea: styled.div`
     border-radius: var(--radius-15);

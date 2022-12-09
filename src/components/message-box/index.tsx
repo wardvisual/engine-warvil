@@ -8,6 +8,7 @@ import Wrapper from './style';
 const MessageBox: NextPage<IMessageBox> = ({
   isFromUser,
   message,
+  id,
 }: IMessageBox): JSX.Element => {
   return (
     <Wrapper.MessageBox>
