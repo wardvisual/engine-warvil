@@ -1,7 +1,20 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 const Wrapper = {
   MessageBox: styled.div`
+    @keyframes typing {
+      from {
+        transform: translateY(20%);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0%);
+        opacity: 1;
+      }
+    }
+
+    animation: typing 0.3s linear;
+
     > div.user {
       text-align: end;
       > div {

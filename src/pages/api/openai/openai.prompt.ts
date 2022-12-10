@@ -1,3 +1,4 @@
+import { commands } from 'lib/constants/commands';
 import { Promptable } from './openai.types';
 export class Prompt implements Promptable {
   private formatRequest(userRequest: string): string {
@@ -8,9 +9,9 @@ export class Prompt implements Promptable {
     return userQuestion;
   }
   private formatString(text: string[]) {
-    var finalString = '';
+    let finalString = '';
 
-    for (var i = 0; i < text.length; i++) {
+    for (let i = 0; i < text.length; i++) {
       if (i % 2 === 0) {
         finalString += `You: ${text[i]}`;
       } else {
@@ -22,9 +23,19 @@ export class Prompt implements Promptable {
   }
 
   public trainPrompt(command: string, request: string[]): string {
-    console.log({ request });
-    return `${this.formatString(request)}\nYou: ${this.formatRequest(
-      request.slice(-1)[0]
-    )}\nWarvil:`;
+    let response = ``;
+
+    switch (command) {
+      case commands.GENERATE_CODE:
+        response = `${this.formatString(request)}\nYou: ${this.formatRequest(
+          request.slice(-1)[0]
+        )}\nWarvil:`;
+        break;
+      case commands.BASIC_QUESTION:
+        response = ``;
+        break;
+    }
+
+    return response;
   }
 }

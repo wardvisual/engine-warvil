@@ -154,7 +154,8 @@ const GlobalStyle = createGlobalStyle`
         width: 100%;
         background: rgba(0, 0, 0, 0.4);
         display: none;
-    }
+    } 
+
 `;
 
 export default GlobalStyle;

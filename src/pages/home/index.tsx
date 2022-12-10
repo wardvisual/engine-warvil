@@ -9,24 +9,26 @@ import MessageBox from 'src/components/message-box/index';
 
 import Wrapper from 'styles/home.style';
 import { MessageBoxable } from 'lib/types/message';
+import CommandBox from 'src/components/command-box';
+import Playground from 'src/components/playground';
+import { commands } from 'lib/constants/commands';
 
 const useBreakpoint = createBreakpoint({ XL: 1280, L: 992, S: 350 });
 
 const Home: NextPage = (props) => {
   const [appRequests, setAppRequests] = useState<MessageBoxable[]>([]);
-  const messagesContainerRef = useRef(null);
+  const messageBoxContainerRef = useRef(null);
   const commandBoxRef = useRef<HTMLInputElement>(null);
   const popupRef = useRef<HTMLInputElement>(null);
   const inputBoxRef = useRef<HTMLInputElement>(null);
 
   const [userInput, setUserInput] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
-  const [toggleCommandBox, setToggleCommandBox] = useState<boolean>(false);
-  const [command, setCommand] = useState<string>('');
+  const [command, setCommand] = useState<string>(commands.GENERATE_CODE);
 
   const breakpoint = useBreakpoint();
 
-  const getUserInput = (event: any) => {
+  const getUserInput = (event: unknown) => {
     setUserInput(event.target.value);
   };
 
@@ -90,32 +92,9 @@ const Home: NextPage = (props) => {
     setLoading(false);
   };
 
-  const openPopup = () => {
-    setToggleCommandBox(!toggleCommandBox);
-    popupRef.current?.setAttribute('style', `display: block`);
-    commandBoxRef.current?.children[1].setAttribute('style', `display: block`);
-  };
-
-  const toggle = () => {
-    setToggleCommandBox(!toggleCommandBox);
-  };
-
-  const closePopup = () => {
-    commandBoxRef.current?.children[1].setAttribute('style', `display: none`);
-    popupRef.current?.setAttribute('style', `display: none`);
-  };
-
   useEffect(() => {
-    if (commandBoxRef.current) {
-      if (breakpoint === 'S') {
-        commandBoxRef.current?.addEventListener('click', openPopup);
-      }
-    }
-  }, [breakpoint]);
-
-  useEffect(() => {
-    if (messagesContainerRef && messagesContainerRef.current) {
-      const container: any = messagesContainerRef.current;
+    if (messageBoxContainerRef && messageBoxContainerRef.current) {
+      const container: unknown = messageBoxContainerRef.current;
       container.scrollTop = container.scrollHeight;
     }
   }, [appRequests]);
@@ -129,7 +108,7 @@ const Home: NextPage = (props) => {
 
   return (
     <>
-      <div className="overlay" onClick={closePopup} ref={popupRef}></div>
+      <div className="overlay" ref={popupRef}></div>
       <Layout>
         <Wrapper.Home>
           <Wrapper.Header>
@@ -139,97 +118,16 @@ const Home: NextPage = (props) => {
             </div>
           </Wrapper.Header>
           <Wrapper.Container>
-            <Wrapper.Commands ref={commandBoxRef}>
-              <div>
-                <h2>Choose Commands</h2>
-              </div>
-              <ul className={toggleCommandBox ? 'mobile' : ''}>
-                <li>
-                  <i className="fas fa-question-circle"></i> Basic question
-                </li>
-                <li>
-                  <i className="fas fa-code"></i> Generate code
-                </li>
-                <li>
-                  <i className="fas fa-check"></i> Grammar correction
-                </li>
-                <li>
-                  <i className="fas fa-quote-right"></i>
-                  Paraphrase
-                </li>
-                <li>
-                  <i className="fas fa-book-reader"></i> Summarize for a grade
-                  student
-                </li>
-                <li>
-                  <i className="fas fa-globe"></i> English to other language
-                </li>
-                <li>
-                  <i className="fas fa-file-code"></i> Explain programming code
-                </li>
-                <li>
-                  <i className="fas fa-balance-scale"></i> Evaluate a
-                  mathematical expression
-                </li>
-                <li>
-                  <i className="fas fa-calculator"></i> Evaluate a math equation
-                </li>
-                <li>
-                  <i className="fas fa-book-open"></i> Create study notes
-                </li>
-              </ul>
-              {breakpoint === 'S' && (
-                <div>
-                  <i className="fa fa-caret-down"></i>
-                </div>
-              )}
-            </Wrapper.Commands>
-            <Wrapper.Playground>
-              <Wrapper.Header>
-                <div className="message-box">
-                  <h2>Basic Question</h2>
-                  <p>Answers at your fingertips</p>
-                </div>
-              </Wrapper.Header>
-              <Wrapper.EngineArea>
-                <Wrapper.MessageBoxContainer ref={messagesContainerRef}>
-                  {appRequests.map((el, i) => (
-                    <MessageBox
-                      key={i}
-                      isFromUser={el.isFromUser}
-                      message={el.message}
-                    />
-                  ))}
-                  {loading && (
-                    <div className="loading">
-                      <p>🤖 Warvil</p>
-                      <div>
-                        <p>Typing...</p>
-                      </div>
-                    </div>
-                  )}
-                </Wrapper.MessageBoxContainer>
-              </Wrapper.EngineArea>
-
-              <Wrapper.UserArea onSubmit={submitRequest}>
-                <div>
-                  <input
-                    type="text"
-                    placeholder="What's on your mind?"
-                    name="userRequest"
-                    onChange={getUserInput}
-                    value={userInput}
-                    required
-                    autoFocus={true}
-                    disabled={loading}
-                    ref={inputBoxRef}
-                  />
-                  <button type="submit" disabled={loading}>
-                    <i className="fas fa-paper-plane"> </i>
-                  </button>
-                </div>
-              </Wrapper.UserArea>
-            </Wrapper.Playground>
+            <CommandBox ref={commandBoxRef} breakpoint={breakpoint} />
+            <Playground
+              appRequests={appRequests}
+              getUserInput={getUserInput}
+              inputBoxRef={inputBoxRef}
+              loading={loading}
+              messageBoxContainerRef={messageBoxContainerRef}
+              submitRequest={submitRequest}
+              userInput={userInput}
+            />
           </Wrapper.Container>
         </Wrapper.Home>
       </Layout>

@@ -56,6 +56,7 @@ const Wrapper = {
     }
 
     ul.desktop {
+      all: unset;
     }
 
     ul {
@@ -66,12 +67,16 @@ const Wrapper = {
         transition: all 0.3s ease-in-out;
         min-width: max-content;
 
-        &:first-child {
+        &:nth-child(2) {
+          color: var(--color-blue-400);
           background-color: var(--color-black-400);
+
+          > * {
+            color: var(--color-blue-400);
+          }
         }
 
         &:hover {
-          border-radius: var(--radius-15);
           background-color: var(--color-black-400);
           cursor: pointer;
           animation: flying-animation 0.3s ease;
