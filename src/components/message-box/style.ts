@@ -38,7 +38,6 @@ const Wrapper = {
       > div {
         p,
         pre {
-          /* text-align: end; */
           margin-top: 0.5em;
           background: var(--color-black-400);
           padding: 1em;
@@ -46,6 +45,10 @@ const Wrapper = {
           max-width: max-content;
           width: inherit;
           border-radius: var(--radius-10);
+        }
+
+        pre {
+          white-space: pre-wrap;
         }
       }
     }
