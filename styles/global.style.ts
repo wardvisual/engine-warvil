@@ -41,6 +41,7 @@ const GlobalStyle = createGlobalStyle`
     /* customize the scrollbar width */
     &::-webkit-scrollbar {
         width: 5px;
+        height: 3px;
     }
 
     body {
