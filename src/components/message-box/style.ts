@@ -23,7 +23,8 @@ const Wrapper = {
         padding-left: 0.2em;
       }
       > div {
-        p {
+        p,
+        pre {
           /* text-align: end; */
           margin-top: 0.5em;
           background: var(--color-black-400);

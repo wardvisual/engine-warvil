@@ -8,12 +8,12 @@ import React from 'react';
 
 const MessageBox: NextPage<MessageBoxable> = ({
   isFromUser,
-  message,
+  message = ``,
 }: MessageBoxable): JSX.Element => {
   let html;
 
   if (!isFromUser && message.indexOf('\n') !== -1) {
-    const formattedMessage = message.replace(/^\n/, '');
+    const formattedMessage = message.replace(/^\n\n/, '');
     const lines = formattedMessage.split('\n');
     html = lines.map((line, index) => `${line} <br/>`);
 
@@ -28,7 +28,7 @@ const MessageBox: NextPage<MessageBoxable> = ({
           {isFromUser ? (
             <p>{message}</p>
           ) : (
-            <p dangerouslySetInnerHTML={{ __html: html || '' }}></p>
+            <pre dangerouslySetInnerHTML={{ __html: html || '' }}></pre>
           )}
         </div>
       </div>
