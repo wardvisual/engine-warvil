@@ -23,10 +23,8 @@ export class Prompt implements Promptable {
 
   public trainPrompt(command: string, request: string[]): string {
     console.log({ request });
-    return `
-        ${this.formatString(request)}
-        You: ${this.formatRequest(request.slice(-1)[0])}
-        Warvil: 
-    `;
+    return `${this.formatString(request)}\nYou: ${this.formatRequest(
+      request.slice(-1)[0]
+    )}\nWarvil:`;
   }
 }
