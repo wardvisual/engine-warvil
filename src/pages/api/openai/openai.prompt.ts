@@ -1,6 +1,13 @@
 import { commands } from 'lib/constants/commands';
 import { Promptable } from './openai.types';
+import { Trainer } from './openai.trainer';
 export class Prompt implements Promptable {
+  private trainer: Trainer;
+
+  constructor() {
+    this.trainer = new Trainer();
+  }
+
   private formatRequest(userRequest: string): string {
     const userQuestion =
       userRequest[0].toLocaleUpperCase() +
@@ -27,9 +34,9 @@ export class Prompt implements Promptable {
 
     switch (command) {
       case commands.GENERATE_CODE:
-        response = `${this.formatString(request)}\nYou: ${this.formatRequest(
-          request.slice(-1)[0]
-        )}\nWarvil:`;
+        response += `${this.trainer.generateCode()}${this.formatString(
+          request
+        )}\nYou: ${this.formatRequest(request.slice(-1)[0])}\nWarvil:`;
         break;
       case commands.BASIC_QUESTION:
         response = ``;
