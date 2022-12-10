@@ -147,6 +147,14 @@ const GlobalStyle = createGlobalStyle`
     h3 {
         font-size: 1rem;
     }
+
+    .overlay {
+        position: absolute;
+        height: 100vh;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.4);
+        display: none;
+    }
 `;
 
 export default GlobalStyle;

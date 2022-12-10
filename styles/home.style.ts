@@ -46,6 +46,18 @@ const Wrapper = {
       padding: 1em;
     }
 
+    ul.mobile {
+      z-index: 9;
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    ul.desktop {
+    }
+
     ul {
       li {
         padding: 1em;
@@ -97,19 +109,19 @@ const Wrapper = {
       justify-content: space-between;
       align-items: center;
       padding: 0.8em;
-      > div {
-        padding: 0.2em;
-      }
+      cursor: pointer;
 
       ul {
         display: none;
+      }
+      > div {
+        padding: 0.2em;
       }
 
       > div:last-child {
         padding: 0;
         i {
-          font-size: 3rem;
-          cursor: pointer;
+          font-size: 2.2rem;
 
           &:active {
             transform: scale(0.9);
@@ -129,6 +141,7 @@ const Wrapper = {
   EngineArea: styled.div`
     border-radius: var(--radius-15);
     background-color: var(--color-black-300);
+    min-height: 32em;
   `,
   UserArea: styled.form`
     border-radius: var(--radius-15);
