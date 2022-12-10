@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import { NextPage } from 'next';
 import { useEffect, useRef, useState } from 'react';
+import { createBreakpoint } from 'react-use';
 
 import { Layout } from 'styles/global.style';
 import MessageBox from 'src/components/message-box/index';
@@ -8,14 +9,19 @@ import MessageBox from 'src/components/message-box/index';
 import Wrapper from 'styles/home.style';
 import { MessageBoxable } from 'lib/types/message';
 
+const useBreakpoint = createBreakpoint({ XL: 1280, L: 992, S: 350 });
+
 const Home: NextPage = (props) => {
   const [appRequests, setAppRequests] = useState<MessageBoxable[]>([]);
   const messagesContainerRef = useRef(null);
+  const commandBox = useRef<HTMLInputElement>(null);
   const inputBoxRef = useRef<HTMLInputElement>(null);
 
   const [userInput, setUserInput] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
   const [command, setCommand] = useState<string>('');
+
+  const breakpoint = useBreakpoint();
 
   const getUserInput = (event: any) => {
     setUserInput(event.target.value);
@@ -96,6 +102,7 @@ const Home: NextPage = (props) => {
     if (inputBoxRef.current) {
       inputBoxRef.current.focus();
     }
+    console.log({ breakpoint });
   }, [appRequests]);
 
   return (
@@ -147,6 +154,11 @@ const Home: NextPage = (props) => {
                 <i className="fas fa-book-open"></i> Create study notes
               </li>
             </ul>
+            {breakpoint === 'S' && (
+              <div>
+                <i className="fa fa-caret-down"></i>
+              </div>
+            )}
           </Wrapper.Commands>
           <Wrapper.Playground>
             <Wrapper.Header>

@@ -14,10 +14,20 @@ const Wrapper = {
         border-bottom: 1px var(--color-black-400) solid;
       }
     }
+
+    @media screen and (max-width: 992px) {
+      div {
+        padding: 1em;
+      }
+    }
   `,
   Container: styled.div`
     display: flex;
     gap: 1em;
+
+    @media screen and (max-width: 992px) {
+      flex-direction: column;
+    }
   `,
   Commands: styled.div`
     appearance: none;
@@ -78,6 +88,32 @@ const Wrapper = {
 
         i {
           margin-right: 0.5em;
+        }
+      }
+    }
+
+    @media screen and (max-width: 992px) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.8em;
+      > div {
+        padding: 0.2em;
+      }
+
+      ul {
+        display: none;
+      }
+
+      > div:last-child {
+        padding: 0;
+        i {
+          font-size: 3rem;
+          cursor: pointer;
+
+          &:active {
+            transform: scale(0.9);
+          }
         }
       }
     }
