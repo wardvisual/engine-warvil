@@ -123,6 +123,19 @@ const Wrapper = {
     grid-gap: 1em;
     overflow: auto;
     max-height: 32em;
+
+    .loading {
+      margin-left: 1em;
+
+      > div {
+        background: var(--color-black-400);
+        padding: 0.8em;
+        color: var(--color-white-300);
+        max-width: max-content;
+        width: inherit;
+        border-radius: var(--radius-10);
+      }
+    }
   `,
   MessageBox: styled.div`
     padding: 1em;

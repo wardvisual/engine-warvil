@@ -34,7 +34,8 @@ class OpenAIClient {
         return completion.data.choices[0].text;
       }
     } catch (error) {
-      return "I don't understand your request!" + error;
+      console.log({ error });
+      return "I'm sorry, I don't understand your question!";
     }
   }
 }

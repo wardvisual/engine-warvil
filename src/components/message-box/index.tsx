@@ -1,14 +1,14 @@
 /* eslint-disable react/no-unescaped-entities */
 
 import { NextPage } from 'next';
-import { IMessageBoxProps } from 'src/types/message';
 
 import Wrapper from './style';
+import { MessageBoxable } from 'lib/types/message';
 
-const MessageBox: NextPage<IMessageBoxProps> = ({
+const MessageBox: NextPage<MessageBoxable> = ({
   isFromUser,
   message,
-}: IMessageBoxProps): JSX.Element => {
+}: MessageBoxable): JSX.Element => {
   return (
     <Wrapper.MessageBox>
       <div className={isFromUser ? 'user' : 'engine'}>

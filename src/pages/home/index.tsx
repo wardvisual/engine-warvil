@@ -2,15 +2,16 @@
 import { NextPage } from 'next';
 import { useEffect, useRef, useState } from 'react';
 
-import { Layout } from '../../../styles/global.style';
-import MessageBox from '../../components/message-box/index';
+import { Layout } from 'styles/global.style';
+import MessageBox from 'src/components/message-box/index';
 
-import { IMessageBox } from 'src/types/message';
-import Wrapper from '../../../styles/home.style';
+import Wrapper from 'styles/home.style';
+import { MessageBoxable } from 'lib/types/message';
 
 const Home: NextPage = (props) => {
-  const [appRequests, setAppRequests] = useState<IMessageBox[]>([]);
+  const [appRequests, setAppRequests] = useState<MessageBoxable[]>([]);
   const messagesContainerRef = useRef(null);
+  const inputBoxRef = useRef<HTMLInputElement>(null);
 
   const [userInput, setUserInput] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
@@ -91,6 +92,12 @@ const Home: NextPage = (props) => {
     }
   }, [appRequests]);
 
+  useEffect(() => {
+    if (inputBoxRef.current) {
+      inputBoxRef.current.focus();
+    }
+  }, [appRequests]);
+
   return (
     <Layout>
       <Wrapper.Home>
@@ -157,6 +164,14 @@ const Home: NextPage = (props) => {
                     message={el.message}
                   />
                 ))}
+                {loading && (
+                  <div className="loading">
+                    <p>🤖 Warvil</p>
+                    <div>
+                      <p>Typing...</p>
+                    </div>
+                  </div>
+                )}
               </Wrapper.MessageBoxContainer>
             </Wrapper.EngineArea>
 
@@ -169,7 +184,9 @@ const Home: NextPage = (props) => {
                   onChange={getUserInput}
                   value={userInput}
                   required
+                  autoFocus={true}
                   disabled={loading}
+                  ref={inputBoxRef}
                 />
                 <button type="submit" disabled={loading}>
                   <i className="fas fa-paper-plane"> </i>
