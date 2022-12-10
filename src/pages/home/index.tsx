@@ -12,8 +12,9 @@ const Home: NextPage = (props) => {
   const [appRequests, setAppRequests] = useState<IMessageBox[]>([]);
   const messagesContainerRef = useRef(null);
 
-  const [userInput, setUserInput] = useState('');
-  const [command, setCommand] = useState('');
+  const [userInput, setUserInput] = useState<string>('');
+  const [loading, setLoading] = useState<boolean>(false);
+  const [command, setCommand] = useState<string>('');
 
   const getUserInput = (event: any) => {
     setUserInput(event.target.value);
@@ -27,18 +28,25 @@ const Home: NextPage = (props) => {
       { isFromUser: true, message: userInput },
     ];
 
-    setAppRequests(newUserRequestPrompt);
+    setUserInput('');
+    setLoading(true);
 
     try {
+      setAppRequests(newUserRequestPrompt);
+
       const response = await fetch('api/openai', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ userRequest: userInput, command }),
+        body: JSON.stringify({
+          userRequest: [
+            ...appRequests.map((request) => request.message),
+            userInput,
+          ],
+          command,
+        }),
       });
-
-      setUserInput('');
 
       const result = await response.json();
 
@@ -56,15 +64,20 @@ const Home: NextPage = (props) => {
           },
         ]);
       }
+
+      console.log({ result });
     } catch (error: any) {
       setAppRequests([
         ...newUserRequestPrompt,
         {
           isFromUser: false,
-          message: `Error: ${error?.message}`,
+          message: `${error?.message}`,
         },
       ]);
+      console.log({ error });
     }
+
+    setLoading(false);
   };
 
   useEffect(() => {
@@ -156,8 +169,9 @@ const Home: NextPage = (props) => {
                   onChange={getUserInput}
                   value={userInput}
                   required
+                  disabled={loading}
                 />
-                <button type="submit">
+                <button type="submit" disabled={loading}>
                   <i className="fas fa-paper-plane"> </i>
                 </button>
               </div>
