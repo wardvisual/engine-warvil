@@ -18,7 +18,7 @@ class OpenAIClient {
     this.openai = new OpenAIApi(this.configuration);
   }
 
-  public async createCompletion(command: string, userRequest: string) {
+  public async createCompletion(command: string, userRequest: string[]) {
     try {
       const completion = await this.openai.createCompletion({
         model: this.defaultModel,

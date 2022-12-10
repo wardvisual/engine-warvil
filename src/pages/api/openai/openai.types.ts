@@ -1,3 +1,3 @@
 export interface Promptable {
-  trainPrompt(command: string, request: string): string;
+  trainPrompt(command: string, request: string[]): string;
 }
