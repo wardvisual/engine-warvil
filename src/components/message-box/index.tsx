@@ -13,7 +13,7 @@ const MessageBox: NextPage<MessageBoxable> = ({
   let html;
 
   if (!isFromUser && message.indexOf('\n') !== -1) {
-    const formattedMessage = message.replace(/^\n\n/, '');
+    const formattedMessage = message.replace(/^\n\n/, ' ');
     const lines = formattedMessage.split('\n');
     html = lines.map((line, index) => `${line} <br/>`);
 
@@ -28,7 +28,7 @@ const MessageBox: NextPage<MessageBoxable> = ({
           {isFromUser ? (
             <p>{message}</p>
           ) : (
-            <pre dangerouslySetInnerHTML={{ __html: html || '' }}></pre>
+            <pre dangerouslySetInnerHTML={{ __html: html || message }}></pre>
           )}
         </div>
       </div>
