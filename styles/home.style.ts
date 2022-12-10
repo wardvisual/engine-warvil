@@ -137,6 +137,7 @@ const Wrapper = {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    min-height: 45em;
   `,
   EngineArea: styled.div`
     border-radius: var(--radius-15);

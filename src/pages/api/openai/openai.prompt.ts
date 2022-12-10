@@ -12,9 +12,9 @@ export class Prompt implements Promptable {
 
     for (var i = 0; i < text.length; i++) {
       if (i % 2 === 0) {
-        finalString += `You: ${text[i]},\n`;
+        finalString += `You: ${text[i]}`;
       } else {
-        finalString += `Warvil: ${text[i]},\n`;
+        finalString += `Warvil: ${text[i]}`;
       }
     }
 
