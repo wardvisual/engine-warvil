@@ -2,6 +2,10 @@ import styled, { createGlobalStyle } from 'styled-components';
 
 export const Layout = styled.div`
   margin: 0 1em 0 1em;
+
+  @media screen and (max-width: 992px) {
+    margin: 0 0.5em 0 0.5em;
+  }
 `;
 
 const GlobalStyle = createGlobalStyle`
@@ -28,7 +32,6 @@ const GlobalStyle = createGlobalStyle`
         --radius-20: 20px;
     }
 
-
     /* customize the scrollbar color */
     &::-webkit-scrollbar-thumb {
         background-color: var(--color-blue-400);
@@ -40,7 +43,7 @@ const GlobalStyle = createGlobalStyle`
 
     /* customize the scrollbar width */
     &::-webkit-scrollbar {
-        width: 5px;
+        width: 4px;
         height: 3px;
     }
 
