@@ -6,7 +6,7 @@ import Wrapper from './style';
 
 const CommandBox: NextPage<CommandBoxable> = (prop: CommandBoxable) => {
   return (
-    <Wrapper.Commands ref={prop.ref}>
+    <Wrapper.Commands>
       <div>
         <h2>Choose Commands</h2>
       </div>
