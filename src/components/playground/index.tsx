@@ -4,10 +4,25 @@ import { NextPage } from 'next';
 import Wrapper from './style';
 import { Playgroundable } from 'lib/types/props';
 import MessageBox from '../message-box';
+import { useState, useEffect } from 'react';
+import { useStore } from 'lib/hooks/store';
 
 const Playground: NextPage<Playgroundable> = (
   prop: Playgroundable
 ): JSX.Element => {
+  const [templateInstructions] = useState<string[]>([
+    'Code a calculator in Java',
+    'Code a simple HTML and CSS webpage',
+    'Code a regex finding the vulnerable input',
+    'Code a Chatbot in C#',
+  ]);
+
+  const store = useStore((state: any) => state);
+
+  const getTemplateInstruction = (index: number) => {
+    store.setUserInputRequest(templateInstructions[index]);
+  };
+
   return (
     <Wrapper.Playground>
       <Wrapper.Header>
@@ -17,8 +32,17 @@ const Playground: NextPage<Playgroundable> = (
         </div>
       </Wrapper.Header>
       <Wrapper.EngineArea>
+        {/* {store.initialCodeInstruction && (
+          <ul className="pre-code">
+            {templateInstructions.map((el, index) => (
+              <li key={index} onClick={() => getTemplateInstruction(index)}>
+                {el}
+              </li>
+            ))}
+          </ul>
+        )} */}
         <Wrapper.MessageBoxContainer ref={prop.messageBoxContainerRef}>
-          {prop.appRequests.map((el, i) => (
+          {prop.appRequests?.map((el, i) => (
             <MessageBox
               key={i}
               isFromUser={el.isFromUser}
