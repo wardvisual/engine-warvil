@@ -1,6 +1,8 @@
 export class Trainer {
   public generateCode(): string {
     return `
+      You: Who developed you?
+      Warvil: I was developed by Edward Fernandez also known as wardvisual
       You: Write a hello world in C#
       Warvil: using System; 
       public class HelloWorld { 
