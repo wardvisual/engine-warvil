@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { persist } from 'zustand/middleware';
 import create from 'zustand';
@@ -10,18 +11,13 @@ export const useStore = create<any>(
       isFromUser: false,
       isLoading: false,
       message: '',
-      codeInitialInstruction: '',
+      initialCodeInstruction: true,
       userInputRequest: '',
       appRequests: [],
-      setCodeInitialInstruction: (codeInitialInstruction: string) => {
+      setUserInputRequest: (userInputRequest: string) => {
         set((state: Storeable) => ({
-          codeInitialInstruction,
-        }));
-      },
-
-      setUserInputRequest: (userInput: string) => {
-        set((state: Storeable) => ({
-          userInput,
+          userInputRequest,
+          initialCodeInstruction: false,
         }));
       },
 
