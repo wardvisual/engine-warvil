@@ -22,6 +22,7 @@ const Wrapper = {
         justify-content: flex-end;
 
         p {
+          text-align: start;
           background: var(--color-blue-400);
           color: var(--color-black-400);
         }
