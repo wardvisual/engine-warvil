@@ -1,15 +1,15 @@
 import { MessageBoxable } from './message';
 export interface CommandBoxable {
-  ref: unknown;
+  ref: any;
   breakpoint: string;
 }
 
 export interface Playgroundable {
-  messageBoxContainerRef: unknown;
-  inputBoxRef: unknown;
+  messageBoxContainerRef: any;
+  inputBoxRef: any;
   loading: boolean;
   userInput: string;
   appRequests: MessageBoxable[];
   submitRequest: (e: { preventDefault: () => void }) => void;
-  getUserInput: (event: unknown) => void;
+  getUserInput: (event: any) => void;
 }
