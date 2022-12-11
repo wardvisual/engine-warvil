@@ -23,12 +23,61 @@ const Wrapper = {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 45em;
+    @media screen and (max-width: 992px) {
+      min-height: 40em;
+    }
   `,
   EngineArea: styled.div`
     border-radius: var(--radius-15);
     background-color: var(--color-black-300);
-    min-height: 32em;
+    /* min-height: 10em; */
+    position: relative;
+
+    .pre-code {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 1em;
+      overflow: hidden;
+      user-select: none;
+      li {
+        padding: 1.5em;
+        background: var(--color-black-400);
+        border-radius: var(--radius-10);
+        text-align: center;
+
+        &:hover {
+          background-color: var(--color-black-400);
+          cursor: pointer;
+          animation: flying-animation 0.3s ease;
+          color: var(--color-blue-400);
+
+          > * {
+            color: var(--color-blue-400);
+          }
+        }
+
+        &:active {
+          transform: scale(0.95);
+        }
+
+        @keyframes flying-animation {
+          0% {
+            transform: scale(1);
+          }
+          50% {
+            transform: scale(1.02);
+          }
+          100% {
+            transform: scale(1);
+          }
+        }
+      }
+    }
   `,
   UserArea: styled.form`
     border-radius: var(--radius-15);
@@ -65,6 +114,7 @@ const Wrapper = {
       margin-left: 1em;
 
       > div {
+        margin-top: 0.5em;
         background: var(--color-black-400);
         padding: 0.8em;
         color: var(--color-white-300);
