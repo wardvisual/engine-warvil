@@ -5,46 +5,46 @@ import { useEffect, useRef, useState } from 'react';
 import { createBreakpoint } from 'react-use';
 
 import { Layout } from 'styles/global.style';
-import MessageBox from 'src/components/message-box/index';
 
 import Wrapper from 'styles/home.style';
-import { MessageBoxable } from 'lib/types/message';
 import CommandBox from 'src/components/command-box';
 import Playground from 'src/components/playground';
 import { commands } from 'lib/constants/commands';
+import { useStore } from 'lib/hooks/store';
+import { Event } from 'lib/types/tags';
 
 const useBreakpoint = createBreakpoint({ XL: 1280, L: 992, S: 350 });
 
-const Home: NextPage = (props) => {
-  const [appRequests, setAppRequests] = useState<MessageBoxable[]>([]);
+const Home: NextPage = () => {
   const messageBoxContainerRef = useRef(null);
-  const commandBoxRef = useRef<HTMLInputElement>(null);
-  const popupRef = useRef<HTMLInputElement>(null);
+  const commandBoxRef = useRef<HTMLDivElement>(null);
+  const popupRef = useRef<HTMLDivElement>(null);
   const inputBoxRef = useRef<HTMLInputElement>(null);
 
-  const [userInput, setUserInput] = useState<string>('');
-  const [loading, setLoading] = useState<boolean>(false);
-  const [command, setCommand] = useState<string>(commands.GENERATE_CODE);
+  const [command] = useState<string>(commands.GENERATE_CODE);
 
   const breakpoint = useBreakpoint();
+  const store = useStore((state: any) => state);
 
-  const getUserInput = (event: unknown) => {
-    setUserInput(event.target.value);
+  const getUserInput = (event: Event) => {
+    store.setUserInputRequest(event.target.value);
+    if (store.setUserInputRequest)
+      store.setUserInputRequest(event.target.value);
   };
 
   const submitRequest = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
 
     const newUserRequestPrompt = [
-      ...appRequests,
-      { isFromUser: true, message: userInput },
+      ...store.appRequests,
+      { isFromUser: true, message: store.userInputRequest },
     ];
 
-    setUserInput('');
-    setLoading(true);
+    store.setUserInputRequest('');
+    store.setIsLoading(true);
 
     try {
-      setAppRequests(newUserRequestPrompt);
+      store.setAppRequests(newUserRequestPrompt);
 
       const response = await fetch('api/openai', {
         method: 'POST',
@@ -53,8 +53,10 @@ const Home: NextPage = (props) => {
         },
         body: JSON.stringify({
           userRequest: [
-            ...appRequests.map((request) => request.message),
-            userInput,
+            ...store.appRequests.map(
+              (request: { message: string }) => request.message
+            ),
+            store.userInputRequest,
           ],
           command,
         }),
@@ -63,12 +65,12 @@ const Home: NextPage = (props) => {
       const result = await response.json();
 
       if (result) {
-        setAppRequests([
+        store.setAppRequests([
           ...newUserRequestPrompt,
           { isFromUser: false, message: result.response },
         ]);
       } else {
-        setAppRequests([
+        store.setAppRequests([
           ...newUserRequestPrompt,
           {
             isFromUser: false,
@@ -79,7 +81,7 @@ const Home: NextPage = (props) => {
 
       console.log({ result });
     } catch (error: any) {
-      setAppRequests([
+      store.setAppRequests([
         ...newUserRequestPrompt,
         {
           isFromUser: false,
@@ -89,22 +91,21 @@ const Home: NextPage = (props) => {
       console.log({ error });
     }
 
-    setLoading(false);
+    store.setIsLoading(false);
   };
 
   useEffect(() => {
     if (messageBoxContainerRef && messageBoxContainerRef.current) {
-      const container: unknown = messageBoxContainerRef.current;
+      const container: HTMLDivElement = messageBoxContainerRef.current;
       container.scrollTop = container.scrollHeight;
     }
-  }, [appRequests]);
+  }, [store.appRequests]);
 
   useEffect(() => {
     if (inputBoxRef.current) {
       inputBoxRef.current.focus();
     }
-    console.log({ breakpoint });
-  }, [appRequests]);
+  }, [store.appRequests]);
 
   return (
     <>
@@ -120,13 +121,13 @@ const Home: NextPage = (props) => {
           <Wrapper.Container>
             <CommandBox ref={commandBoxRef} breakpoint={breakpoint} />
             <Playground
-              appRequests={appRequests}
+              appRequests={store.appRequests}
               getUserInput={getUserInput}
               inputBoxRef={inputBoxRef}
-              loading={loading}
+              loading={store.isLoading}
               messageBoxContainerRef={messageBoxContainerRef}
               submitRequest={submitRequest}
-              userInput={userInput}
+              userInput={store.userInputRequest}
             />
           </Wrapper.Container>
         </Wrapper.Home>
@@ -134,5 +135,7 @@ const Home: NextPage = (props) => {
     </>
   );
 };
+
+Home.getInitialProps = async () => 1;
 
 export default Home;
