@@ -6,11 +6,11 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Warvil AI Bot</title>
+        <title>Engine Warvil</title>
         <meta name="author" content="Edward Fernandez" />
         <meta
           name="description"
-          content="Warvil is an AI bot that seeks to respond to your queries about programming."
+          content="Warvil is an intelligent chatbot powered by artificial intelligence. It is designed to provide helpful and insightful answers to your questions. Warvil can learn from its conversations with you, allowing it to become increasingly efficient and knowledgeable over time."
         />
         <link
           rel="stylesheet"
