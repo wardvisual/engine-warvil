@@ -19,6 +19,7 @@ class OpenAIClient {
   }
 
   public async createCompletion(command: string, userRequest: string[]) {
+    console.log({ command, userRequest });
     try {
       const completion = await this.openai.createCompletion({
         model: this.defaultModel,
@@ -33,8 +34,8 @@ class OpenAIClient {
       if (completion.data.choices?.length) {
         return completion.data.choices[0].text;
       }
-    } catch (error) {
-      console.log({ error });
+    } catch (error: any) {
+      console.log({ error: error.message });
       return "I'm sorry, I don't understand your question!";
     }
   }
