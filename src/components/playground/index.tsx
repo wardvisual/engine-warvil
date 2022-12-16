@@ -4,8 +4,7 @@ import { NextPage } from 'next';
 import Wrapper from './style';
 import { Playgroundable } from 'lib/types/props';
 import MessageBox from '../message-box';
-import { useState, useEffect } from 'react';
-import { useStore } from 'lib/hooks/store';
+import { useState } from 'react';
 
 const Playground: NextPage<Playgroundable> = (
   prop: Playgroundable
@@ -17,10 +16,8 @@ const Playground: NextPage<Playgroundable> = (
     'Code a Chatbot in C#',
   ]);
 
-  const store = useStore((state: any) => state);
-
   const getTemplateInstruction = (index: number) => {
-    store.setUserInputRequest(templateInstructions[index]);
+    // prop.userInput(templateInstructions[index]);
   };
 
   return (
@@ -42,7 +39,7 @@ const Playground: NextPage<Playgroundable> = (
           </ul>
         )} */}
         <Wrapper.MessageBoxContainer ref={prop.messageBoxContainerRef}>
-          {prop.appRequests?.map((el, i) => (
+          {prop.appRequests.map((el, i) => (
             <MessageBox
               key={i}
               isFromUser={el.isFromUser}
@@ -66,6 +63,7 @@ const Playground: NextPage<Playgroundable> = (
             type="text"
             placeholder="What's on your mind?"
             name="userRequest"
+            // onChange={(event) => setUserInputRequest(event.target.value)}
             onChange={prop.getUserInput}
             value={prop.userInput}
             required

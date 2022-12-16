@@ -1,6 +1,4 @@
-import { Storeable } from 'lib/types/store';
-
-export async function postInstructionRequest(store: Storeable) {
+export async function postInstructionRequest(store: any) {
   try {
     const response = await fetch('api/openai', {
       method: 'POST',

@@ -14,6 +14,6 @@ export default async function handler(
       req.body.userRequest
     );
 
-    res.status(200).json({ response: request });
+    res.status(200).json(request);
   }
 }

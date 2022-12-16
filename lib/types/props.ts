@@ -1,4 +1,5 @@
 import { MessageBoxable } from './message';
+import { Event } from 'lib/types/tags';
 export interface CommandBoxable {
   ref: any;
   breakpoint: string;
@@ -11,5 +12,5 @@ export interface Playgroundable {
   userInput: string;
   appRequests: MessageBoxable[];
   submitRequest: (e: { preventDefault: () => void }) => void;
-  getUserInput: (event: any) => void;
+  getUserInput: (event: Event) => void;
 }

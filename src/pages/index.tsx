@@ -9,88 +9,75 @@ import { Layout } from 'styles/global.style';
 import Wrapper from 'styles/home.style';
 import CommandBox from 'src/components/command-box';
 import Playground from 'src/components/playground';
-import { commands } from 'lib/constants/commands';
-import { useStore } from 'lib/hooks/store';
 import { Event } from 'lib/types/tags';
+import { postInstructionRequest } from 'lib/helpers/api';
 import { MessageBoxable } from 'lib/types/message';
+import { commands } from '../../lib/constants/commands';
 
 const useBreakpoint = createBreakpoint({ XL: 1280, L: 992, S: 350 });
 
 const Home: NextPage = () => {
+  /* Reference Variables */
   const messageBoxContainerRef = useRef(null);
   const commandBoxRef = useRef<HTMLDivElement>(null);
   const popupRef = useRef<HTMLDivElement>(null);
   const inputBoxRef = useRef<HTMLInputElement>(null);
 
+  /* Hooks */
   const breakpoint = useBreakpoint();
-  const store = useStore((state: any) => state);
 
+  /* States*/
+  const [userInputRequest, setUserInputRequest] = useState<string>('');
+  const [command, setCommand] = useState<string>(commands.GENERATE_CODE);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [appRequests, setAppRequests] = useState<MessageBoxable[]>([]);
+
+  /* Functions */
   const getUserInput = (event: Event) => {
-    store.setUserInputRequest(event.target.value);
-    if (store.setUserInputRequest)
-      store.setUserInputRequest(event.target.value);
+    setUserInputRequest(event.target.value);
   };
+
+  useEffect(() => {
+    console.log({ appRequests });
+  }, [appRequests]);
 
   const submitRequest = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
 
-    const newUserRequestPrompt = [
-      ...store.appRequests,
-      { isFromUser: true, message: store.userInputRequest },
-    ];
+    setIsLoading(true);
+    setUserInputRequest('');
 
-    store.setUserInputRequest('');
-    store.setIsLoading(true);
+    setAppRequests([
+      ...appRequests,
+      { isFromUser: true, message: userInputRequest },
+    ]);
 
     try {
-      store.setAppRequests(newUserRequestPrompt);
+      const state = {
+        command,
+        appRequests,
+        userInputRequest,
+      };
 
-      const response = await fetch('api/openai', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          userRequest: [
-            ...store.appRequests.map(
-              (request: { message: string }) => request.message
-            ),
-            store.userInputRequest,
-          ],
-          command: store.command,
-        }),
-      });
-
-      const result = await response.json();
+      const result = await postInstructionRequest(state);
 
       if (result) {
-        store.setAppRequests([
-          ...newUserRequestPrompt,
-          { isFromUser: false, message: result.response },
-        ]);
-      } else {
-        store.setAppRequests([
-          ...newUserRequestPrompt,
-          {
-            isFromUser: false,
-            message: 'Error: No response from OpenAI API',
-          },
+        setAppRequests([
+          ...appRequests,
+          { isFromUser: false, message: result.message },
         ]);
       }
-
-      console.log({ result });
     } catch (error: any) {
-      store.setAppRequests([
-        ...newUserRequestPrompt,
+      setAppRequests([
+        ...appRequests,
         {
           isFromUser: false,
           message: `${error?.message}`,
         },
       ]);
-      console.log({ error });
     }
 
-    store.setIsLoading(false);
+    setIsLoading(false);
   };
 
   useEffect(() => {
@@ -98,13 +85,13 @@ const Home: NextPage = () => {
       const container: HTMLDivElement = messageBoxContainerRef.current;
       container.scrollTop = container.scrollHeight;
     }
-  }, [store.appRequests]);
+  }, [appRequests]);
 
   useEffect(() => {
     if (inputBoxRef.current) {
       inputBoxRef.current.focus();
     }
-  }, [store.appRequests]);
+  }, [appRequests]);
 
   return (
     <>
@@ -115,7 +102,6 @@ const Home: NextPage = () => {
             <div>
               <h1>Engine Warvil</h1>
               <p>
-                {' '}
                 Your OpenAI Assistant.
                 <br /> 👨‍💻 Developed by &nbsp;
                 <a
@@ -132,13 +118,13 @@ const Home: NextPage = () => {
           <Wrapper.Container>
             <CommandBox ref={commandBoxRef} breakpoint={breakpoint} />
             <Playground
-              appRequests={store.appRequests}
+              appRequests={appRequests}
+              userInput={userInputRequest}
               getUserInput={getUserInput}
               inputBoxRef={inputBoxRef}
-              loading={store.isLoading}
+              loading={isLoading}
               messageBoxContainerRef={messageBoxContainerRef}
               submitRequest={submitRequest}
-              userInput={store.userInputRequest}
             />
           </Wrapper.Container>
         </Wrapper.Home>
