@@ -1,6 +1,6 @@
 import { Configuration, OpenAIApi } from 'openai';
 
-import { Promptable } from './openai.types';
+import { AIResponse, Promptable } from './openai.types';
 import { Prompt } from './openai.prompt';
 
 class OpenAIClient {
@@ -8,6 +8,7 @@ class OpenAIClient {
   private openai: OpenAIApi;
   private defaultModel: string;
   private prompt: Promptable;
+  public response!: AIResponse;
 
   constructor() {
     this.defaultModel = 'text-davinci-003';
@@ -19,7 +20,6 @@ class OpenAIClient {
   }
 
   public async createCompletion(command: string, userRequest: string[]) {
-    console.log({ command, userRequest });
     try {
       const completion = await this.openai.createCompletion({
         model: this.defaultModel,
@@ -32,12 +32,19 @@ class OpenAIClient {
       });
 
       if (completion.data.choices?.length) {
-        return completion.data.choices[0].text;
+        this.response = {
+          isSuccess: true,
+          message: completion.data.choices[0].text || '',
+        };
       }
-    } catch (error: any) {
-      console.log({ error: error.message });
-      return "I'm sorry, I don't understand your question!";
+    } catch (error) {
+      this.response = {
+        isSuccess: false,
+        message: "I'm sorry, I don't understand your question!",
+      };
     }
+
+    return this.response;
   }
 }
 
