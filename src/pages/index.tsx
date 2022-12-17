@@ -12,6 +12,7 @@ import Playground from 'src/components/playground';
 import { Event } from 'lib/types/tags';
 import { MessageBoxable } from 'lib/types/message';
 import { commands } from '../../lib/constants/commands';
+import { postInstructionRequest } from 'lib/helpers/api';
 
 const useBreakpoint = createBreakpoint({ XL: 1280, L: 992, S: 350 });
 
@@ -54,23 +55,11 @@ const Home: NextPage = () => {
     try {
       setAppRequests(newUserRequestPrompt);
 
-      const response = await fetch('api/openai', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          userRequest: [
-            ...appRequests.map(
-              (request: { message: string }) => request.message
-            ),
-            userInputRequest,
-          ],
-          command: command,
-        }),
+      const result = await postInstructionRequest({
+        command,
+        userInputRequest,
+        appRequests,
       });
-
-      const result = await response.json();
 
       if (result) {
         setAppRequests([
