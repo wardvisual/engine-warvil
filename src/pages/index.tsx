@@ -10,7 +10,6 @@ import Wrapper from 'styles/home.style';
 import CommandBox from 'src/components/command-box';
 import Playground from 'src/components/playground';
 import { Event } from 'lib/types/tags';
-import { postInstructionRequest } from 'lib/helpers/api';
 import { MessageBoxable } from 'lib/types/message';
 import { commands } from '../../lib/constants/commands';
 
@@ -28,9 +27,9 @@ const Home: NextPage = () => {
 
   /* States*/
   const [userInputRequest, setUserInputRequest] = useState<string>('');
+  const [appRequests, setAppRequests] = useState<MessageBoxable[]>([]);
   const [command, setCommand] = useState<string>(commands.GENERATE_CODE);
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [appRequests, setAppRequests] = useState<MessageBoxable[]>([]);
 
   /* Functions */
   const getUserInput = (event: Event) => {
@@ -41,30 +40,50 @@ const Home: NextPage = () => {
     console.log({ appRequests });
   }, [appRequests]);
 
-  const submitRequest = async (e: { preventDefault: () => void }) => {
-    e.preventDefault();
+  const submitRequest = async (event: any) => {
+    event.preventDefault();
 
     setIsLoading(true);
     setUserInputRequest('');
 
-    setAppRequests([
+    const newUserRequestPrompt = [
       ...appRequests,
       { isFromUser: true, message: userInputRequest },
-    ]);
+    ];
 
     try {
-      const state = {
-        command,
-        appRequests,
-        userInputRequest,
-      };
+      setAppRequests(newUserRequestPrompt);
 
-      const result = await postInstructionRequest(state);
+      const response = await fetch('api/openai', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          userRequest: [
+            ...appRequests.map(
+              (request: { message: string }) => request.message
+            ),
+            userInputRequest,
+          ],
+          command: command,
+        }),
+      });
+
+      const result = await response.json();
 
       if (result) {
         setAppRequests([
-          ...appRequests,
+          ...newUserRequestPrompt,
           { isFromUser: false, message: result.message },
+        ]);
+      } else {
+        setAppRequests([
+          ...newUserRequestPrompt,
+          {
+            isFromUser: false,
+            message: 'Error: No response from OpenAI API',
+          },
         ]);
       }
     } catch (error: any) {
@@ -72,7 +91,7 @@ const Home: NextPage = () => {
         ...appRequests,
         {
           isFromUser: false,
-          message: `${error?.message}`,
+          message: error.message,
         },
       ]);
     }
