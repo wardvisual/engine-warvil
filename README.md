@@ -6,11 +6,12 @@
   <a href="https://github.com/wardvisual/engine-warvil">
     <img src="./public/banner.svg" alt="banner">
   </a>
-
-  <h3 align="center">Engine Warvil</h3>
+  <br />
+  <br />
+  <h2 align="center">Engine Warvil</h2>
 
   <p align=" center">Warvil is an intelligent chatbot powered by artificial intelligence. It is designed to provide helpful and insightful answers to your questions. Warvil can learn from its conversations with you, allowing it to become increasingly efficient and knowledgeable over time.</p>
-  <p>THIS PROJECT IS UNDER DEVELOPMENT</p>
+  <h4>THIS PROJECT IS UNDER DEVELOPMENT</h4>
     <br />
     <br />
     <a href="https://engine-warvil.vercel.app/"><strong>View Project »</strong></a>
@@ -43,13 +44,30 @@
 2. Install NPM packages
 
    ```sh
-   cd warvil-bot && npm install
+   npm install
    ```
+
+3. Create a copy of `.env.example` file
+
+   ```sh
+   cp .env.example .env
+   ```
+
+4. Enter your OPENAI API Key in `.env` file
+   ```sh
+   OPENAI_API_KEY = 'ENTER YOUR OPENAI API KEY'
+   ```
+
+<!-- LICENSE -->
+
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
 
 <!-- CONTACT -->
 
 ## Contact
 
-Edward Fernandez - [@wardvisual](https://twitter.com/wardvisual)
+Edward Fernandez: [@wardvisual](https://twitter.com/wardvisual)
 
-Project Link: [warvil-bot](https://engine-warvil.vercel.app/)
+Project Link: [engine-warvil](https://engine-warvil.vercel.app/)
