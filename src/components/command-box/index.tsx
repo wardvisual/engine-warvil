@@ -5,47 +5,63 @@ import React from 'react';
 import Wrapper from './style';
 
 const CommandBox: NextPage<CommandBoxable> = (prop: CommandBoxable) => {
+  const list = [
+    {
+      icon: 'fa-question-circle',
+      name: 'Basic question',
+    },
+    {
+      icon: 'fa-code',
+      name: 'Generate code',
+    },
+    {
+      icon: 'fa-book',
+      name: 'Generate thesis title',
+    },
+    {
+      icon: 'fa-check',
+      name: 'Grammar correction',
+    },
+    {
+      icon: 'fa-quote-right',
+      name: 'Paraphrase',
+    },
+    {
+      icon: 'fa-book-reader',
+      name: 'Summarize for a grade student',
+    },
+    {
+      icon: 'fa-globe',
+      name: 'English to other language',
+    },
+    {
+      icon: 'fa-file-code',
+      name: 'Explain programming code',
+    },
+    {
+      icon: 'fa-balance-scale',
+      name: 'Evaluate a mathematical expression',
+    },
+    {
+      icon: 'fa-calculator',
+      name: 'Evaluate a math equation',
+    },
+    {
+      icon: 'fa-book-open',
+      name: 'Create study notes',
+    },
+  ];
   return (
     <Wrapper.Commands>
       <div>
         <h2>Choose Commands</h2>
       </div>
       <ul>
-        <li>
-          <i className="fas fa-question-circle"></i> Basic question
-        </li>
-        <li>
-          <i className="fas fa-code"></i> Generate code
-        </li>
-        <li>
-          <i className="fas fa-book"></i> Generate thesis title
-        </li>
-        <li>
-          <i className="fas fa-check"></i> Grammar correction
-        </li>
-        <li>
-          <i className="fas fa-quote-right"></i>
-          Paraphrase
-        </li>
-        <li>
-          <i className="fas fa-book-reader"></i> Summarize for a grade student
-        </li>
-        <li>
-          <i className="fas fa-globe"></i> English to other language
-        </li>
-        <li>
-          <i className="fas fa-file-code"></i> Explain programming code
-        </li>
-        <li>
-          <i className="fas fa-balance-scale"></i> Evaluate a mathematical
-          expression
-        </li>
-        <li>
-          <i className="fas fa-calculator"></i> Evaluate a math equation
-        </li>
-        <li>
-          <i className="fas fa-book-open"></i> Create study notes
-        </li>
+        {list.map((el, index) => (
+          <li key={index}>
+            <i className={`fas ${el.icon} `}></i>&nbsp;{el.name}
+          </li>
+        ))}
       </ul>
       {
         <div>
