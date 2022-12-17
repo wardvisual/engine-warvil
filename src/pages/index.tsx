@@ -13,6 +13,7 @@ import { Event } from 'lib/types/tags';
 import { MessageBoxable } from 'lib/types/message';
 import { commands } from '../../lib/constants/commands';
 import { postInstructionRequest } from 'lib/helpers/api';
+import Image from 'next/image';
 
 const useBreakpoint = createBreakpoint({ XL: 1280, L: 992, S: 350 });
 
@@ -108,10 +109,16 @@ const Home: NextPage = () => {
         <Wrapper.Home>
           <Wrapper.Header>
             <div>
-              <h1>Engine Warvil</h1>
+              {/* <h1>Engine Warvil</h1> */}
+              <Image
+                src="/assets/logo.svg"
+                objectFit="contain"
+                alt="engine warvil"
+                width={200}
+                height={100}
+              />
               <p>
-                Your OpenAI Assistant.
-                <br /> 👨‍💻 Developed by &nbsp;
+                👨‍💻 Developed by &nbsp;
                 <a
                   href="https://wardvisual.me/"
                   title="wardvisual"
