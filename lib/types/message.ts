@@ -5,7 +5,6 @@ export interface Promptable {
 export interface MessageBoxable {
   isFromUser: boolean;
   message: string;
-  loading?: boolean;
 }
 
 export interface MessageStoreable {
