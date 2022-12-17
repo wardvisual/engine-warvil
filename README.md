@@ -53,9 +53,9 @@
    cp .env.example .env
    ```
 
-4. Enter your OPENAI API Key in `.env` file
+4. Enter your OpenAI API Key in `.env` file
    ```sh
-   OPENAI_API_KEY = 'ENTER YOUR OPENAI API KEY'
+   OPENAI_API_KEY = 'ENTER YOUR OpenAI API KEY'
    ```
 
 <!-- LICENSE -->
