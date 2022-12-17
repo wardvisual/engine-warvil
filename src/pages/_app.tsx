@@ -1,13 +1,10 @@
-import { Provider, useCreateStore } from 'lib/hooks/store';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import GlobalStyle from 'styles/global.style';
 
-function MyApp({ Component, pageProps }: any) {
-  const createStore = useCreateStore(pageProps.state);
-
+function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <Provider createStore={createStore}>
+    <>
       <Head>
         <title>Engine Warvil</title>
         <meta name="author" content="Edward Fernandez" />
@@ -22,7 +19,7 @@ function MyApp({ Component, pageProps }: any) {
       </Head>
       <GlobalStyle />
       <Component {...pageProps} />
-    </Provider>
+    </>
   );
 }
 
