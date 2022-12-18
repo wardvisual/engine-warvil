@@ -6,7 +6,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Engine Warvil</title>
+        <title>Engine Warvil - The intelligent bot</title>
         <meta name="author" content="Edward Fernandez" />
         <meta
           name="description"
