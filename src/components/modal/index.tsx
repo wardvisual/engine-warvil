@@ -12,7 +12,7 @@ const Modal: NextPage<Modalable> = (prop: Modalable) => {
           <Wrapper.Overlay onClick={prop.handleOnClose} />
           <Wrapper.Modal>
             <Wrapper.ModalHeader>
-              <h2>Modal Title</h2>
+              <h2>{prop.title}</h2>
               <i className="fas fa-times" onClick={prop.handleOnClose}></i>
             </Wrapper.ModalHeader>
             <Wrapper.ModalBody>{prop.children}</Wrapper.ModalBody>

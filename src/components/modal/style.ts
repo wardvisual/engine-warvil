@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 const Wrapper = {
   Modal: styled.div`
+    z-index: 9999;
     padding: 1em;
     position: absolute;
     top: 50%;
@@ -11,7 +12,7 @@ const Wrapper = {
     border-radius: var(--radius-5);
     min-width: max-content;
     min-height: max-content;
-    max-width: 30em;
+    max-width: 40em;
     max-height: 40em;
   `,
   ModalHeader: styled.div`
@@ -19,6 +20,7 @@ const Wrapper = {
     justify-content: space-between;
     align-items: center;
     gap: 1em;
+    border-bottom: 1px var(--color-black-400) solid;
 
     i {
       font-size: 1.5rem;
