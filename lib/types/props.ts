@@ -1,3 +1,4 @@
+import { ReactNode } from 'react';
 import { MessageBoxable } from './message';
 import { Event } from 'lib/types/tags';
 export interface CommandBoxable {
@@ -13,4 +14,10 @@ export interface Playgroundable {
   appRequests: MessageBoxable[];
   submitRequest: (e: { preventDefault: () => void }) => void;
   getUserInput: (event: Event) => void;
+}
+
+export interface Modalable {
+  children: ReactNode;
+  display: boolean;
+  handleOnClose: () => void;
 }
