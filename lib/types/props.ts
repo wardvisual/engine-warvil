@@ -18,6 +18,7 @@ export interface Playgroundable {
 
 export interface Modalable {
   children: ReactNode;
+  title: string;
   display: boolean;
   handleOnClose: () => void;
 }
