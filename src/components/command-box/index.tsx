@@ -4,7 +4,7 @@ import { NextPage } from 'next';
 import React from 'react';
 
 import Wrapper from './style';
-import { useEffect, useRef, useState } from 'react';
+import { useState, useEffect } from 'react';
 import { commands } from '../../../lib/constants/commands';
 import Modal from '../modal/index';
 
@@ -14,6 +14,8 @@ const CommandBox: NextPage<CommandBoxable> = (prop: CommandBoxable) => {
     command: string;
   }>({ isShow: false, command: '' });
   const [listOfCommands, setListOfCommands] = useState<boolean>(false);
+  const [mobileDeviceBreakpoint, setMobileDeviceBreakpoint] =
+    useState<boolean>(false);
 
   const showModal = (command: string) => {
     setUnavailableModal({ isShow: !showUnavailableModal.isShow, command });
@@ -85,6 +87,12 @@ const CommandBox: NextPage<CommandBoxable> = (prop: CommandBoxable) => {
     },
   ];
 
+  useEffect(() => {
+    if (prop.breakpoint === 'S') {
+      setMobileDeviceBreakpoint(!mobileDeviceBreakpoint);
+    }
+  }, []);
+
   return (
     <Wrapper.Commands onClick={handleOnListOfCommandClose}>
       <Modal
@@ -94,9 +102,9 @@ const CommandBox: NextPage<CommandBoxable> = (prop: CommandBoxable) => {
       >
         <p>This command is currently not available</p>
       </Modal>
-      {prop.breakpoint === 'S' ? (
+      {mobileDeviceBreakpoint && (
         <>
-          <div className="mobile">
+          <div>
             <h2>Choose Commands</h2>
           </div>
           <Modal
@@ -116,7 +124,8 @@ const CommandBox: NextPage<CommandBoxable> = (prop: CommandBoxable) => {
             <i className="fa fa-caret-down"></i>
           </div>
         </>
-      ) : (
+      )}
+      {!mobileDeviceBreakpoint && (
         <>
           <div>
             <h2>Choose Commands</h2>
