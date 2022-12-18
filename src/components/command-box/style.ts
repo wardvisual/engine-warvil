@@ -15,7 +15,7 @@ const Wrapper = {
     min-width: max-content;
 
     div {
-      padding: 1em;
+      padding: 0.5em;
     }
 
     ul.mobile {
@@ -88,11 +88,9 @@ const Wrapper = {
       padding: 0.8em;
       cursor: pointer;
 
-      ul {
-        display: none;
-      }
-      > div {
-        padding: 0.2em;
+      > div.mobile {
+        position: absolute;
+        left: 2em;
       }
 
       > div:last-child {

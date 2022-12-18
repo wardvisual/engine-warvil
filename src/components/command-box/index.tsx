@@ -9,16 +9,22 @@ import { commands } from '../../../lib/constants/commands';
 import Modal from '../modal/index';
 
 const CommandBox: NextPage<CommandBoxable> = (prop: CommandBoxable) => {
-  const commandListBox = useRef<HTMLUListElement>(null);
-  const [display, setDisplayModal] = useState<boolean>(false);
+  const [showUnavailableModal, setUnavailableModal] = useState<{
+    isShow: boolean;
+    command: string;
+  }>({ isShow: false, command: '' });
+  const [listOfCommands, setListOfCommands] = useState<boolean>(false);
 
   const showModal = (command: string) => {
-    console.log({ command });
-    setDisplayModal(!display);
+    setUnavailableModal({ isShow: !showUnavailableModal.isShow, command });
   };
 
-  const handleOnClose = () => {
-    setDisplayModal(!display);
+  const handleUnavailableModalClose = () => {
+    setUnavailableModal({ isShow: !showUnavailableModal.isShow, command: '' });
+  };
+
+  const handleOnListOfCommandClose = () => {
+    setListOfCommands(!listOfCommands);
   };
 
   const list = [
@@ -80,25 +86,50 @@ const CommandBox: NextPage<CommandBoxable> = (prop: CommandBoxable) => {
   ];
 
   return (
-    <Wrapper.Commands>
-      <Modal display={display} handleOnClose={handleOnClose}>
+    <Wrapper.Commands onClick={handleOnListOfCommandClose}>
+      <Modal
+        title={showUnavailableModal.command}
+        display={showUnavailableModal.isShow}
+        handleOnClose={handleUnavailableModalClose}
+      >
         <p>This command is currently not available</p>
       </Modal>
-      <div>
-        <h2>Choose Commands</h2>
-      </div>
-      <ul ref={commandListBox}>
-        {list.map((el, index) => (
-          <li key={index} onClick={() => el.onClick(el.name)}>
-            <i className={`fas ${el.icon} `}></i>&nbsp;{el.name}
-          </li>
-        ))}
-      </ul>
-      {
-        <div>
-          <i className={prop.breakpoint === 'S' ? `fa fa-caret-down` : ''}></i>
-        </div>
-      }
+      {prop.breakpoint === 'S' ? (
+        <>
+          <div className="mobile">
+            <h2>Choose Commands</h2>
+          </div>
+          <Modal
+            title={'Choose Commands'}
+            display={listOfCommands}
+            handleOnClose={handleOnListOfCommandClose}
+          >
+            <ul>
+              {list.map((el, index) => (
+                <li key={index} onClick={() => el.onClick(el.name)}>
+                  <i className={`fas ${el.icon} `}></i>&nbsp;{el.name}
+                </li>
+              ))}
+            </ul>
+          </Modal>
+          <div>
+            <i className="fa fa-caret-down"></i>
+          </div>
+        </>
+      ) : (
+        <>
+          <div>
+            <h2>Choose Commands</h2>
+          </div>
+          <ul>
+            {list.map((el, index) => (
+              <li key={index} onClick={() => el.onClick(el.name)}>
+                <i className={`fas ${el.icon} `}></i>&nbsp;{el.name}
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
     </Wrapper.Commands>
   );
 };
