@@ -47,13 +47,16 @@
    npm install
    ```
 
-3. Create a copy of `.env.example` file
+### Setup
+
+1. Create a copy of `.env.example` file
 
    ```sh
    cp .env.example .env
    ```
 
-4. Enter your OpenAI API Key in `.env` file
+2. Enter your OpenAI API Key in `.env` file
+
    ```sh
    OPENAI_API_KEY = 'ENTER YOUR OpenAI API KEY'
    ```
