@@ -2,12 +2,32 @@ import styled from 'styled-components';
 
 const Wrapper = {
   Header: styled.header`
+    display: flex;
+    justify-content: space-between;
+
+    > div:last-child {
+      display: flex;
+      gap: 1em;
+      button {
+        all: unset;
+
+        i {
+          font-size: 1.8rem;
+          cursor: pointer;
+          &:hover {
+            color: var(--color-blue-400);
+          }
+
+          &:active {
+            transform: scale(0.95);
+          }
+        }
+      }
+    }
+
     div {
       padding: 2em;
-
-      &.message-box {
-        border-bottom: 1px var(--color-black-400) solid;
-      }
+      border-bottom: 1px var(--color-black-400) solid;
     }
 
     @media screen and (max-width: 992px) {
@@ -106,6 +126,12 @@ const Wrapper = {
       display: flex;
       align-items: center;
       gap: .8em;
+      
+      > div {
+        padding: 0 2em 0 0;
+        display: flex;
+        gap: 1.2em;
+    }
 
       button {
         all: unset;

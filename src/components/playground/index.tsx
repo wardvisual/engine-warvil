@@ -4,27 +4,27 @@ import { NextPage } from 'next';
 import Wrapper from './style';
 import { Playgroundable } from 'lib/types/props';
 import MessageBox from '../message-box';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const Playground: NextPage<Playgroundable> = (
   prop: Playgroundable
 ): JSX.Element => {
   const [templateInstructions] = useState([
     {
-      name: 'Code a calculator in Java',
-      icon: 'calculator',
+      name: 'Create a hello world program in Assembly language',
+      icon: 'microchip',
     },
     {
-      name: 'Code a simple HTML and CSS webpage',
-      icon: 'globe',
+      name: 'Create a 3D array in Java and find the duplicate elements',
+      icon: 'clone',
     },
     {
-      name: 'Code a regex in Java to find vulnerable symbols',
+      name: 'Create a function in Javascript utilizing regex to find XSS attacks',
       icon: 'search',
     },
     {
-      name: 'Code a Chatbot in C#',
-      icon: 'comment',
+      name: 'Create a simple chatbot utilizing the Lua Programming Language',
+      icon: 'robot',
     },
   ]);
 
@@ -49,9 +49,21 @@ const Playground: NextPage<Playgroundable> = (
         </Wrapper.PreCode>
       )}
       <Wrapper.Header>
-        <div className="message-box">
+        <div>
           <h2>Generate Code</h2>
           <p>Say goodbye to tedious coding tasks</p>
+        </div>
+        <div>
+          <button
+            type="button"
+            title="Delete Conversation"
+            onClick={prop.cleanUpConvo}
+          >
+            <i className="fas fa-trash-alt"> </i>
+          </button>
+          <button type="button" title="Settings">
+            <i className="fas fa-cog"> </i>
+          </button>
         </div>
       </Wrapper.Header>
       <Wrapper.EngineArea>
@@ -88,9 +100,18 @@ const Playground: NextPage<Playgroundable> = (
             disabled={prop.loading}
             ref={prop.inputBoxRef}
           />
-          <button type="submit" disabled={prop.loading}>
-            <i className="fas fa-paper-plane"> </i>
-          </button>
+          <div>
+            <button type="submit" disabled={prop.loading} title="Send">
+              <i className="fas fa-paper-plane"> </i>
+            </button>
+            <button
+              type="button"
+              disabled={prop.loading}
+              title="Start Recording"
+            >
+              <i className="fas fa-microphone"> </i>
+            </button>
+          </div>
         </div>
       </Wrapper.UserArea>
     </Wrapper.Playground>

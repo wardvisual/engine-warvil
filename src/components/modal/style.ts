@@ -37,8 +37,9 @@ const Wrapper = {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: var(--color-black-100);
     opacity: 40%;
+    background: black;
+    filter: blur(4px);
   `,
 };
 
