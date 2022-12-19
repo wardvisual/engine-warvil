@@ -89,9 +89,15 @@ const CommandBox: NextPage<CommandBoxable> = (prop: CommandBoxable) => {
 
   useEffect(() => {
     if (prop.breakpoint === 'S') {
-      setMobileDeviceBreakpoint(!mobileDeviceBreakpoint);
+      setMobileDeviceBreakpoint(true);
     }
-  }, []);
+
+    if (prop.breakpoint === 'L') {
+      setMobileDeviceBreakpoint(false);
+    }
+
+    console.log({ mobileDeviceBreakpoint, br: prop.breakpoint });
+  }, [prop.breakpoint]);
 
   return (
     <Wrapper.Commands onClick={handleOnListOfCommandClose}>
