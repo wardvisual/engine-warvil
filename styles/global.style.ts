@@ -101,6 +101,7 @@ const GlobalStyle = createGlobalStyle`
     input, teaxtarea, select, option, button {
         border-radius: var(--radius-10);
         padding: 1em;
+
     }
 
     input, textarea {
@@ -138,7 +139,7 @@ const GlobalStyle = createGlobalStyle`
         min-width: 40em;
         max-width: 60em;
 
-    }
+    } 
 
     h1 {
         font-size: 2rem;
