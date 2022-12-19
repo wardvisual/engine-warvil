@@ -32,10 +32,16 @@ const Home: NextPage = () => {
   const [appRequests, setAppRequests] = useState<MessageBoxable[]>([]);
   const [command, setCommand] = useState<string>(commands.GENERATE_CODE);
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [initialCodeInstruction, setInitialCodeInstruction] =
+    useState<boolean>(true);
 
   /* Functions */
-  const getUserInput = (event: Event) => {
-    setUserInputRequest(event.target.value);
+  const getUserInput = (event: string | Event) => {
+    if (typeof event === 'string') {
+      setUserInputRequest(event);
+    } else {
+      setUserInputRequest(event.target.value);
+    }
   };
 
   useEffect(() => {
@@ -46,6 +52,7 @@ const Home: NextPage = () => {
     event.preventDefault();
 
     setIsLoading(true);
+    setInitialCodeInstruction(!initialCodeInstruction);
     setUserInputRequest('');
 
     const newUserRequestPrompt = [
@@ -137,6 +144,7 @@ const Home: NextPage = () => {
               userInput={userInputRequest}
               getUserInput={getUserInput}
               inputBoxRef={inputBoxRef}
+              initialCodeInstruction={initialCodeInstruction}
               loading={isLoading}
               messageBoxContainerRef={messageBoxContainerRef}
               submitRequest={submitRequest}
