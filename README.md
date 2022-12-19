@@ -4,7 +4,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/wardvisual/engine-warvil">
-    <img src="./public/banner.svg" alt="banner">
+    <img src="https://github.com/wardvisual/engine-warvil/blob/main/public/banner.svg" alt="banner">
   </a>
   <br />
   <br />
@@ -26,7 +26,7 @@
 </div>
 
 <a href="https://github.com/wardvisual/engine-warvil">
-   <img src="./public/homepage.jpg" alt="homepage">
+   <img src="https://github.com/wardvisual/engine-warvil/blob/main/public/homepage.jpg" alt="homepage">
 </a>
 
 ### Built With
