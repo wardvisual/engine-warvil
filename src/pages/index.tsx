@@ -15,7 +15,7 @@ import { commands } from '../../lib/constants/commands';
 import { postInstructionRequest } from 'lib/helpers/api';
 import Image from 'next/image';
 
-const useBreakpoint = createBreakpoint({ XL: 1280, L: 992, S: 350 });
+const useBreakpoint = createBreakpoint({ L: 1280, S: 992 });
 
 const Home: NextPage = () => {
   /* Reference Variables */
