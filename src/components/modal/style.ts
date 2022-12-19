@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const Wrapper = {
   Modal: styled.div`
-    z-index: 9999;
+    z-index: 9999999999;
     padding: 1em;
     position: absolute;
     top: 50%;
@@ -31,6 +31,7 @@ const Wrapper = {
     padding: 1em;
   `,
   Overlay: styled.div`
+    z-index: 9;
     position: fixed;
     top: 0;
     left: 0;
