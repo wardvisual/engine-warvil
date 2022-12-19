@@ -15,6 +15,7 @@ export interface Playgroundable {
   appRequests: MessageBoxable[];
   submitRequest: (e: { preventDefault: () => void }) => void;
   getUserInput: (event: string | Event) => void;
+  cleanUpConvo: () => void;
 }
 
 export interface Modalable {
