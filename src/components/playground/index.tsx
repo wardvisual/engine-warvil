@@ -29,23 +29,25 @@ const Playground: NextPage<Playgroundable> = (
   ]);
 
   const getTemplateInstruction = (index: number) => {
-    // prop.userInput(templateInstructions[index]);
+    prop.getUserInput(templateInstructions[index].name);
   };
 
   return (
     <Wrapper.Playground>
-      <Wrapper.PreCode>
-        <i className="fas fa-lightbulb"></i>
-        <p>Try these examples</p>
-        <ul>
-          {templateInstructions.map((el, index) => (
-            <li key={index}>
-              <i className={`fas fa-${el.icon}`}></i>
-              <span>{el.name}</span>
-            </li>
-          ))}
-        </ul>
-      </Wrapper.PreCode>
+      {prop.initialCodeInstruction && (
+        <Wrapper.PreCode>
+          <i className="fas fa-lightbulb"></i>
+          <p>Try these examples</p>
+          <ul>
+            {templateInstructions.map((el, index) => (
+              <li key={index} onClick={() => getTemplateInstruction(index)}>
+                <i className={`fas fa-${el.icon}`}></i>
+                <span>{el.name}</span>
+              </li>
+            ))}
+          </ul>
+        </Wrapper.PreCode>
+      )}
       <Wrapper.Header>
         <div className="message-box">
           <h2>Generate Code</h2>
