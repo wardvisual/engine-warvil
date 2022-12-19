@@ -9,11 +9,23 @@ import { useState } from 'react';
 const Playground: NextPage<Playgroundable> = (
   prop: Playgroundable
 ): JSX.Element => {
-  const [templateInstructions] = useState<string[]>([
-    'Code a calculator in Java',
-    'Code a simple HTML and CSS webpage',
-    'Code a regex finding the vulnerable input',
-    'Code a Chatbot in C#',
+  const [templateInstructions] = useState([
+    {
+      name: 'Code a calculator in Java',
+      icon: 'calculator',
+    },
+    {
+      name: 'Code a simple HTML and CSS webpage',
+      icon: 'globe',
+    },
+    {
+      name: 'Code a regex finding the vulnerable input',
+      icon: 'search',
+    },
+    {
+      name: 'Code a Chatbot in C#',
+      icon: 'comment',
+    },
   ]);
 
   const getTemplateInstruction = (index: number) => {
@@ -22,6 +34,18 @@ const Playground: NextPage<Playgroundable> = (
 
   return (
     <Wrapper.Playground>
+      <Wrapper.PreCode>
+        <i className="fas fa-lightbulb"></i>
+        <p>Try these examples</p>
+        <ul>
+          {templateInstructions.map((el, index) => (
+            <li key={index}>
+              <i className={`fas fa-${el.icon}`}></i>
+              <span>{el.name}</span>
+            </li>
+          ))}
+        </ul>
+      </Wrapper.PreCode>
       <Wrapper.Header>
         <div className="message-box">
           <h2>Generate Code</h2>
@@ -29,15 +53,6 @@ const Playground: NextPage<Playgroundable> = (
         </div>
       </Wrapper.Header>
       <Wrapper.EngineArea>
-        {/* {store.initialCodeInstruction && (
-          <ul className="pre-code">
-            {templateInstructions.map((el, index) => (
-              <li key={index} onClick={() => getTemplateInstruction(index)}>
-                {el}
-              </li>
-            ))}
-          </ul>
-        )} */}
         <Wrapper.MessageBoxContainer ref={prop.messageBoxContainerRef}>
           {prop.appRequests.map((el, i) => (
             <MessageBox

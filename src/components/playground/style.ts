@@ -23,37 +23,62 @@ const Wrapper = {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    position: relative;
     @media screen and (max-width: 992px) {
       min-height: 40em;
     }
   `,
-  EngineArea: styled.div`
-    border-radius: var(--radius-15);
-    background-color: var(--color-black-300);
-    /* min-height: 10em; */
-    position: relative;
+  PreCode: styled.div`
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
-    .pre-code {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+    user-select: none;
+    display: grid;
+    place-items: center;
+    grid-gap: 1em;
 
+    @media screen and (max-width: 992px) {
+      display: none;
+    }
+
+    i {
+      font-size: 4rem;
+      color: var(--color-blue-400);
+    }
+
+    p {
+      color: var(--color-blue-400);
+      font-weight: bold;
+      margin-bottom: 0.4em;
+    }
+
+    ul {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       grid-gap: 1em;
       overflow: hidden;
-      user-select: none;
+
       li {
-        padding: 1.5em;
+        padding: 1em;
         background: var(--color-black-400);
         border-radius: var(--radius-10);
         text-align: center;
+        display: grid;
+
+        i {
+          font-size: 1.8rem;
+          margin: 0.2em 0 0.5em 0;
+          color: var(--color-white-400);
+          &:hover {
+            color: var(--color-blue-400);
+          }
+        }
 
         &:hover {
           background-color: var(--color-black-400);
           cursor: pointer;
-          animation: flying-animation 0.3s ease;
           color: var(--color-blue-400);
 
           > * {
@@ -64,20 +89,13 @@ const Wrapper = {
         &:active {
           transform: scale(0.95);
         }
-
-        @keyframes flying-animation {
-          0% {
-            transform: scale(1);
-          }
-          50% {
-            transform: scale(1.02);
-          }
-          100% {
-            transform: scale(1);
-          }
-        }
       }
     }
+  `,
+
+  EngineArea: styled.div`
+    border-radius: var(--radius-15);
+    background-color: var(--color-black-300);
   `,
   UserArea: styled.form`
     border-radius: var(--radius-15);
