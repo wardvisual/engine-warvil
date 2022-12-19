@@ -44,6 +44,12 @@ const Home: NextPage = () => {
     }
   };
 
+  const cleanUpConvo = () => {
+    setUserInputRequest('');
+    setAppRequests([]);
+    setInitialCodeInstruction(true);
+  };
+
   useEffect(() => {
     console.log({ appRequests });
   }, [appRequests]);
@@ -52,7 +58,7 @@ const Home: NextPage = () => {
     event.preventDefault();
 
     setIsLoading(true);
-    setInitialCodeInstruction(!initialCodeInstruction);
+    setInitialCodeInstruction(false);
     setUserInputRequest('');
 
     const newUserRequestPrompt = [
@@ -135,6 +141,17 @@ const Home: NextPage = () => {
                   www.wardvisual.com
                 </a>
               </p>
+              <p>
+                ⭐ Give it a star &nbsp;
+                <a
+                  href="https://github.com/wardvisual/engine-warvil//"
+                  title="Engine Warvil"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Engine Warvil
+                </a>
+              </p>
             </div>
           </Wrapper.Header>
           <Wrapper.Container>
@@ -144,6 +161,7 @@ const Home: NextPage = () => {
               userInput={userInputRequest}
               getUserInput={getUserInput}
               inputBoxRef={inputBoxRef}
+              cleanUpConvo={cleanUpConvo}
               initialCodeInstruction={initialCodeInstruction}
               loading={isLoading}
               messageBoxContainerRef={messageBoxContainerRef}
