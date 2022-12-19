@@ -19,7 +19,7 @@ const Playground: NextPage<Playgroundable> = (
       icon: 'globe',
     },
     {
-      name: 'Code a regex finding the vulnerable input',
+      name: 'Code a regex in Java to find vulnerable symbols',
       icon: 'search',
     },
     {
