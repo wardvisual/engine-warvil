@@ -18,14 +18,13 @@ const Wrapper = {
       padding: 0.5em;
     }
 
-    ul.mobile {
+    /* ul.mobile {
       z-index: 9;
       display: block;
-      position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-    }
+    } */
 
     ul.desktop {
       all: unset;
@@ -89,8 +88,6 @@ const Wrapper = {
       cursor: pointer;
 
       > div.mobile {
-        position: absolute;
-        left: 2em;
       }
 
       > div:last-child {
