@@ -9,11 +9,12 @@ export interface CommandBoxable {
 export interface Playgroundable {
   messageBoxContainerRef: any;
   inputBoxRef: any;
+  initialCodeInstruction: boolean;
   loading: boolean;
   userInput: string;
   appRequests: MessageBoxable[];
   submitRequest: (e: { preventDefault: () => void }) => void;
-  getUserInput: (event: Event) => void;
+  getUserInput: (event: string | Event) => void;
 }
 
 export interface Modalable {
