@@ -110,7 +110,7 @@ const CommandBox: NextPage<CommandBoxable> = (prop: CommandBoxable) => {
       </Modal>
       {mobileDeviceBreakpoint && (
         <>
-          <div>
+          <div className="mobile">
             <h2>Choose Commands</h2>
           </div>
           <Modal
