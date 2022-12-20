@@ -16,6 +16,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
         />
+        <link rel="icon" type="image/x-icon" href="./logo.png" />
       </Head>
       <GlobalStyle />
       <Component {...pageProps} />
