@@ -6,15 +6,12 @@ export class Trainer {
 
       You: Create a 3D array in Java and find the duplicate elements.
       Warvil: <p>To create a 3D array in Java, you can use the following syntax:</p>
-
       <pre>
         <code>
           int[][][] array = new int[x][y][z];
         </code>
       </pre>
-
-      <p>This will create a 3D array with dimensions x, y, and z, where x is the number of layers, y is the number of rows in each layer, and z is the number of columns in each row.</p><p>To find the duplicate elements in a 3D array, you can use a nested loop structure to iterate over the elements of the array and store the values in a separate data structure, such as a HashSet. The HashSet class does not allow duplicate elements, so if you try to add a value that is already present in the set, it will return false. You can use this property to identify duplicate elements in the array.</p><p>Here is an example of how you might implement this in Java:</p>
-
+      <p>\nThis will create a 3D array with dimensions x, y, and z, where x is the number of layers, y is the number of rows in each layer, and z is the number of columns in each row.</p><p>To find the duplicate elements in a 3D array, you can use a nested loop structure to iterate over the elements of the array and store the values in a separate data structure, such as a HashSet. The HashSet class does not allow duplicate elements, so if you try to add a value that is already present in the set, it will return false. You can use this property to identify duplicate elements in the array.</p><p>Here is an example of how you might implement this in Java:</p>
       <pre>
         <code>
           import java.util.HashSet;
@@ -48,7 +45,7 @@ export class Trainer {
           }
         </code>
       </pre>
-      
-      <p>This example creates a 3D array with dimensions 2 x 3 x 4 and initializes it with some values. It then iterates over the elements of the array and uses a HashSet to identify any duplicate elements. If a duplicate element is found, it is printed to the console.</p><p>I hope this helps! Let me know if you have any questions.</p>`;
+      <p>\nThis example creates a 3D array with dimensions 2 x 3 x 4 and initializes it with some values. It then iterates over the elements of the array and uses a HashSet to identify any duplicate elements. If a duplicate element is found, it is printed to the console.</p>
+      <p>\nI hope this helps! Let me know if you have any questions.</p>`;
   }
 }
