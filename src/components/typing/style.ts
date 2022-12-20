@@ -23,7 +23,7 @@ const Wrapper = {
     }
 
     .bouncing-ball + .bouncing-ball + .bouncing-ball {
-      animation-delay: 1s;
+      animation-delay: 1.2s;
     }
 
     @keyframes bouncing-ball {
@@ -34,7 +34,7 @@ const Wrapper = {
         transform: translateY(-5px);
       }
       100% {
-        transform: translateY(0);
+        transform: translateY(0px);
       }
     }
   `,
