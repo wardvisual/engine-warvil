@@ -20,7 +20,10 @@ const Modal: NextPage<Modalable> = (prop: Modalable) => {
               <h2>{prop.title}</h2>
               <i className="fas fa-times" onClick={prop.handleOnClose}></i>
             </Wrapper.ModalHeader>
-            <Wrapper.ModalBody>{prop.children}</Wrapper.ModalBody>
+            <Wrapper.ModalBody>
+              <hr />
+              {prop.children}
+            </Wrapper.ModalBody>
           </Wrapper.Modal>
         </>
       )}

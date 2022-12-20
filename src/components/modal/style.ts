@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const Wrapper = {
   Modal: styled.div`
     z-index: 9999999999;
-    padding: 1em;
+    padding: 0.5em;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -20,16 +20,14 @@ const Wrapper = {
     justify-content: space-between;
     align-items: center;
     gap: 1em;
-    border-bottom: 1px var(--color-black-400) solid;
-    padding: 1em !important;
-
+    padding: 1.2em 1.2em 0 1.2em !important;
     i {
       font-size: 1.5rem;
       cursor: pointer;
     }
   `,
   ModalBody: styled.div`
-    padding: 1em !important;
+    padding: 0 1em 1em 1em !important;
   `,
   Overlay: styled.div`
     z-index: 9;
