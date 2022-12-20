@@ -11,7 +11,7 @@ const Wrapper = {
     background-color: var(--color-black-300);
     border-radius: var(--radius-5);
     min-height: max-content;
-    width: 95%;
+    width: 90%;
     max-width: 40em;
     max-height: 40em;
   `,
