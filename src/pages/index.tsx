@@ -14,6 +14,8 @@ import { MessageBoxable } from 'lib/types/message';
 import { commands } from '../../lib/constants/commands';
 import { postInstructionRequest } from 'lib/helpers/api';
 import Image from 'next/image';
+import Navbar from 'src/components/navbar';
+import Preloader from 'src/components/preloader';
 
 const useBreakpoint = createBreakpoint({ L: 993, S: 992 });
 
@@ -21,8 +23,8 @@ const Home: NextPage = () => {
   /* Reference Variables */
   const messageBoxContainerRef = useRef(null);
   const commandBoxRef = useRef<HTMLDivElement>(null);
-  const popupRef = useRef<HTMLDivElement>(null);
   const inputBoxRef = useRef<HTMLInputElement>(null);
+  const [loading, setLoading] = useState<boolean>(true);
 
   /* Hooks */
   const breakpoint = useBreakpoint();
@@ -103,6 +105,12 @@ const Home: NextPage = () => {
   };
 
   useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  }, []);
+
+  useEffect(() => {
     if (messageBoxContainerRef && messageBoxContainerRef.current) {
       const container: HTMLDivElement = messageBoxContainerRef.current;
       container.scrollTop = container.scrollHeight;
@@ -117,43 +125,10 @@ const Home: NextPage = () => {
 
   return (
     <>
-      <div className="overlay" ref={popupRef}></div>
-      <Layout>
+      <Preloader loading={loading} />
+      <Layout className={loading ? '' : 'display'}>
         <Wrapper.Home>
-          <Wrapper.Header>
-            <div>
-              {/* <h1>Engine Warvil</h1> */}
-              <Image
-                src="/assets/logo.svg"
-                objectFit="contain"
-                alt="engine warvil"
-                width={200}
-                height={100}
-              />
-              <p>
-                👨‍💻 Developed by &nbsp;
-                <a
-                  href="https://wardvisual.me/"
-                  title="wardvisual"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  www.wardvisual.com
-                </a>
-              </p>
-              <p>
-                ⭐ Give it a star &nbsp;
-                <a
-                  href="https://github.com/wardvisual/engine-warvil//"
-                  title="Engine Warvil"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Engine Warvil
-                </a>
-              </p>
-            </div>
-          </Wrapper.Header>
+          <Navbar />
           <Wrapper.Container>
             <CommandBox ref={commandBoxRef} breakpoint={breakpoint} />
             <Playground
