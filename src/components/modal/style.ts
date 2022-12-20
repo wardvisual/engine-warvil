@@ -11,7 +11,7 @@ const Wrapper = {
     background-color: var(--color-black-300);
     border-radius: var(--radius-5);
     min-height: max-content;
-    width: 80%;
+    width: 95%;
     max-width: 40em;
     max-height: 40em;
   `,
@@ -21,6 +21,7 @@ const Wrapper = {
     align-items: center;
     gap: 1em;
     border-bottom: 1px var(--color-black-400) solid;
+    padding: 1em !important;
 
     i {
       font-size: 1.5rem;
@@ -28,7 +29,7 @@ const Wrapper = {
     }
   `,
   ModalBody: styled.div`
-    padding: 1em;
+    padding: 1em !important;
   `,
   Overlay: styled.div`
     z-index: 9;
