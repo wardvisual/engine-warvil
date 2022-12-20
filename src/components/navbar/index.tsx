@@ -25,14 +25,14 @@ const Navbar = () => {
           </a>
         </p>
         <p>
-          ⭐ Give it a star &nbsp;
+          ⭐ Give it a&nbsp;
           <a
             href="https://github.com/wardvisual/engine-warvil//"
             title="Engine Warvil"
             target="_blank"
             rel="noreferrer"
           >
-            Engine Warvil
+            star
           </a>
         </p>
       </div>
