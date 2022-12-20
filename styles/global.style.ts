@@ -22,6 +22,8 @@ const GlobalStyle = createGlobalStyle`
         --color-black-200: #1D1F2B;
         --color-black-300: #232530;
         --color-black-400: #1d1f2a;
+        // Gray
+        --color-gray-100: #2F313B;
         // Blue
         --color-blue-100: #456584;
         --color-blue-200: #5c88b1;
@@ -134,7 +136,7 @@ const GlobalStyle = createGlobalStyle`
         &:hover {
             background-color: var(--color-blue-400);
         }
-
+image.png
         &:active {
             transform: scale(0.99);
         }
