@@ -2,6 +2,13 @@ import styled, { createGlobalStyle } from 'styled-components';
 
 export const Layout = styled.div`
   margin: 0 1em 0 1em;
+  opacity: 0;
+
+  transition: all 0.5s ease-in-out;
+
+  &.display {
+    opacity: 1;
+  }
 
   @media screen and (max-width: 992px) {
     margin: 0 0.5em 0 0.5em;
