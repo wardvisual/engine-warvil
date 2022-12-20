@@ -61,7 +61,7 @@ const Wrapper = {
 
         pre {
           /* margin: 0.4em 0 0.4em 0; */
-          padding: 0 0.5em 0 0.5em;
+          padding: 1em;
           border-radius: var(--radius-10);
           white-space: pre-wrap;
           background: #1d202c;
