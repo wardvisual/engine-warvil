@@ -17,7 +17,11 @@ const Wrapper = {
 
     @media screen and (max-width: 992px) {
       div {
-        padding: 1em;
+        img {
+          max-width: 10em !important;
+        }
+        padding: 0.5em;
+        margin-bottom: 0.8em;
       }
     }
   `,
