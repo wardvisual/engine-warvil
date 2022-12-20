@@ -45,9 +45,10 @@ const Wrapper = {
           max-width: max-content;
         }
 
-        p {
+        p.user {
           border-radius: var(--radius-10);
           margin-top: 0.5em;
+          padding: 1em;
         }
 
         p,
@@ -56,12 +57,11 @@ const Wrapper = {
           color: var(--color-white-300);
           max-width: max-content;
           width: inherit;
-          padding: 1em;
         }
 
         pre {
           /* margin: 0.4em 0 0.4em 0; */
-          /* padding: 0.5em; */
+          padding: 0 0.5em 0 0.5em;
           border-radius: var(--radius-10);
           white-space: pre-wrap;
           background: #1d202c;

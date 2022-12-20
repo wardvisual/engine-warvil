@@ -37,9 +37,13 @@ const MessageBox: NextPage<MessageBoxable> = ({
         <p>{isFromUser ? '👤 You' : '🤖 Warvil'}</p>
         <div>
           {isFromUser ? (
-            <p>{message}</p>
+            <p className="user">{message}</p>
           ) : (
-            <div dangerouslySetInnerHTML={{ __html: html || message }}></div>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: html || message,
+              }}
+            ></div>
           )}
         </div>
       </div>
