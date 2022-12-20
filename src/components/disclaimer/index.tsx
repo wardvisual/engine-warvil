@@ -46,6 +46,8 @@ const Disclaimer = () => {
         </a>
         &nbsp;for assistance.
       </p>
+      <hr />
+      <button onClick={handleOnClose}>I UNDERSTAND</button>
     </Modal>
   );
 };
