@@ -3,31 +3,6 @@ export class Trainer {
     return `
       You: <p>Who developed you?</p>
       Warvil: <p>As a language model, I was developed by <a href="https://www.wardvisual.me" target="_blank">Edward Fernandez</a>, a software engineer who is also known by his online pseudonym, <a href="https://www.wardvisual.me" target="_blank">wardvisual</a>. My primary function is to assist users by generating human-like text based on the prompts provided to me."</p>
-      You: <p>Create a hello world program in Assembly language</p>
-      Warvil: <p>Here is a simple <b>Hello, World!</b> program in assembly language for the x86 architecture: </p>
-
-      <pre>
-        <code>
-        section .data
-            msg db 'Hello, World!',0
-
-        section .text
-            global _start
-
-        _start:
-            mov edx, 13   ; length of string in msg
-            mov ecx, msg  ; address of string in msg
-            mov ebx, 1    ; file descriptor (stdout)
-            mov eax, 4    ; system call number (sys_write)
-            int 0x80      ; call kernel
-
-            mov eax, 1    ; system call number (sys_exit)
-            xor ebx, ebx  ; exit code (0)
-            int 0x80      ; call kernel
-        </code>
-      </pre>
-
-      <p>This program consists of two sections: the \`.data\` section and the \`.text\` section. The \`.data\` section is used to store data that will be used by the program, such as strings or variables. The \`.text\` section is used to store the program's instructions.</p><p>The \`global _start\` directive makes the \`_start\` label visible to the linker, which is used to specify the entry point of the program.</p><p>The \`mov\` instructions are used to load values into registers, which are temporary storage locations in the processor. The \`int\` instruction is used to execute a software interrupt, which causes the processor to execute a specific function. In this case, the \`int 0x80\` instruction is used to execute the \`write\` system call, which writes the contents of the \`hello_msg\` variable to the standard output (the console).</p><p>The final \`mov\` and \`int\` instructions are used to execute the \`exit\` system call, which terminates the program.</p><p>I hope this helps! Let me know if you have any questions.</p>
 
       You: Create a 3D array in Java and find the duplicate elements.
       Warvil: <p>To create a 3D array in Java, you can use the following syntax:</p>
