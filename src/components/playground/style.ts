@@ -45,7 +45,7 @@ const Wrapper = {
     justify-content: space-between;
     position: relative;
     @media screen and (max-width: 992px) {
-      min-height: 40em;
+      min-height: 45em;
     }
   `,
   PreCode: styled.div`
@@ -53,15 +53,11 @@ const Wrapper = {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
     user-select: none;
     display: grid;
     place-items: center;
     grid-gap: 1em;
-
-    @media screen and (max-width: 992px) {
-      display: none;
-    }
+    width: 100%;
 
     i {
       font-size: 4rem;
@@ -71,10 +67,10 @@ const Wrapper = {
     p {
       color: var(--color-blue-400);
       font-weight: bold;
-      margin-bottom: 0.4em;
     }
 
     ul {
+      margin: 0 1em 0 1em;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       grid-gap: 1em;
@@ -108,6 +104,27 @@ const Wrapper = {
 
         &:active {
           transform: scale(0.95);
+        }
+      }
+    }
+
+    @media screen and (max-width: 992px) {
+      grid-gap: 0.5em;
+
+      i {
+        font-size: 1.7rem;
+      }
+      ul {
+        margin-top: 0.4em;
+        grid-gap: 0.5em;
+        grid-template-columns: repeat(1, 1fr);
+
+        li {
+          padding: 0.8em;
+
+          i {
+            font-size: 1.5rem;
+          }
         }
       }
     }
