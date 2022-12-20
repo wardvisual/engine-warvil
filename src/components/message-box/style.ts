@@ -64,7 +64,7 @@ const Wrapper = {
           padding: 1em;
           border-radius: var(--radius-10);
           white-space: pre-wrap;
-          background: #1d202c;
+          background: var(--color-black-300);
 
           code {
             /* color: var(--color-blue-400); */
