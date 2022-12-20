@@ -162,7 +162,7 @@ const Wrapper = {
         &:active {
           transform: scale(0.95);
         }
-    }
+    }    
   `,
 
   MessageBoxContainer: styled.div`
