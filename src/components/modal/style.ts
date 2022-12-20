@@ -10,8 +10,8 @@ const Wrapper = {
     transform: translate(-50%, -50%);
     background-color: var(--color-black-300);
     border-radius: var(--radius-5);
-    min-width: max-content;
     min-height: max-content;
+    width: 80%;
     max-width: 40em;
     max-height: 40em;
   `,
