@@ -13,6 +13,7 @@ const Disclaimer = () => {
       title="DISCLAIMER"
       display={showDisclaimer}
       handleOnClose={handleOnClose}
+      customStyle={{ width: '85%' }}
     >
       <p>
         This application is utilizing a free trial of{' '}
