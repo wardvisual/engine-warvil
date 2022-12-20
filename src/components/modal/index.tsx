@@ -6,11 +6,16 @@ import { Modalable } from 'lib/types/props';
 
 const Modal: NextPage<Modalable> = (prop: Modalable) => {
   return (
-    <div>
+    <>
       {prop.display && (
         <>
           <Wrapper.Overlay onClick={prop.handleOnClose} />
-          <Wrapper.Modal style={{ ...prop.customStyle }}>
+          <Wrapper.Modal
+            style={{
+              ...prop.customStyle,
+              display: prop.display ? '' : 'hidden',
+            }}
+          >
             <Wrapper.ModalHeader>
               <h2>{prop.title}</h2>
               <i className="fas fa-times" onClick={prop.handleOnClose}></i>
@@ -19,7 +24,7 @@ const Modal: NextPage<Modalable> = (prop: Modalable) => {
           </Wrapper.Modal>
         </>
       )}
-    </div>
+    </>
   );
 };
 
