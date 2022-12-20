@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 const Wrapper = {
   Typing: styled.div`
+    transition: opacity 0.5s ease-in-out;
+
     .typing-animation {
       display: inline-block;
       overflow: hidden;
