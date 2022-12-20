@@ -23,4 +23,7 @@ export interface Modalable {
   title: string;
   display: boolean;
   handleOnClose: () => void;
+  customStyle?: {
+    width: string;
+  };
 }
