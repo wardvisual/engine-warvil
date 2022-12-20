@@ -161,6 +161,24 @@ const GlobalStyle = createGlobalStyle`
         display: none;
     } 
 
+    @media screen and (max-width: 992px) {
+        p, span, b {
+            font-size: 14px;
+        }
+        h1 {
+            font-size: 1.5rem;
+        }
+    
+        h2 {
+            font-size: 1rem;
+        }
+        
+        h3 {
+            font-size: .8rem;
+        }
+    }
+
+
 `;
 
 export default GlobalStyle;
