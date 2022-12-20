@@ -57,7 +57,11 @@ const Wrapper = {
     display: grid;
     place-items: center;
     grid-gap: 1em;
-    width: 100%;
+    width: 80%;
+
+    @media screen and (max-width: 992px) {
+      width: 100%;
+    }
 
     i {
       font-size: 4rem;
@@ -70,7 +74,7 @@ const Wrapper = {
     }
 
     ul {
-      margin: 0 1em 0 1em;
+      margin: 0 0.5em 0 0.5em;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       grid-gap: 1em;
@@ -177,7 +181,7 @@ const Wrapper = {
       > div {
         margin-top: 0.5em;
         background: var(--color-black-400);
-        padding: 0.8em;
+        padding: 0.8em 1em 0.3em 1em;
         color: var(--color-white-300);
         max-width: max-content;
         width: inherit;

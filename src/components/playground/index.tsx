@@ -5,6 +5,7 @@ import Wrapper from './style';
 import { Playgroundable } from 'lib/types/props';
 import MessageBox from '../message-box';
 import { useState, useEffect } from 'react';
+import Typing from '../typing';
 
 const Playground: NextPage<Playgroundable> = (
   prop: Playgroundable
@@ -78,9 +79,7 @@ const Playground: NextPage<Playgroundable> = (
           {prop.loading && (
             <div className="loading">
               <p>🤖 Warvil</p>
-              <div>
-                <p>Typing...</p>
-              </div>
+              <Typing />
             </div>
           )}
         </Wrapper.MessageBoxContainer>
