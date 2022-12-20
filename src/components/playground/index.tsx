@@ -16,15 +16,15 @@ const Playground: NextPage<Playgroundable> = (
       icon: 'microchip',
     },
     {
-      name: 'Create a 3D array in Java and find the duplicate elements',
-      icon: 'clone',
+      name: 'How do I make an HTTP request in Javascript?',
+      icon: 'hand-paper',
     },
     {
       name: 'Create a function in Javascript utilizing regex to find XSS attacks',
       icon: 'search',
     },
     {
-      name: 'Create a simple chatbot utilizing the Lua Programming Language',
+      name: 'How to configure CORS in Laravel',
       icon: 'robot',
     },
   ]);
