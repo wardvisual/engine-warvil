@@ -15,7 +15,7 @@ const Wrapper = {
     min-width: max-content;
 
     div {
-      padding: 0.5em;
+      padding: 0.2em 0.8em 0.2em 0.8em;
     }
 
     /* ul.mobile {
@@ -81,22 +81,27 @@ const Wrapper = {
     }
 
     @media screen and (max-width: 992px) {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.8em;
+      /* display: flex; */
+      /* justify-content: space-between; */
+      /* align-items: center; */
+
       cursor: pointer;
 
-      > div.mobile {
+      div {
+        padding: 0;
       }
 
-      > div:last-child {
-        padding: 0;
-        i {
-          font-size: 2.2rem;
-
-          &:active {
-            transform: scale(0.9);
+      > div.mobile {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        > div:last-child {
+          i {
+            font-size: 2em;
+            &:active {
+              transform: scale(0.9);
+            }
           }
         }
       }

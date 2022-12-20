@@ -109,8 +109,8 @@ const CommandBox: NextPage<CommandBoxable> = (prop: CommandBoxable) => {
         <p>This command is currently not available</p>
       </Modal>
       {mobileDeviceBreakpoint && (
-        <>
-          <div className="mobile">
+        <div className="mobile">
+          <div>
             <h2>Choose Commands</h2>
           </div>
           <Modal
@@ -129,7 +129,7 @@ const CommandBox: NextPage<CommandBoxable> = (prop: CommandBoxable) => {
           <div>
             <i className="fa fa-caret-down"></i>
           </div>
-        </>
+        </div>
       )}
       {!mobileDeviceBreakpoint && (
         <>
