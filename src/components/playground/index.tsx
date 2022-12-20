@@ -59,6 +59,7 @@ const Playground: NextPage<Playgroundable> = (
             type="button"
             title="Delete Conversation"
             onClick={prop.cleanUpConvo}
+            disabled={prop.loading}
           >
             <i className="fas fa-trash-alt"> </i>
           </button>
