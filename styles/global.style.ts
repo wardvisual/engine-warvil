@@ -41,7 +41,7 @@ const GlobalStyle = createGlobalStyle`
 
     /* customize the scrollbar color */
     &::-webkit-scrollbar-thumb {
-        background-color: var(--color-blue-400);
+        background-color: var(--color-black-100);
     }
 
     &::-webkit-scrollbar-track {
@@ -52,6 +52,10 @@ const GlobalStyle = createGlobalStyle`
     &::-webkit-scrollbar {
         width: 4px;
         height: 3px;
+
+        @media screen and (max-width: 992px) {
+            width: 2px;
+        }
     }
 
     body {
@@ -106,9 +110,34 @@ const GlobalStyle = createGlobalStyle`
     }
 
     input, teaxtarea, select, option, button {
-        border-radius: var(--radius-10);
+        border-radius: var(--radius-5);
+        border: none;
         padding: 1em;
+        width: 100%;
+    }
 
+    button {
+        background-color: var(--color-blue-300);
+        color: var(--color-black-400);
+        cursor: pointer;
+        font-weight: 700;
+        &.outlined {
+            background-color: unset;
+            color: var(--color-blue-400);
+            border: .5px  var(--color-blue-400) solid;
+
+            &:hover {
+                background-color: var(--color-black-400);
+             }
+        }
+
+        &:hover {
+            background-color: var(--color-blue-400);
+        }
+
+        &:active {
+            transform: scale(0.99);
+        }
     }
 
     input, textarea {
@@ -159,14 +188,12 @@ const GlobalStyle = createGlobalStyle`
     h3 {
         font-size: 1rem;
     }
-
-    .overlay {
-        position: absolute;
-        height: 100vh;
-        width: 100%;
-        background: rgba(0, 0, 0, 0.4);
-        display: none;
-    } 
+    
+    hr {
+        margin: 1em 0 1em 0;
+        height: .2px;
+        opacity: 7%;
+    }
 
     @media screen and (max-width: 992px) {
         p, span, b {
