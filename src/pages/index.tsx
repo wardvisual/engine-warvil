@@ -13,9 +13,9 @@ import { Event } from 'lib/types/tags';
 import { MessageBoxable } from 'lib/types/message';
 import { commands } from '../../lib/constants/commands';
 import { postInstructionRequest } from 'lib/helpers/api';
-import Image from 'next/image';
 import Navbar from 'src/components/navbar';
 import Preloader from 'src/components/preloader';
+import Disclaimer from 'src/components/disclaimer';
 
 const useBreakpoint = createBreakpoint({ L: 993, S: 992 });
 
@@ -144,6 +144,7 @@ const Home: NextPage = () => {
             />
           </Wrapper.Container>
         </Wrapper.Home>
+        <Disclaimer />
       </Layout>
     </>
   );

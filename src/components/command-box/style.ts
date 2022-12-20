@@ -18,14 +18,6 @@ const Wrapper = {
       padding: 0.2em 0.8em 0.2em 0.8em;
     }
 
-    /* ul.mobile {
-      z-index: 9;
-      display: block;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    } */
-
     ul.desktop {
       all: unset;
     }
