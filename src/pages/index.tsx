@@ -46,11 +46,20 @@ const Home: NextPage = () => {
     }
   };
 
+  const handleCommandChange = (index: number) => {
+    console.log({ index });
+    // setCommand(Object.keys(commands)[index]);
+  };
+
   const cleanUpConvo = () => {
     setUserInputRequest('');
     setAppRequests([]);
     setInitialCodeInstruction(true);
   };
+
+  useEffect(() => {
+    console.log({ command });
+  }, [setCommand, command]);
 
   useEffect(() => {
     console.log({ appRequests });
@@ -92,6 +101,7 @@ const Home: NextPage = () => {
         ]);
       }
     } catch (error: any) {
+      console.log({ error: error.message });
       setAppRequests([
         ...appRequests,
         {
@@ -130,9 +140,14 @@ const Home: NextPage = () => {
         <Wrapper.Home>
           <Navbar />
           <Wrapper.Container>
-            <CommandBox ref={commandBoxRef} breakpoint={breakpoint} />
+            <CommandBox
+              ref={commandBoxRef}
+              breakpoint={breakpoint}
+              handleCommandChange={handleCommandChange}
+            />
             <Playground
               appRequests={appRequests}
+              command={command}
               userInput={userInputRequest}
               getUserInput={getUserInput}
               inputBoxRef={inputBoxRef}
