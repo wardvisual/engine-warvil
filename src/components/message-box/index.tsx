@@ -1,17 +1,19 @@
 /* eslint-disable react/no-unescaped-entities */
 
 import { NextPage } from 'next';
-
-import Wrapper from './style';
-import { MessageBoxable } from 'lib/types/message';
 import React from 'react';
 import { useEffect } from 'react';
+import DOMPurify from 'isomorphic-dompurify';
+
+import { MessageBoxable } from 'lib/types/message';
+
+import Wrapper from './style';
 
 const MessageBox: NextPage<MessageBoxable> = ({
   isFromUser,
   message = ``,
 }: MessageBoxable): JSX.Element => {
-  let html;
+  let html: any;
 
   const codeRegex = /[{}[\]()<>\-*/%&|^\_\\]|<pre[^>]*>.*?<\/pre>/g;
 
@@ -28,6 +30,8 @@ const MessageBox: NextPage<MessageBoxable> = ({
     html = html.join('');
   }
 
+  const sanitizedHtml = DOMPurify.sanitize(html);
+
   useEffect(() => {
     console.log({ message });
   }, [message]);
@@ -41,7 +45,7 @@ const MessageBox: NextPage<MessageBoxable> = ({
           ) : (
             <div
               dangerouslySetInnerHTML={{
-                __html: html || message,
+                __html: sanitizedHtml || message,
               }}
             ></div>
           )}
