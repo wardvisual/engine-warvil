@@ -37,7 +37,8 @@ class OpenAIClient {
           message: completion.data.choices[0].text || '',
         };
       }
-    } catch (error) {
+    } catch (error: any) {
+      console.log({ server: error.message });
       const msg = {
         preffered: "I'm sorry, I don't understand your question!",
         expiredToken: `I'm sorry, but the service is currently not available due to development work. Please check back later or contact wardvisual, the developer of this app, for further assistance.`,
