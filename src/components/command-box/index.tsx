@@ -5,8 +5,9 @@ import React from 'react';
 
 import Wrapper from './style';
 import { useState, useEffect } from 'react';
-import { commands } from '../../../lib/constants/commands';
 import Modal from '../modal/index';
+import { commands } from '../../../lib/constants/commands';
+import { content } from 'lib/dummies/content';
 
 const CommandBox: NextPage<CommandBoxable> = (prop: CommandBoxable) => {
   const [showUnavailableModal, setUnavailableModal] = useState<{
@@ -17,8 +18,11 @@ const CommandBox: NextPage<CommandBoxable> = (prop: CommandBoxable) => {
   const [mobileDeviceBreakpoint, setMobileDeviceBreakpoint] =
     useState<boolean>(false);
 
-  const showModal = (command: string) => {
-    setUnavailableModal({ isShow: !showUnavailableModal.isShow, command });
+  const showModal = (index: number) => {
+    setUnavailableModal({
+      isShow: !showUnavailableModal.isShow,
+      command: content[Object.keys(commands)[index]]['title'],
+    });
   };
 
   const handleUnavailableModalClose = () => {
@@ -33,57 +37,90 @@ const CommandBox: NextPage<CommandBoxable> = (prop: CommandBoxable) => {
     {
       icon: 'fa-question-circle',
       name: 'Basic question',
-      onClick: (command: string) => showModal(command),
+      onClick: (index: number) => {
+        showModal(index);
+        prop.handleCommandChange(index);
+      },
     },
     {
       icon: 'fa-code',
       name: 'Generate code',
-      onClick: (command: string) => 1,
+      onClick: (index: number) => {
+        showModal(index);
+        prop.handleCommandChange(index);
+      },
     },
     {
       icon: 'fa-book',
       name: 'Generate thesis title',
-      onClick: (command: string) => showModal(command),
+      onClick: (index: number) => {
+        showModal(index);
+        prop.handleCommandChange(index);
+      },
     },
     {
       icon: 'fa-check',
       name: 'Grammar correction',
-      onClick: (command: string) => showModal(command),
+      onClick: (index: number) => {
+        showModal(index);
+        prop.handleCommandChange(index);
+      },
     },
     {
       icon: 'fa-quote-right',
       name: 'Paraphrase',
-      onClick: (command: string) => showModal(command),
+      onClick: (index: number) => {
+        showModal(index);
+        prop.handleCommandChange(index);
+      },
     },
     {
       icon: 'fa-book-reader',
       name: 'Summarize for a grade student',
-      onClick: (command: string) => showModal(command),
+      onClick: (index: number) => {
+        showModal(index);
+        prop.handleCommandChange(index);
+      },
     },
     {
       icon: 'fa-globe',
       name: 'English to other language',
-      onClick: (command: string) => showModal(command),
+      onClick: (index: number) => {
+        showModal(index);
+        prop.handleCommandChange(index);
+      },
     },
     {
       icon: 'fa-file-code',
       name: 'Explain programming code',
-      onClick: (command: string) => showModal(command),
+      onClick: (index: number) => {
+        showModal(index);
+        prop.handleCommandChange(index);
+      },
     },
     {
       icon: 'fa-balance-scale',
       name: 'Evaluate a mathematical expression',
-      onClick: (command: string) => showModal(command),
+      onClick: (index: number) => {
+        showModal(index);
+        prop.handleCommandChange(index);
+      },
     },
     {
       icon: 'fa-calculator',
       name: 'Evaluate a math equation',
-      onClick: (command: string) => showModal(command),
+      onClick: (index: number) => {
+        showModal(index);
+        prop.handleCommandChange(index);
+      },
     },
     {
       icon: 'fa-book-open',
       name: 'Create study notes',
-      onClick: (command: string) => showModal(command),
+      onClick: (index: number) => {
+        showModal(index);
+        prop.handleCommandChange(index);
+      },
     },
   ];
 
@@ -120,7 +157,7 @@ const CommandBox: NextPage<CommandBoxable> = (prop: CommandBoxable) => {
           >
             <ul>
               {list.map((el, index) => (
-                <li key={index} onClick={() => el.onClick(el.name)}>
+                <li key={index} onClick={() => el.onClick(index)}>
                   <i className={`fas ${el.icon} `}></i>&nbsp;{el.name}
                 </li>
               ))}
@@ -138,7 +175,7 @@ const CommandBox: NextPage<CommandBoxable> = (prop: CommandBoxable) => {
           </div>
           <ul>
             {list.map((el, index) => (
-              <li key={index} onClick={() => el.onClick(el.name)}>
+              <li key={index} onClick={() => el.onClick(index)}>
                 <i className={`fas ${el.icon} `}></i>&nbsp;{el.name}
               </li>
             ))}
