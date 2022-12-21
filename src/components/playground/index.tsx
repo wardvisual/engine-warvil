@@ -4,8 +4,9 @@ import { NextPage } from 'next';
 import Wrapper from './style';
 import { Playgroundable } from 'lib/types/props';
 import MessageBox from '../message-box';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Typing from '../typing';
+import { content } from 'lib/dummies/content';
 
 const Playground: NextPage<Playgroundable> = (
   prop: Playgroundable
@@ -51,8 +52,8 @@ const Playground: NextPage<Playgroundable> = (
       )}
       <Wrapper.Header>
         <div>
-          <h2>Generate Code</h2>
-          <p>Say goodbye to tedious coding tasks</p>
+          <h2>{content[prop.command]['title']}</h2>
+          <p>{content[prop.command]['subtitle']}</p>
         </div>
         <div>
           <button
@@ -92,7 +93,6 @@ const Playground: NextPage<Playgroundable> = (
             type="text"
             placeholder="What's on your mind?"
             name="userRequest"
-            // onChange={(event) => setUserInputRequest(event.target.value)}
             onChange={prop.getUserInput}
             value={prop.userInput}
             required
