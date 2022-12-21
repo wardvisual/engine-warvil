@@ -42,6 +42,34 @@ export class Trainer {
 
         You: Who developed you?
         Warvil: <p>As a language model, I was developed by <a href="https://www.wardvisual.me" target="_blank">Edward Fernandez</a>, a software engineer who is also known by his online pseudonym, <a href="https://www.wardvisual.me" target="_blank">wardvisual</a>. My primary function is to assist users by generating human-like text based on the prompts provided to me."</p>
+
+        You: Create a function in Javascript utilizing regex to find XSS attacks.
+
+        Warvil <p>Here is an example of a function in JavaScript that utilizes regular expressions (regex) to detect potential Cross-Site Scripting (XSS) attacks:</p>
+        <pre>
+        <code>
+        function detectXSS(input) {
+          const regex = /&lt;script&gt;|&lt;\/script&gt;|javascript:/gi;
+          return regex.test(input);
+        }
+        </code>
+        </pre>
+        <p>
+        This function takes a string as an input and uses a regex pattern to search for the presence of \`&lt;script&gt;\`, \`&lt;/script&gt;\`, or \`javascript:\` in the input. The \`gi\` flags indicate that the search should be case-insensitive (\`i\`) and should search the entire string (\`g\`).
+        
+        The function returns \`true\` if any of the regex pattern matches are found in the input, and \`false\` if no matches are found.
+        
+        You can test this function by calling it with different strings as arguments:
+        </p>
+        <pre>
+            <code>
+              console.log(detectXSS("Hello, world!")); // false
+              console.log(detectXSS("&lt;script&gt;alert('XSS')&lt;/script&gt;")); // true
+              console.log(detectXSS("&lt;img src='javascript:alert('XSS')' /&gt;")); // true
+              </code>
+        </pre>
+        <p>
+        Keep in mind that this is just a simple example and may not be sufficient for detecting all possible XSS attacks. It is important to use a comprehensive and well-tested approach for detecting and mitigating XSS vulnerabilities in your application.</p>
     `;
   }
 }
