@@ -4,6 +4,7 @@ import { Event } from 'lib/types/tags';
 export interface CommandBoxable {
   ref: any;
   breakpoint: string;
+  handleCommandChange: (index: number) => void;
 }
 
 export interface Playgroundable {
@@ -12,6 +13,7 @@ export interface Playgroundable {
   initialCodeInstruction: boolean;
   loading: boolean;
   userInput: string;
+  command: string;
   appRequests: MessageBoxable[];
   submitRequest: (e: { preventDefault: () => void }) => void;
   getUserInput: (event: string | Event) => void;
