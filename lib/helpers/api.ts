@@ -16,7 +16,8 @@ export async function postInstructionRequest(store: any) {
       }),
     });
 
-    return await response.json();
+    const data = await response.json();
+    return data;
   } catch (err) {
     return err;
   }
