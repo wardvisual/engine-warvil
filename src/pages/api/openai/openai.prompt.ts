@@ -15,7 +15,7 @@ export class Prompt implements Promptable {
 
     return userQuestion;
   }
-  private formatString(text: string[]) {
+  private format(text: string[]) {
     let finalString = '';
 
     for (let i = 0; i < text.length; i++) {
@@ -33,13 +33,24 @@ export class Prompt implements Promptable {
     let response = ``;
 
     switch (command) {
-      case commands.GENERATE_CODE:
-        response += `${this.trainer.generateCode()}${this.formatString(
-          request
-        )}\nYou: ${this.formatRequest(request.slice(-1)[0])}\nWarvil:`;
-        break;
       case commands.BASIC_QUESTION:
-        response = ``;
+        response += `${this.trainer.generateQA()}${this.format(request)}
+        \nYou: Answer my provided question: \n\n${this.formatRequest(
+          request.slice(-1)[0]
+        )}\nWarvil:`;
+        break;
+      case commands.GENERATE_CODE:
+        response += `${this.trainer.generateCode()}${this.format(request)}
+        \nYou: Code a program: \n\n${this.formatRequest(
+          request.slice(-1)[0]
+        )}\nWarvil:`;
+        break;
+      case commands.GRAMMAR_CORRECTION:
+        response += `${this.trainer.generateGrammar()}${this.format(
+          request
+        )}\nYou: Correct this to standard English:\n\n${this.formatRequest(
+          request.slice(-1)[0]
+        )}\nWarvil:`;
         break;
     }
 

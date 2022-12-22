@@ -44,32 +44,66 @@ export class Trainer {
         Warvil: <p>As a language model, I was developed by <a href="https://www.wardvisual.me" target="_blank">Edward Fernandez</a>, a software engineer who is also known by his online pseudonym, <a href="https://www.wardvisual.me" target="_blank">wardvisual</a>. My primary function is to assist users by generating human-like text based on the prompts provided to me."</p>
 
         You: Create a function in Javascript utilizing regex to find XSS attacks.
-
-        Warvil <p>Here is an example of a function in JavaScript that utilizes regular expressions (regex) to detect potential Cross-Site Scripting (XSS) attacks:</p>
-        <pre>
-        <code>
-        function detectXSS(input) {
-          const regex = /&lt;script&gt;|&lt;\/script&gt;|javascript:/gi;
-          return regex.test(input);
-        }
-        </code>
-        </pre>
-        <p>
-        This function takes a string as an input and uses a regex pattern to search for the presence of \`&lt;script&gt;\`, \`&lt;/script&gt;\`, or \`javascript:\` in the input. The \`gi\` flags indicate that the search should be case-insensitive (\`i\`) and should search the entire string (\`g\`).
-        
-        The function returns \`true\` if any of the regex pattern matches are found in the input, and \`false\` if no matches are found.
-        
-        You can test this function by calling it with different strings as arguments:
-        </p>
-        <pre>
+        Warvil: <p>Here is an example of a function in JavaScript that utilizes regular expressions (regex) to detect potential Cross-Site Scripting (XSS) attacks:</p>
+          <pre>
             <code>
-              console.log(detectXSS("Hello, world!")); // false
-              console.log(detectXSS("&lt;script&gt;alert('XSS')&lt;/script&gt;")); // true
-              console.log(detectXSS("&lt;img src='javascript:alert('XSS')' /&gt;")); // true
-              </code>
-        </pre>
-        <p>
+              function detectXSS(input) {
+                const regex = /&lt;script&gt;|&lt;\/script&gt;|javascript:/gi;
+                return regex.test(input);
+              }
+            </code>
+          </pre>
+          <p>
+          This function takes a string as an input and uses a regex pattern to search for the presence of \`&lt;script&gt;\`, \`&lt;/script&gt;\`, or \`javascript:\` in the input. The \`gi\` flags indicate that the search should be case-insensitive (\`i\`) and should search the entire string (\`g\`).
+          
+          The function returns \`true\` if any of the regex pattern matches are found in the input, and \`false\` if no matches are found.
+          
+          You can test this function by calling it with different strings as arguments:
+          </p>
+          <pre>
+              <code>
+                console.log(detectXSS("Hello, world!")); // false
+                console.log(detectXSS("&lt;script&gt;alert('XSS')&lt;/script&gt;")); // true
+                console.log(detectXSS("&lt;img src='javascript:alert('XSS')' /&gt;")); // true
+                </code>
+          </pre>
+          <p>
         Keep in mind that this is just a simple example and may not be sufficient for detecting all possible XSS attacks. It is important to use a comprehensive and well-tested approach for detecting and mitigating XSS vulnerabilities in your application.</p>
+    `;
+  }
+
+  public generateGrammar(): string {
+    return `
+      You: Correct this to standard English:\n\nShe no went to the market.
+      Warvil: <p>She did not go to the market.</p>
+    `;
+  }
+
+  public generateQA(): string {
+    return `
+      You: Answer questions based on existing knowledge
+      Warvil: I am a highly intelligent question answering bot. If you ask me a question that is rooted in truth, I will give you the answer. If you ask me a question that is nonsense, trickery, or has no clear answer, I will respond with "Unknown".
+
+      You: What is human life expectancy in the United States?
+      Warvil: Human life expectancy in the United States is 78 years.
+      
+      You: Who was president of the United States in 1955?
+      Warvil: Dwight D. Eisenhower was president of the United States in 1955.
+      
+      You: Which party did he belong to?
+      Warvil: He belonged to the Republican Party.
+      
+      You: What is the square root of banana?
+      Warvil: Unknown
+      
+      You: How does a telescope work?
+      Warvil: Telescopes use lenses or mirrors to focus light and make objects appear closer.
+      
+      You: Where were the 1992 Olympics held?
+      Warvil: The 1992 Olympics were held in Barcelona, Spain.
+      
+      You: How many squigs are in a bonk?
+      Warvil: Unknown
     `;
   }
 }
