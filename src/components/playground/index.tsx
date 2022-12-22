@@ -11,27 +11,10 @@ import { content } from 'lib/dummies/content';
 const Playground: NextPage<Playgroundable> = (
   prop: Playgroundable
 ): JSX.Element => {
-  const [templateInstructions] = useState([
-    {
-      name: 'Create a hello world program in Assembly language',
-      icon: 'microchip',
-    },
-    {
-      name: 'How do I make an HTTP request in Javascript?',
-      icon: 'hand-paper',
-    },
-    {
-      name: 'Create a function in Javascript utilizing regex to find XSS attacks',
-      icon: 'search',
-    },
-    {
-      name: 'How to configure CORS in Laravel',
-      icon: 'robot',
-    },
-  ]);
-
   const getTemplateInstruction = (index: number) => {
-    prop.getUserInput(templateInstructions[index].name);
+    prop.getUserInput(
+      content[prop.command]['templateInstructions'][index].name
+    );
   };
 
   return (
@@ -41,7 +24,7 @@ const Playground: NextPage<Playgroundable> = (
           <i className="fas fa-lightbulb"></i>
           <p>Try these examples</p>
           <ul>
-            {templateInstructions.map((el, index) => (
+            {content[prop.command]['templateInstructions'].map((el, index) => (
               <li key={index} onClick={() => getTemplateInstruction(index)}>
                 <i className={`fas fa-${el.icon}`}></i>
                 <span>{el.name}</span>
