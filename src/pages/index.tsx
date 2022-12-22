@@ -48,7 +48,7 @@ const Home: NextPage = () => {
 
   const handleCommandChange = (index: number) => {
     console.log({ index });
-    // setCommand(Object.keys(commands)[index]);
+    setCommand(Object.keys(commands)[index]);
   };
 
   const cleanUpConvo = () => {
