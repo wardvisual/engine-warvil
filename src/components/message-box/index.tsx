@@ -3,7 +3,7 @@
 import { NextPage } from 'next';
 import React from 'react';
 import { useEffect } from 'react';
-import DOMPurify from 'isomorphic-dompurify';
+import { sanitize } from 'isomorphic-dompurify';
 
 import { MessageBoxable } from 'lib/types/message';
 
@@ -30,8 +30,6 @@ const MessageBox: NextPage<MessageBoxable> = ({
     html = html.join('');
   }
 
-  const sanitizedHtml = DOMPurify.sanitize(html);
-
   useEffect(() => {
     console.log({ message });
   }, [message]);
@@ -45,7 +43,7 @@ const MessageBox: NextPage<MessageBoxable> = ({
           ) : (
             <div
               dangerouslySetInnerHTML={{
-                __html: sanitizedHtml || message,
+                __html: sanitize(html) || message,
               }}
             ></div>
           )}
