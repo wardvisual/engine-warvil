@@ -4,7 +4,8 @@ import { Event } from 'lib/types/tags';
 export interface CommandBoxable {
   ref: any;
   breakpoint: string;
-  handleCommandChange: (index: number) => void;
+  command: string;
+  handleCommandChange: (index: number, isDisabled: boolean) => void;
 }
 
 export interface Playgroundable {
