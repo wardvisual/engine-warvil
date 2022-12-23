@@ -31,18 +31,21 @@
 <br />
 <!-- BUILT WITH -->
 
+<hr />
+
 ### Built With
 
 - [Next.js](https://nextjs.org/)
 - [Typescript](https://www.typescriptlang.org/)
 - [OpenAI](https://openai.com/)
 
+
 <!-- FEATURES -->
 ### Key Features
   Some of these features may not respond correctly while they are being developed.
 
- #### Basic Questions
-   - 💡 Warvil is able to answer basic questions about a variety of topics using artificial intelligence.
+ #### Basic Questions 
+ - 💡 Warvil is able to answer basic questions about a variety of topics using artificial intelligence.
 #### Generate Code
   - 💡 Warvil can generate code for a variety of programming languages based on your specifications.
 
@@ -68,7 +71,7 @@
 - 💡 Warvil can generate study notes based on text input, helping you learn and retain information more effectively.
 
 <!-- INSTALLATION -->
-<br />
+<hr />
 
 ### Installation
 
@@ -97,6 +100,10 @@
    ```sh
    OPENAI_API_KEY = 'ENTER YOUR OpenAI API KEY'
    ```
+
+
+<hr />
+
 
 <!-- LICENSE -->
 
