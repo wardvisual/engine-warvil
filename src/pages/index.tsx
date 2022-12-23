@@ -46,9 +46,11 @@ const Home: NextPage = () => {
     }
   };
 
-  const handleCommandChange = (index: number) => {
-    console.log({ index });
-    setCommand(Object.keys(commands)[index]);
+  const handleCommandChange = (index: number, isDisabled: boolean) => {
+    if(!isDisabled) {
+      cleanUpConvo();
+      setCommand(Object.keys(commands)[index]);
+    }
   };
 
   const cleanUpConvo = () => {
@@ -56,10 +58,6 @@ const Home: NextPage = () => {
     setAppRequests([]);
     setInitialCodeInstruction(true);
   };
-
-  useEffect(() => {
-    console.log({ command });
-  }, [setCommand, command]);
 
   useEffect(() => {
     console.log({ appRequests });
@@ -143,6 +141,7 @@ const Home: NextPage = () => {
             <CommandBox
               ref={commandBoxRef}
               breakpoint={breakpoint}
+              command={command}
               handleCommandChange={handleCommandChange}
             />
             <Playground
