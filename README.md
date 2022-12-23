@@ -41,30 +41,30 @@
 ### Key Features
    Some of these features might not accurately respond, as it is under development.
 
- ### Basic Questions
+ #### Basic Questions
    - 💡 Warvil is able to answer basic questions about a variety of topics using artificial intelligence.
-### Generate Code
+#### Generate Code
   - 💡 Warvil can generate code for a variety of programming languages based on your specifications.
 
-### Generate Thesis Title
+#### Generate Thesis Title
    - 💡 Warvil can generate potential titles for your thesis or research project.
 
-### Grammar Correction
+#### Grammar Correction
    - 💡 Warvil can help you improve your writing by correcting grammar errors and providing suggestions for improvement.
 
-### Paraphrase
+#### Paraphrase
 - 💡 Warvil can rewrite text to convey the same information in a different way, making it easier to understand.
 
-### Summarize
+#### Summarize
 - 💡 Warvil can generate a summary of longer pieces of text, helping you save time and focus on the most important information.
-### English to another language
+#### English to another language
 - 💡 Warvil can translate text from English to a variety of other languages.
-### Explain the Programming Code
+#### Explain the Programming Code
 - 💡 Warvil can provide explanations and examples for programming concepts and code snippets.
 
-### Evaluate a Mathematical Expression
+#### Evaluate a Mathematical Expression
 - 💡 Warvil can evaluate and simplify mathematical expressions.
-### Create Study Notes
+#### Create Study Notes
 - 💡 Warvil can generate study notes based on text input, helping you learn and retain information more effectively.
 
 <!-- INSTALLATION -->
