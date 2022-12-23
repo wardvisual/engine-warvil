@@ -8,14 +8,15 @@ export class Prompt implements Promptable {
     this.trainer = new Trainer();
   }
 
-  private formatRequest(userRequest: string): string {
+  private formatRequest(userRequest: string[]): string {
+    const request: string = userRequest.slice(-1)[0];
+
     const userQuestion =
-      userRequest[0].toLocaleUpperCase() +
-      userRequest.slice(1).toLocaleLowerCase();
+      request[0].toLocaleUpperCase() + request.slice(1).toLocaleLowerCase();
 
     return userQuestion;
   }
-  private format(text: string[]) {
+  private formatString(text: string[]) {
     let finalString = '';
 
     for (let i = 0; i < text.length; i++) {
@@ -34,26 +35,87 @@ export class Prompt implements Promptable {
 
     switch (command) {
       case commands.BASIC_QUESTION:
-        response += `${this.trainer.generateQA()}${this.format(request)}
-        \nYou: Answer my provided question: \n\n${this.formatRequest(
-          request.slice(-1)[0]
-        )}\nWarvil:`;
+        response +=
+          `${this.trainer.generateQA()}` +
+          `${this.formatString(request)}` +
+          `You: Answer this question:` +
+          `${this.formatRequest(request)}?` +
+          `Warvil: `;
         break;
       case commands.GENERATE_CODE:
-        response += `${this.trainer.generateCode()}${this.format(request)}
-        \nYou: Code a program: \n\n${this.formatRequest(
-          request.slice(-1)[0]
-        )}\nWarvil:`;
+        response +=
+          `${this.trainer.generateCode()}` +
+          `${this.formatString(request)}` +
+          `You: Translate Text into Code Based on the Provided Instructions:` +
+          `${this.formatRequest(request)}` +
+          `Warvil: `;
+        break;
+      case commands.GENERATE_THESIS_TITLE:
+        response +=
+          `${this.trainer.generateThesisTitle()}` +
+          `${this.formatString(request)}` +
+          `You: Generate at least 5 thesis title based on this concept:` +
+          `${this.formatRequest(request)}` +
+          `Warvil: `;
         break;
       case commands.GRAMMAR_CORRECTION:
-        response += `${this.trainer.generateGrammar()}${this.format(
-          request
-        )}\nYou: Correct this to standard English:\n\n${this.formatRequest(
-          request.slice(-1)[0]
-        )}\nWarvil:`;
+        response +=
+          `${this.trainer.correctGrammar()}` +
+          `${this.formatString(request)}` +
+          `You: Corrects sentences into standard English:` +
+          `${this.formatRequest(request)}` +
+          `Warvil: `;
+        break;
+      case commands.PARAPHRASE:
+        response +=
+          `${this.trainer.paraphrase()}` +
+          `${this.formatString(request)}` +
+          `You: Paraphrase this sentence:` +
+          `"${this.formatRequest(request)}"` +
+          `Warvil: `;
+        break;
+      case commands.SUMMARIZE_FOR_A_STUDENT_GRADE:
+        response +=
+          `${this.trainer.summarize()}` +
+          `${this.formatString(request)}` +
+          `You: Translates difficult text into simpler concepts:` +
+          `${this.formatRequest(request)}` +
+          `Warvil: `;
+        break;
+      case commands.ENGLISH_TO_OTHER_LANGUAGE:
+        response +=
+          `${this.trainer.englishToOther()}` +
+          `${this.formatString(request)}` +
+          `You: Translates these/this:` +
+          `${this.formatRequest(request)}` +
+          `Warvil: `;
+        break;
+      case commands.EXPLAIN_PROGRAMMING_CODE:
+        response +=
+          `${this.trainer.explainProgrammingCode()}` +
+          `"${this.formatString(request)}"` +
+          `You: Explain a complicated piece of code:` +
+          `"${this.formatRequest(request)}"` +
+          `Warvil: `;
+        break;
+      case commands.EVALUATE_A_MATHEMATICAL_EXPRESSION:
+        response +=
+          `${this.trainer.evaluateMathematicalExpression()}` +
+          `${this.formatString(request)}` +
+          `You: Evaluate this math expression:` +
+          `${this.formatRequest(request)}` +
+          `Warvil: `;
+        break;
+      case commands.CREATE_STUDY_NOTES:
+        response +=
+          `${this.trainer.createStudyNotes()}` +
+          `${this.formatString(request)}` +
+          `You: Create study notes based on this concept: ` +
+          `${this.formatRequest(request)}` +
+          `Warvil: `;
         break;
     }
-
+    console.log({ command, request, response });
     return response;
   }
 }
