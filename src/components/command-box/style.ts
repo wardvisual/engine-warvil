@@ -16,6 +16,7 @@ const Wrapper = {
 
     div {
       padding: 0.2em 0.8em 0.2em 0.8em;
+      margin-bottom: 1em;
     }
 
     ul.desktop {
@@ -25,6 +26,7 @@ const Wrapper = {
     .active {
       color: var(--color-blue-400);
       background-color: var(--color-black-400);
+      border-radius: var(--radius-5);
 
       > * {
         color: var(--color-blue-400);
