@@ -39,7 +39,7 @@
 
 <!-- FEATURES -->
 ### Key Features
-   Some of these features might not accurately respond, as it is under development.
+  Some of these features may not respond correctly while they are being developed.
 
  #### Basic Questions
    - 💡 Warvil is able to answer basic questions about a variety of topics using artificial intelligence.
