@@ -22,6 +22,15 @@ const Wrapper = {
       all: unset;
     }
 
+    .active {
+      color: var(--color-blue-400);
+      background-color: var(--color-black-400);
+
+      > * {
+        color: var(--color-blue-400);
+      }
+    }
+
     ul {
       li {
         padding: 1em;
@@ -29,15 +38,6 @@ const Wrapper = {
         border: none;
         transition: all 0.3s ease-in-out;
         min-width: max-content;
-
-        &:nth-child(2) {
-          color: var(--color-blue-400);
-          background-color: var(--color-black-400);
-
-          > * {
-            color: var(--color-blue-400);
-          }
-        }
 
         &:hover {
           background-color: var(--color-black-400);
