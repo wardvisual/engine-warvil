@@ -39,6 +39,7 @@
 - [Typescript](https://www.typescriptlang.org/)
 - [OpenAI](https://openai.com/)
 
+<hr />
 
 <!-- FEATURES -->
 ### Key Features
