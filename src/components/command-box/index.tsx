@@ -38,88 +38,130 @@ const CommandBox: NextPage<CommandBoxable> = (prop: CommandBoxable) => {
       icon: 'fa-question-circle',
       name: 'Basic question',
       onClick: (index: number) => {
-        showModal(index);
-        prop.handleCommandChange(index);
+        const isDisabled: boolean = content[Object.keys(commands)[index]].isDisabled
+
+        if(isDisabled) {
+          showModal(index)
+        } 
+
+        prop.handleCommandChange(index, isDisabled);
       },
     },
     {
       icon: 'fa-code',
       name: 'Generate code',
       onClick: (index: number) => {
-        showModal(index);
-        prop.handleCommandChange(index);
+        const isDisabled: boolean = content[Object.keys(commands)[index]].isDisabled
+
+        if(isDisabled) {
+          showModal(index)
+        } 
+
+        prop.handleCommandChange(index, isDisabled);
       },
     },
     {
       icon: 'fa-book',
       name: 'Generate thesis title',
       onClick: (index: number) => {
-        showModal(index);
-        prop.handleCommandChange(index);
+        const isDisabled: boolean = content[Object.keys(commands)[index]].isDisabled
+
+        if(isDisabled) {
+          showModal(index)
+        } 
+
+        prop.handleCommandChange(index, isDisabled);
       },
     },
     {
       icon: 'fa-check',
       name: 'Grammar correction',
       onClick: (index: number) => {
-        showModal(index);
-        prop.handleCommandChange(index);
+        const isDisabled: boolean = content[Object.keys(commands)[index]].isDisabled
+
+        if(isDisabled) {
+          showModal(index)
+        } 
+
+        prop.handleCommandChange(index, isDisabled);
       },
     },
     {
       icon: 'fa-quote-right',
       name: 'Paraphrase',
       onClick: (index: number) => {
-        showModal(index);
-        prop.handleCommandChange(index);
+        const isDisabled: boolean = content[Object.keys(commands)[index]].isDisabled
+
+        if(isDisabled) {
+          showModal(index)
+        } 
+
+        prop.handleCommandChange(index, isDisabled);
       },
     },
     {
       icon: 'fa-book-reader',
       name: 'Summarize for a grade student',
       onClick: (index: number) => {
-        showModal(index);
-        prop.handleCommandChange(index);
+        const isDisabled: boolean = content[Object.keys(commands)[index]].isDisabled
+
+        if(isDisabled) {
+          showModal(index)
+        } 
+
+        prop.handleCommandChange(index, isDisabled);
       },
     },
     {
       icon: 'fa-globe',
       name: 'English to other language',
       onClick: (index: number) => {
-        showModal(index);
-        prop.handleCommandChange(index);
+        const isDisabled: boolean = content[Object.keys(commands)[index]].isDisabled
+
+        if(isDisabled) {
+          showModal(index)
+        } 
+
+        prop.handleCommandChange(index, isDisabled);
       },
     },
     {
       icon: 'fa-file-code',
       name: 'Explain programming code',
       onClick: (index: number) => {
-        showModal(index);
-        prop.handleCommandChange(index);
-      },
-    },
-    {
-      icon: 'fa-balance-scale',
-      name: 'Evaluate a mathematical expression',
-      onClick: (index: number) => {
-        showModal(index);
-        prop.handleCommandChange(index);
+        const isDisabled: boolean = content[Object.keys(commands)[index]].isDisabled
+
+        if(isDisabled) {
+          showModal(index)
+        } 
+
+        prop.handleCommandChange(index, isDisabled);
       },
     },
     {
       icon: 'fa-calculator',
-      name: 'Evaluate a math equation',
+      name: 'Evaluate a mathematical expression',
       onClick: (index: number) => {
-        showModal(index);
-        prop.handleCommandChange(index);
+        const isDisabled: boolean = content[Object.keys(commands)[index]].isDisabled
+
+        if(isDisabled) {
+          showModal(index)
+        } 
+
+        prop.handleCommandChange(index, isDisabled);
       },
     },
     {
       icon: 'fa-book-open',
       name: 'Create study notes',
       onClick: (index: number) => {
-        showModal(index);
-        prop.handleCommandChange(index);
+        const isDisabled: boolean = content[Object.keys(commands)[index]].isDisabled
+
+        if(isDisabled) {
+          showModal(index)
+        } 
+
+        prop.handleCommandChange(index, isDisabled);
       },
     },
   ];
@@ -175,8 +217,15 @@ const CommandBox: NextPage<CommandBoxable> = (prop: CommandBoxable) => {
           </div>
           <ul>
             {list.map((el, index) => (
-              <li key={index} onClick={() => el.onClick(index)}>
-                <i className={`fas ${el.icon} `}></i>&nbsp;{el.name}
+              <li
+                key={index}
+                onClick={() => el.onClick(index)}
+                className={`${
+                  prop.command === Object.keys(commands)[index] ? 'active' : ''
+                }`}
+              >
+                <i className={`fas ${el.icon} `}></i>
+                &nbsp;{el.name}
               </li>
             ))}
           </ul>
