@@ -133,6 +133,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-Edward Fernandez: [@wardvisual](https://twitter.com/wardvisual)
+Edward Fernandez: [Wardvisual](https://wardvisual.me/)
 
-Project Link: [engine-warvil](https://engine-warvil.vercel.app/)
+Project Link: [Engine Warvil](https://engine-warvil.vercel.app/)
