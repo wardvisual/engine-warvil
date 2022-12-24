@@ -2,7 +2,7 @@ import { Configuration, OpenAIApi } from 'openai';
 
 import { AIResponse, Promptable } from 'lib/api/openai/openai.types';
 import { Prompt } from 'lib/api/openai/openai.prompt';
-import { commands } from 'lib/constants/commands';
+import { commands } from 'lib/constants/constant.command';
 
 class OpenAIClient {
   private configuration: Configuration;

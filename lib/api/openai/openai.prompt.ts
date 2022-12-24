@@ -1,4 +1,4 @@
-import { commands } from 'lib/constants/commands';
+import { commands } from 'lib/constants/constant.command';
 import { Promptable } from 'lib/api/openai/openai.types';
 import { Trainer } from 'lib/api/openai/openai.trainer';
 
