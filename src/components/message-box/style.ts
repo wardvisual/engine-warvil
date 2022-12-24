@@ -21,7 +21,7 @@ const Wrapper = {
         display: flex;
         justify-content: flex-end;
 
-        p {
+        pre {
           text-align: start;
           background: var(--color-blue-400);
           color: var(--color-black-400);

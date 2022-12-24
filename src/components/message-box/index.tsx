@@ -17,7 +17,7 @@ const MessageBox: NextPage<MessageBoxable> = ({
 
   const codeRegex = /[{}[\]()<>\-*/%&|^\_\\]|<pre[^>]*>.*?<\/pre>/g;
 
-  if (!isFromUser && message.indexOf('\n') !== -1) {
+  if (message.indexOf('\n') !== -1) {
     const formattedMessage = message.replace(/^  \n\n/, ' ');
     const lines = formattedMessage.split('\n');
 
@@ -36,7 +36,7 @@ const MessageBox: NextPage<MessageBoxable> = ({
         <p>{isFromUser ? '👤 You' : '🤖 Warvil'}</p>
         <div>
           {isFromUser ? (
-            <p className="user">{message}</p>
+            <pre className="user">{message}</pre>
           ) : (
             <div
               dangerouslySetInnerHTML={{
