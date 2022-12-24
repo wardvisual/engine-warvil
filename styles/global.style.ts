@@ -146,11 +146,10 @@ const GlobalStyle = createGlobalStyle`
         &:hover {
             background-color: var(--color-blue-400);
         }
-image.png
         &:active {
-            transform: scale(0.99);
+                transform: scale(0.99);
+            }
         }
-    }
 
     input, textarea {
         ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -179,14 +178,12 @@ image.png
         border-radius: 5px;
         border: none;
         outline: none;
-        padding: 1.5em;
-        min-height: 1.5em;
+        padding: 1em;
         font-size: 1em;
-        width: 100%;
-        max-height: 4em;
-        min-width: 40em;
-        max-width: 60em;
-
+        width: auto;
+        max-height: .2em;
+        max-width: 70em;
+        resize: none;
     } 
 
     h1 {
