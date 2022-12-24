@@ -2,7 +2,8 @@ import { commands } from 'lib/constants/constant.command';
 
 export const content = {
   [commands['BASIC_QUESTION']]: {
-    title: 'Basic Question',
+    title: 'Answer Basic Questions',
+    icon: 'fa-question-circle',
     subtitle: 'Get basic answers to your questions quickly and easily!',
     templateInstructions: [
       {
@@ -25,7 +26,8 @@ export const content = {
     isDisabled: false,
   },
   [commands['GENERATE_CODE']]: {
-    title: 'Generate code',
+    title: 'Generate Code',
+    icon: 'fa-code',
     subtitle: 'Say goodbye to tedious coding tasks',
     templateInstructions: [
       {
@@ -48,7 +50,8 @@ export const content = {
     isDisabled: false,
   },
   [commands['GENERATE_THESIS_TITLE']]: {
-    title: 'Generate thesis title',
+    title: 'Generate Thesis Titles',
+    icon: 'fa-book',
     subtitle: 'Generate Compelling Thesis Titles with Ease!',
     templateInstructions: [
       {
@@ -71,7 +74,7 @@ export const content = {
     isDisabled: true,
   },
   [commands['GRAMMAR_CORRECTION']]: {
-    title: 'Grammar correction',
+    title: 'Correct Grammar',
     subtitle: 'Polish Your Writing Quickly & Easily!',
     templateInstructions: [
       {
@@ -94,7 +97,8 @@ export const content = {
     isDisabled: false,
   },
   [commands['PARAPHRASE']]: {
-    title: 'Praphrase',
+    title: 'Paraphrase Text',
+    icon: 'fa-quote-right',
     subtitle: 'Reword Text Effortlessly!',
     templateInstructions: [
       {
@@ -117,7 +121,8 @@ export const content = {
     isDisabled: false,
   },
   [commands['SUMMARIZE_FOR_A_STUDENT_GRADE']]: {
-    title: 'Summarize for a student grade',
+    title: 'Summarize',
+    icon: 'fa-book-reader',
     subtitle: 'Summarize Text Easily for Better Grades!',
     templateInstructions: [
       {
@@ -137,10 +142,11 @@ export const content = {
         icon: 'newspaper',
       },
     ],
-    isDisabled: false,
+    isDisabled: true,
   },
   [commands['ENGLISH_TO_OTHER_LANGUAGE']]: {
-    title: 'English to other langauge',
+    title: 'Translate to Other Languages',
+    icon: 'fa-globe',
     subtitle: 'Accurately Translate English to Any Language!',
     templateInstructions: [
       {
@@ -163,7 +169,8 @@ export const content = {
     isDisabled: false,
   },
   [commands['EXPLAIN_PROGRAMMING_CODE']]: {
-    title: 'Explain programming code',
+    title: 'Explain Programming Code',
+    icon: 'fa-file-code',
     subtitle: 'Understand Difficult Programming Code with Ease!',
     templateInstructions: [
       {
@@ -186,7 +193,8 @@ export const content = {
     isDisabled: true,
   },
   [commands['EVALUATE_A_MATHEMATICAL_EXPRESSION']]: {
-    title: 'Evaluate a mathematical expression',
+    title: 'Evaluate Mathematical Expressions',
+    icon: 'fa-calculator',
     subtitle: 'Evaluate Mathematical Expressions Quickly and Accurately!',
     templateInstructions: [
       {
@@ -209,7 +217,8 @@ export const content = {
     isDisabled: true,
   },
   [commands['CREATE_STUDY_NOTES']]: {
-    title: 'Create study notes',
+    title: 'Create Study Notes',
+    icon: 'fa-book-open',
     subtitle: 'Create Comprehensive Study Notes in No Time!',
     templateInstructions: [
       {
