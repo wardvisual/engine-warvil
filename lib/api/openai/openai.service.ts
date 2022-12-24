@@ -110,8 +110,7 @@ class OpenAIClient {
           top_p: 1.0,
           frequency_penalty: 0.0,
           presence_penalty: 0.0,
-          stop: ["\"\"\""], /* @prettier-ignore  */
-
+          stop: ['"""'] /* @prettier-ignore  */,
         };
         break;
       case commands.EVALUATE_A_MATHEMATICAL_EXPRESSION:

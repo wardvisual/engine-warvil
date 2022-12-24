@@ -16,6 +16,7 @@ import { postInstructionRequest } from 'lib/helpers/api';
 import Navbar from 'src/components/navbar';
 import Preloader from 'src/components/preloader';
 import Disclaimer from 'src/components/disclaimer';
+import { onInputNewLine } from 'lib/helpers/key-event';
 
 const useBreakpoint = createBreakpoint({ L: 993, S: 992 });
 
@@ -47,7 +48,7 @@ const Home: NextPage = () => {
   };
 
   const handleCommandChange = (index: number, isDisabled: boolean) => {
-    if(!isDisabled) {
+    if (!isDisabled) {
       cleanUpConvo();
       setCommand(Object.keys(commands)[index]);
     }
@@ -57,7 +58,7 @@ const Home: NextPage = () => {
     setUserInputRequest('');
     setAppRequests([]);
     setInitialCodeInstruction(true);
-  }; 
+  };
 
   const submitRequest = async (event: any) => {
     event.preventDefault();
@@ -125,6 +126,18 @@ const Home: NextPage = () => {
       inputBoxRef.current.focus();
     }
   }, [appRequests]);
+
+  useEffect(() => {
+    if (inputBoxRef.current) {
+      inputBoxRef.current.addEventListener('keydown', onInputNewLine);
+    }
+
+    return () => {
+      if (inputBoxRef.current) {
+        inputBoxRef.current.removeEventListener('keydown', onInputNewLine);
+      }
+    };
+  }, []);
 
   return (
     <>

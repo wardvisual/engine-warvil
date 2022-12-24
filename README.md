@@ -42,8 +42,10 @@
 <hr />
 
 <!-- FEATURES -->
+
 ### Key Features
-  Some of these features may not respond correctly while they are being developed.
+
+Some of these features may not respond correctly while they are being developed.
 
 <details>
   <summary>💡 Basic Questions </summary>
@@ -87,10 +89,10 @@
     Warvil can generate study notes based on text input, helping you learn and retain information more effectively.
 </details>
 
-
 <hr />
 
 <!-- INSTALLATION -->
+
 ### Installation
 
 1. Clone the repo
@@ -119,9 +121,7 @@
    OPENAI_API_KEY = 'ENTER YOUR OpenAI API KEY'
    ```
 
-
 <hr />
-
 
 <!-- LICENSE -->
 

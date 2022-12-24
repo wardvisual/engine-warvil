@@ -22,8 +22,7 @@ export const content = {
         icon: 'toolbox',
       },
     ],
-    isDisabled: false
-
+    isDisabled: false,
   },
   [commands['GENERATE_CODE']]: {
     title: 'Generate code',
@@ -46,8 +45,7 @@ export const content = {
         icon: 'language',
       },
     ],
-    isDisabled: false
-
+    isDisabled: false,
   },
   [commands['GENERATE_THESIS_TITLE']]: {
     title: 'Generate thesis title',
@@ -70,8 +68,7 @@ export const content = {
         icon: 'meditation',
       },
     ],
-    isDisabled: true
-
+    isDisabled: true,
   },
   [commands['GRAMMAR_CORRECTION']]: {
     title: 'Grammar correction',
@@ -94,8 +91,7 @@ export const content = {
         icon: 'keyboard',
       },
     ],
-    isDisabled: false
-
+    isDisabled: false,
   },
   [commands['PARAPHRASE']]: {
     title: 'Praphrase',
@@ -118,8 +114,7 @@ export const content = {
         icon: 'lightbulb',
       },
     ],
-    isDisabled: false
-
+    isDisabled: false,
   },
   [commands['SUMMARIZE_FOR_A_STUDENT_GRADE']]: {
     title: 'Summarize for a student grade',
@@ -142,8 +137,7 @@ export const content = {
         icon: 'newspaper',
       },
     ],
-    isDisabled: false
-
+    isDisabled: false,
   },
   [commands['ENGLISH_TO_OTHER_LANGUAGE']]: {
     title: 'English to other langauge',
@@ -166,7 +160,7 @@ export const content = {
         icon: 'comments',
       },
     ],
-    isDisabled: false
+    isDisabled: false,
   },
   [commands['EXPLAIN_PROGRAMMING_CODE']]: {
     title: 'Explain programming code',
@@ -189,8 +183,7 @@ export const content = {
         icon: 'question-circle',
       },
     ],
-    isDisabled: true
-
+    isDisabled: true,
   },
   [commands['EVALUATE_A_MATHEMATICAL_EXPRESSION']]: {
     title: 'Evaluate a mathematical expression',
@@ -213,8 +206,7 @@ export const content = {
         icon: 'brain',
       },
     ],
-    isDisabled: true
-
+    isDisabled: true,
   },
   [commands['CREATE_STUDY_NOTES']]: {
     title: 'Create study notes',
@@ -237,6 +229,6 @@ export const content = {
         icon: 'graduation-cap',
       },
     ],
-    isDisabled: true
+    isDisabled: true,
   },
 };
