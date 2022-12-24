@@ -1,4 +1,4 @@
-import { commands } from '../constants/commands';
+import { commands } from 'lib/constants/constant.command';
 
 export const content = {
   [commands['BASIC_QUESTION']]: {
