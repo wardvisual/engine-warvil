@@ -40,11 +40,8 @@ const Home: NextPage = () => {
 
   /* Functions */
   const getUserInput = (event: string | Event) => {
-    if (typeof event === 'string') {
-      setUserInputRequest(event);
-    } else {
-      setUserInputRequest(event.target.value);
-    }
+    if (typeof event === 'string') setUserInputRequest(event);
+    else setUserInputRequest(event.target.value);
   };
 
   const handleCommandChange = (index: number, isDisabled: boolean) => {
@@ -62,6 +59,8 @@ const Home: NextPage = () => {
 
   const submitRequest = async (event: any) => {
     event.preventDefault();
+
+    getUserInput(event);
 
     setIsLoading(true);
     setInitialCodeInstruction(false);
@@ -126,18 +125,6 @@ const Home: NextPage = () => {
       inputBoxRef.current.focus();
     }
   }, [appRequests]);
-
-  useEffect(() => {
-    if (inputBoxRef.current) {
-      inputBoxRef.current.addEventListener('keydown', onInputNewLine);
-    }
-
-    return () => {
-      if (inputBoxRef.current) {
-        inputBoxRef.current.removeEventListener('keydown', onInputNewLine);
-      }
-    };
-  }, []);
 
   return (
     <>
