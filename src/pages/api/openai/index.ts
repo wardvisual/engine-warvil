@@ -1,6 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next';
-import OpenAIClient from './openai.service';
+import OpenAIClient from 'lib/api/openai/openai.service';
 
 const openAIClient = new OpenAIClient();
 
