@@ -1,6 +1,9 @@
-export function onInputNewLine(event: any) {
-  if (event.shiftKey && event.key === 'Enter') {
+export const onInputNewLine = async (event: any, callback: any) => {
+  const keyCode = event.which || event.keyCode;
+
+  if (keyCode === 13 && !event.shiftKey) {
     event.preventDefault();
-    event.target.value += '\n';
+
+    await callback(event);
   }
-}
+};
