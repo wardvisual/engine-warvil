@@ -180,8 +180,8 @@ const GlobalStyle = createGlobalStyle`
         outline: none;
         padding: 1em;
         font-size: 1em;
-        width: auto;
-        max-height: .2em;
+        width: 100%;
+        max-height: 1.4em;
         max-width: 70em;
         resize: none;
     } 
