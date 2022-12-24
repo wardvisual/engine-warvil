@@ -4,7 +4,7 @@ import { NextPage } from 'next';
 import { useEffect, useRef, useState } from 'react';
 import { createBreakpoint } from 'react-use';
 
-import { Layout } from 'styles/global.style';
+import { HomeOverlay, Layout } from 'styles/global.style';
 
 import Wrapper from 'styles/home.style';
 import CommandBox from 'src/components/command-box';
@@ -135,6 +135,7 @@ const Home: NextPage = () => {
     <>
       <Preloader loading={loading} />
       <Layout className={loading ? '' : 'display'}>
+        <HomeOverlay />
         <Wrapper.Home>
           <Navbar />
           <Wrapper.Container>
