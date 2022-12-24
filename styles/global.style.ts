@@ -15,6 +15,16 @@ export const Layout = styled.div`
   }
 `;
 
+export const HomeOverlay = styled.div`
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background: url("./assets/bg.svg") no-repeat;
+  background-size: cover;
+  z-index: -1;
+  opacity: 20%;
+`
+
 const GlobalStyle = createGlobalStyle`
     :root {
         // Black
