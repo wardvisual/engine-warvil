@@ -11,7 +11,7 @@ import CommandBox from 'src/components/command-box';
 import Playground from 'src/components/playground';
 import { Event } from 'lib/types/tags';
 import { MessageBoxable } from 'lib/types/message';
-import { commands } from '../../lib/constants/commands';
+import { commands } from 'lib/constants/constant.command';
 import { postInstructionRequest } from 'lib/helpers/api';
 import Navbar from 'src/components/navbar';
 import Preloader from 'src/components/preloader';
