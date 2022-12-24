@@ -4,9 +4,8 @@ import { NextPage } from 'next';
 import Wrapper from './style';
 import { Playgroundable } from 'lib/types/props';
 import MessageBox from '../message-box';
-import { useState } from 'react';
 import Typing from '../typing';
-import { content } from 'lib/dummies/content';
+import { content } from 'lib/data/data.content';
 
 const Playground: NextPage<Playgroundable> = (
   prop: Playgroundable
