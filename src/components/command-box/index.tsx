@@ -6,8 +6,8 @@ import React from 'react';
 import Wrapper from './style';
 import { useState, useEffect } from 'react';
 import Modal from '../modal/index';
-import { commands } from '../../../lib/constants/commands';
-import { content } from 'lib/dummies/content';
+import { commands } from 'lib/constants/constant.command';
+import { content } from 'lib/data/data.content';
 
 const CommandBox: NextPage<CommandBoxable> = (prop: CommandBoxable) => {
   const [showUnavailableModal, setUnavailableModal] = useState<{
