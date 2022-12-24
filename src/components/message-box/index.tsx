@@ -30,9 +30,6 @@ const MessageBox: NextPage<MessageBoxable> = ({
     html = html.join('');
   }
 
-  useEffect(() => {
-    console.log({ message });
-  }, [message]);
   return (
     <Wrapper.MessageBox>
       <div className={isFromUser ? 'user' : 'engine'}>

@@ -175,7 +175,6 @@ const CommandBox: NextPage<CommandBoxable> = (prop: CommandBoxable) => {
       setMobileDeviceBreakpoint(false);
     }
 
-    console.log({ mobileDeviceBreakpoint, br: prop.breakpoint });
   }, [prop.breakpoint]);
 
   return (

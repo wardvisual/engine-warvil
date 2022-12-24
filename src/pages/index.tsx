@@ -57,11 +57,7 @@ const Home: NextPage = () => {
     setUserInputRequest('');
     setAppRequests([]);
     setInitialCodeInstruction(true);
-  };
-
-  useEffect(() => {
-    console.log({ appRequests });
-  }, [appRequests]);
+  }; 
 
   const submitRequest = async (event: any) => {
     event.preventDefault();
@@ -99,7 +95,6 @@ const Home: NextPage = () => {
         ]);
       }
     } catch (error: any) {
-      console.log({ error: error.message });
       setAppRequests([
         ...appRequests,
         {

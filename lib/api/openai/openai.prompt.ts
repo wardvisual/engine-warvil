@@ -117,7 +117,6 @@ export class Prompt implements Promptable {
           `Warvil: `;
         break;
     }
-    console.log({ command, request, response });
     return response;
   }
 }
