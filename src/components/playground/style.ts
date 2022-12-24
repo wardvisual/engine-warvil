@@ -148,6 +148,12 @@ const Wrapper = {
       align-items: center;
       gap: .8em;
       
+      >div:first-child {
+        width: 100%;
+        padding: .3em;
+        background: var(--color-black-400);
+      }
+
       > div {
         padding: 0 2em 0 0;
         display: flex;
