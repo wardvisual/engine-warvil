@@ -36,7 +36,7 @@ const CommandBox: NextPage<CommandBoxable> = (prop: CommandBoxable) => {
   const list = [
     {
       icon: 'fa-question-circle',
-      name: 'Basic question',
+      name: 'Answer Basic Questions',
       onClick: (index: number) => {
         const isDisabled: boolean =
           content[Object.keys(commands)[index]].isDisabled;
@@ -64,7 +64,7 @@ const CommandBox: NextPage<CommandBoxable> = (prop: CommandBoxable) => {
     },
     {
       icon: 'fa-book',
-      name: 'Generate thesis title',
+      name: 'Generate Thesis Titles',
       onClick: (index: number) => {
         const isDisabled: boolean =
           content[Object.keys(commands)[index]].isDisabled;
@@ -78,7 +78,7 @@ const CommandBox: NextPage<CommandBoxable> = (prop: CommandBoxable) => {
     },
     {
       icon: 'fa-check',
-      name: 'Grammar correction',
+      name: 'Correct Grammar',
       onClick: (index: number) => {
         const isDisabled: boolean =
           content[Object.keys(commands)[index]].isDisabled;
@@ -92,7 +92,7 @@ const CommandBox: NextPage<CommandBoxable> = (prop: CommandBoxable) => {
     },
     {
       icon: 'fa-quote-right',
-      name: 'Paraphrase',
+      name: 'Paraphrase Text',
       onClick: (index: number) => {
         const isDisabled: boolean =
           content[Object.keys(commands)[index]].isDisabled;
@@ -106,7 +106,7 @@ const CommandBox: NextPage<CommandBoxable> = (prop: CommandBoxable) => {
     },
     {
       icon: 'fa-book-reader',
-      name: 'Summarize for a grade student',
+      name: 'Summarize',
       onClick: (index: number) => {
         const isDisabled: boolean =
           content[Object.keys(commands)[index]].isDisabled;
@@ -120,7 +120,7 @@ const CommandBox: NextPage<CommandBoxable> = (prop: CommandBoxable) => {
     },
     {
       icon: 'fa-globe',
-      name: 'English to other language',
+      name: 'Translate to Other Languages',
       onClick: (index: number) => {
         const isDisabled: boolean =
           content[Object.keys(commands)[index]].isDisabled;
@@ -134,7 +134,7 @@ const CommandBox: NextPage<CommandBoxable> = (prop: CommandBoxable) => {
     },
     {
       icon: 'fa-file-code',
-      name: 'Explain programming code',
+      name: 'Explain Programming Code',
       onClick: (index: number) => {
         const isDisabled: boolean =
           content[Object.keys(commands)[index]].isDisabled;
@@ -148,7 +148,7 @@ const CommandBox: NextPage<CommandBoxable> = (prop: CommandBoxable) => {
     },
     {
       icon: 'fa-calculator',
-      name: 'Evaluate a mathematical expression',
+      name: 'Evaluate Mathematical Expressions',
       onClick: (index: number) => {
         const isDisabled: boolean =
           content[Object.keys(commands)[index]].isDisabled;
@@ -162,7 +162,7 @@ const CommandBox: NextPage<CommandBoxable> = (prop: CommandBoxable) => {
     },
     {
       icon: 'fa-book-open',
-      name: 'Create study notes',
+      name: 'Create Study Notes',
       onClick: (index: number) => {
         const isDisabled: boolean =
           content[Object.keys(commands)[index]].isDisabled;
