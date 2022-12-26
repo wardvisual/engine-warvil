@@ -40,7 +40,7 @@ export class Prompt implements Promptable {
         response +=
           `${this.trainer.generateQA()}` +
           `${this.formatString(request)}` +
-          `You: Answer this question:` +
+          `You: Answer it:` +
           `${this.formatRequest(request)}?` +
           `Warvil: `;
         break;
@@ -48,7 +48,7 @@ export class Prompt implements Promptable {
         response +=
           `${this.trainer.generateCode()}` +
           `${this.formatString(request)}` +
-          `You: Translate Text into Code Based on the Provided Instructions:` +
+          `You: Provide me a code based on this:` +
           `${this.formatRequest(request)}` +
           `Warvil: `;
         break;
@@ -64,7 +64,7 @@ export class Prompt implements Promptable {
         response +=
           `${this.trainer.correctGrammar()}` +
           `${this.formatString(request)}` +
-          `You: Corrects sentences into standard English:` +
+          `You: Make the wrong grammar correct:` +
           `${this.formatRequest(request)}` +
           `Warvil: `;
         break;
@@ -72,7 +72,7 @@ export class Prompt implements Promptable {
         response +=
           `${this.trainer.paraphrase()}` +
           `${this.formatString(request)}` +
-          `You: Paraphrase this sentence:` +
+          `You: Paraphrase:` +
           `"${this.formatRequest(request)}"` +
           `Warvil: `;
         break;
@@ -88,7 +88,7 @@ export class Prompt implements Promptable {
         response +=
           `${this.trainer.englishToOther()}` +
           `${this.formatString(request)}` +
-          `You: Translates these/this:` +
+          `You: Translate these/this:` +
           `${this.formatRequest(request)}` +
           `Warvil: `;
         break;
@@ -112,11 +112,13 @@ export class Prompt implements Promptable {
         response +=
           `${this.trainer.createStudyNotes()}` +
           `${this.formatString(request)}` +
-          `You: Create study notes based on this concept: ` +
+          `You: Create me a study notes: ` +
           `${this.formatRequest(request)}` +
           `Warvil: `;
         break;
     }
+
+    console.log({ response });
     return response;
   }
 }
