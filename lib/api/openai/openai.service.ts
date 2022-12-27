@@ -105,11 +105,11 @@ class OpenAIClient {
         this.promptConfig = {
           model: 'code-davinci-002',
           prompt: this.prompt.trainPrompt(command, userRequest),
-          temperature: 0,
-          max_tokens: 64,
-          top_p: 1.0,
-          frequency_penalty: 0.0,
-          presence_penalty: 0.0,
+          temperature: 0.7,
+          max_tokens: 128,
+          top_p: 0.9,
+          frequency_penalty: 1.0,
+          presence_penalty: 1.0,
           stop: ['"""'] /* @prettier-ignore  */,
         };
         break;
@@ -117,11 +117,11 @@ class OpenAIClient {
         this.promptConfig = {
           model: this.defaultModel,
           prompt: this.prompt.trainPrompt(command, userRequest),
-          temperature: 3,
-          max_tokens: 64,
-          top_p: 2.0,
-          frequency_penalty: 5.0,
-          presence_penalty: 5.0,
+          temperature: 0.5,
+          max_tokens: 128,
+          top_p: 1.0,
+          frequency_penalty: 1.0,
+          presence_penalty: 1.0,
         };
         break;
       case commands.CREATE_STUDY_NOTES:
