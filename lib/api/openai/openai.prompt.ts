@@ -80,8 +80,8 @@ export class Prompt implements Promptable {
         response +=
           `${this.trainer.summarize()}` +
           `${this.formatString(request)}` +
-          `You: Translates difficult text into simpler concepts:` +
-          `${this.formatRequest(request)}` +
+          `You: Please summarize: ` +
+          `"${this.formatRequest(request)}"` +
           `Warvil: `;
         break;
       case commands.ENGLISH_TO_OTHER_LANGUAGE:
