@@ -7,11 +7,11 @@ export const content = {
     subtitle: 'Get basic answers to your questions quickly and easily!',
     templateInstructions: [
       {
-        name: 'How do I change the battery in my smoke detector?',
-        icon: 'battery-three-quarters',
+        name: 'How far away is the sun?',
+        icon: 'sun',
       },
       {
-        name: 'What is the capital of France?',
+        name: 'How much does the earth weigh?',
         icon: 'globe',
       },
       {
@@ -19,8 +19,8 @@ export const content = {
         icon: 'dollar-sign',
       },
       {
-        name: 'How do I fix a leaky faucet?',
-        icon: 'toolbox',
+        name: 'How do airplanes fly?',
+        icon: 'plane',
       },
     ],
     isDisabled: false,
@@ -71,7 +71,7 @@ export const content = {
         icon: 'meditation',
       },
     ],
-    isDisabled: true,
+    isDisabled: false,
   },
   [commands['GRAMMAR_CORRECTION']]: {
     title: 'Correct Grammar',
@@ -158,11 +158,11 @@ export const content = {
         icon: 'comments',
       },
       {
-        name: 'Goodbye',
+        name: 'Are you alright?',
         icon: 'comments',
       },
       {
-        name: 'Yes',
+        name: 'How are you?',
         icon: 'comments',
       },
     ],
@@ -186,7 +186,13 @@ export const content = {
         icon: 'terminal',
       },
       {
-        name: "I'm working on a project that involves using APIs, but I'm struggling to understand the documentation.",
+        name: `for (let file of files) {
+          const fileName = file.trim();
+          if(fileName) {
+            const filePath = \n'~/cool_app/project';
+            filePaths.push(filePath);
+          }
+        }`,
         icon: 'question-circle',
       },
     ],
@@ -214,7 +220,7 @@ export const content = {
         icon: 'brain',
       },
     ],
-    isDisabled: true,
+    isDisabled: false,
   },
   [commands['CREATE_STUDY_NOTES']]: {
     title: 'Create Study Notes',
