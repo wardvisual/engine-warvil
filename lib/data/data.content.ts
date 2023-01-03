@@ -1,6 +1,30 @@
 import { commands } from 'lib/constants/constant.command';
 
 export const content = {
+  [commands['GENERATE_THESIS_TITLE']]: {
+    title: 'Generate Thesis Titles',
+    icon: 'fa-book',
+    subtitle: 'Generate Compelling Thesis Titles with Ease!',
+    templateInstructions: [
+      {
+        name: "I'm currios to learn more about utilizing Java to create applications that can be useful to students",
+        icon: 'laptop',
+      },
+      {
+        name: "I'm interested in studying the effects of climate change on biodiversity in tropical rainforests.",
+        icon: 'leaf',
+      },
+      {
+        name: "I'm planning to write my thesis on the relationship between parenting styles and adolescent development.",
+        icon: 'child',
+      },
+      {
+        name: "I'm considering exploring the effectiveness of mindfulness-based stress reduction techniques in my thesis. ",
+        icon: 'chair',
+      },
+    ],
+    isDisabled: false,
+  },
   [commands['BASIC_QUESTION']]: {
     title: 'Answer Basic Questions',
     icon: 'fa-question-circle',
@@ -45,30 +69,6 @@ export const content = {
       {
         name: 'Translating Ruby code into Python',
         icon: 'language',
-      },
-    ],
-    isDisabled: false,
-  },
-  [commands['GENERATE_THESIS_TITLE']]: {
-    title: 'Generate Thesis Titles',
-    icon: 'fa-book',
-    subtitle: 'Generate Compelling Thesis Titles with Ease!',
-    templateInstructions: [
-      {
-        name: 'I want to investigate the ways in which social support can influence mental health outcomes.',
-        icon: 'users',
-      },
-      {
-        name: "I'm interested in studying the effects of climate change on biodiversity in tropical rainforests.",
-        icon: 'leaf',
-      },
-      {
-        name: "I'm planning to write my thesis on the relationship between parenting styles and adolescent development.",
-        icon: 'child',
-      },
-      {
-        name: "I'm considering exploring the effectiveness of mindfulness-based stress reduction techniques in my thesis. ",
-        icon: 'meditation',
       },
     ],
     isDisabled: false,
