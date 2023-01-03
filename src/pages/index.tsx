@@ -33,7 +33,9 @@ const Home: NextPage = () => {
   /* States*/
   const [userInputRequest, setUserInputRequest] = useState<string>('');
   const [appRequests, setAppRequests] = useState<MessageBoxable[]>([]);
-  const [command, setCommand] = useState<string>(commands.GENERATE_CODE);
+  const [command, setCommand] = useState<string>(
+    commands.GENERATE_THESIS_TITLE
+  );
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [initialCodeInstruction, setInitialCodeInstruction] =
     useState<boolean>(true);
