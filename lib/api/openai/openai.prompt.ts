@@ -118,7 +118,6 @@ export class Prompt implements Promptable {
         break;
     }
 
-    console.log({ response });
     return response;
   }
 }
