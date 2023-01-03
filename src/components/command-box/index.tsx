@@ -35,6 +35,20 @@ const CommandBox: NextPage<CommandBoxable> = (prop: CommandBoxable) => {
 
   const list = [
     {
+      icon: 'fa-book',
+      name: 'Generate Thesis Titles',
+      onClick: (index: number) => {
+        const isDisabled: boolean =
+          content[Object.keys(commands)[index]].isDisabled;
+
+        if (isDisabled) {
+          showModal(index);
+        }
+
+        prop.handleCommandChange(index, isDisabled);
+      },
+    },
+    {
       icon: 'fa-question-circle',
       name: 'Answer Basic Questions',
       onClick: (index: number) => {
@@ -62,20 +76,7 @@ const CommandBox: NextPage<CommandBoxable> = (prop: CommandBoxable) => {
         prop.handleCommandChange(index, isDisabled);
       },
     },
-    {
-      icon: 'fa-book',
-      name: 'Generate Thesis Titles',
-      onClick: (index: number) => {
-        const isDisabled: boolean =
-          content[Object.keys(commands)[index]].isDisabled;
 
-        if (isDisabled) {
-          showModal(index);
-        }
-
-        prop.handleCommandChange(index, isDisabled);
-      },
-    },
     {
       icon: 'fa-check',
       name: 'Correct Grammar',
