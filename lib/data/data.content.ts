@@ -19,8 +19,8 @@ export const content = {
         icon: 'child',
       },
       {
-        name: "I'm considering exploring the effectiveness of mindfulness-based stress reduction techniques in my thesis. ",
-        icon: 'chair',
+        name: 'Thesis topics in digital image processing.',
+        icon: 'image',
       },
     ],
     isDisabled: false,
