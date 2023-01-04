@@ -32,7 +32,6 @@ class OpenAIClient {
           top_p: 1,
           frequency_penalty: 0.0,
           presence_penalty: 0.0,
-          stop: ['\n'],
         };
         break;
       case commands.GENERATE_CODE:
@@ -139,6 +138,8 @@ class OpenAIClient {
   }
 
   public async createCompletion(command: string, userRequest: string[]) {
+    console.log({ command, userRequest });
+
     try {
       this.getCompletion(command, userRequest);
 
