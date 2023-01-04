@@ -1,4 +1,9 @@
 export class Trainer {
+  public train(): string {
+    return `You: I want you to act as prompt generator. Firstly, I will give you a little like this: "Act as an English Pronunciation Helper." Then you give me a prompt like this: "I want you to act as an English pronunciation assistant for Turkish speaking people. I will write your sentences, and you will only answer their pronunciations, and nothing else. The replies must not be translations of my sentences but only pronunciations. Pronunciations should use Turkish Latin letters for phonetics. Do not write an explanation on replies. My first sentence is "How is the weather in Istanbul?"."(You should adapt the sample prompt according to the title I gave. The prompt should be self-explanatory and appropriate to the title, don't refer to the example I gave you.). My first title is "act as Code Review Helper" (Give me prompt only)
+    Warvil:`;
+  }
+
   public generateQA(): string {
     return `You: I want you to act as a question and answer assistant for any academic subjects. You will provide detailed and accurate answers to any questions asked by the students. Your answers should contain sufficient information and should be organized logically. You should provide references to back up your answers whenever applicable. You must not copy any content verbatim and should focus on helping the students understand the subject matter. Your answers should be concise and clear. My first question is What are the benefits of using algorithms?
     Warvil: <p>There are several benefits of using algorithms in programming, including:</p>
@@ -87,17 +92,6 @@ export class Trainer {
     `;
   }
 
-  // public generateThesisTitle(): string {
-  //   return `You: Give me a 5 unique thesis title based on concept: \n\n I want to investigate the ways in which social support can influence mental health outcomes.
-  //     Warvil: <p>1. The Role of Social Support in Promoting Positive Mental Health Outcomes: An Exploration of Protective Factors</p>
-  //             <p>2. Investigating the Interplay between Social Support and Mental Health: A Qualitative Analysis</p>
-  //             <p>3. Social Support and Mental Health: A Quantitative Study of the Association between Network Characteristics and Outcomes</p>
-  //             <p>4. The Impact of Social Support on Mental Health Outcomes among Marginalized Populations: A Mixed Methods Approach</p>
-  //             <p>5. Mapping the Terrain of Social Support and Mental Health: A Systematic Review and Meta-Analysis</p>
-
-  //   `;
-  // }
-
   public generateThesisTitle(): string {
     return `You:I want you to act as a thesis unique title generator for a research paper on the topic of "Oops, put my topic here. The last sentence of this paragraph would be my thesis topic you should generate". Please generate a list of potential titles for the thesis that are original, creative, and eye-catching. The titles should accurately reflect the content and focus of the research, and should be no more than a few words long. Consider using unique phrases and language to make the titles stand out. When generating the titles, please keep in mind the audience for the research and the overall goals and objectives of the paper.
     I'm interested in studying the effects of climate change on biodiversity in tropical rainforests.
@@ -112,11 +106,6 @@ export class Trainer {
             <p>9. Determining the Impact of Climate Change on Biodiversity in Tropical Rainforests </p>
             <p>10. Measuring the Effects of Climate Change on Biodiversity in Tropical Rainforests</p>
     `;
-  }
-
-  public train(): string {
-    return `You: I want you to act as prompt generator. Firstly, I will give you a little like this: "Act as an English Pronunciation Helper." Then you give me a prompt like this: "I want you to act as an English pronunciation assistant for Turkish speaking people. I will write your sentences, and you will only answer their pronunciations, and nothing else. The replies must not be translations of my sentences but only pronunciations. Pronunciations should use Turkish Latin letters for phonetics. Do not write an explanation on replies. My first sentence is "How is the weather in Istanbul?"."(You should adapt the sample prompt according to the title I gave. The prompt should be self-explanatory and appropriate to the title, don't refer to the example I gave you.). My first title is "act as Code Review Helper" (Give me prompt only)
-    Warvil:`;
   }
 
   public correctGrammar(): string {
