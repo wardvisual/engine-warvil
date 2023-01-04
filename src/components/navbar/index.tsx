@@ -14,7 +14,7 @@ const Navbar = () => {
           height={100}
         />
         <p>
-          👨‍💻 Developed by &nbsp;
+          👨‍💻 Brought to you by&nbsp;
           <a
             href="https://wardvisual.me/"
             title="wardvisual"
@@ -25,14 +25,14 @@ const Navbar = () => {
           </a>
         </p>
         <p>
-          ⭐ Give it a&nbsp;
+          ⭐ Might useful?&nbsp;
           <a
             href="https://github.com/wardvisual/engine-warvil//"
             title="Engine Warvil"
             target="_blank"
             rel="noreferrer"
           >
-            star
+            Give it a star
           </a>
         </p>
       </div>
