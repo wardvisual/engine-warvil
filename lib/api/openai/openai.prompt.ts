@@ -40,7 +40,7 @@ export class Prompt implements Promptable {
         response +=
           `${this.trainer.generateQA()}` +
           `${this.formatString(request)}` +
-          `You: Answer it:` +
+          `You:` +
           `${this.formatRequest(request)}?` +
           `Warvil: `;
         break;
@@ -48,13 +48,13 @@ export class Prompt implements Promptable {
         response +=
           `${this.trainer.generateCode()}` +
           `${this.formatString(request)}` +
-          `You: Provide me a code based on this:` +
+          `You:` +
           `${this.formatRequest(request)}` +
           `Warvil: `;
         break;
       case commands.GENERATE_THESIS_TITLE:
         response +=
-          `${this.trainer.generateThesisTitle()}` +
+          `${this.trainer.generateThesisTitle()}` +/
           `${this.formatString(request)}` +
           `You:` +
           `${this.formatRequest(request)}` +
@@ -64,7 +64,7 @@ export class Prompt implements Promptable {
         response +=
           `${this.trainer.correctGrammar()}` +
           `${this.formatString(request)}` +
-          `You: Make the wrong grammar correct:` +
+          `You:` +
           `${this.formatRequest(request)}` +
           `Warvil: `;
         break;
@@ -72,7 +72,7 @@ export class Prompt implements Promptable {
         response +=
           `${this.trainer.paraphrase()}` +
           `${this.formatString(request)}` +
-          `You: Paraphrase:` +
+          `You:` +
           `"${this.formatRequest(request)}"` +
           `Warvil: `;
         break;
@@ -80,7 +80,7 @@ export class Prompt implements Promptable {
         response +=
           `${this.trainer.summarize()}` +
           `${this.formatString(request)}` +
-          `You: Please summarize: ` +
+          `You: : ` +
           `"${this.formatRequest(request)}"` +
           `Warvil: `;
         break;
@@ -88,7 +88,7 @@ export class Prompt implements Promptable {
         response +=
           `${this.trainer.englishToOther()}` +
           `${this.formatString(request)}` +
-          `You: Translate these/this:` +
+          `You: ` +
           `${this.formatRequest(request)}` +
           `Warvil: `;
         break;
@@ -96,7 +96,7 @@ export class Prompt implements Promptable {
         response +=
           `${this.trainer.explainProgrammingCode()}` +
           `"${this.formatString(request)}"` +
-          `You: Explain a complicated piece of code:` +
+          `You: ` +
           `"${this.formatRequest(request)}"` +
           `Warvil: `;
         break;
@@ -104,7 +104,7 @@ export class Prompt implements Promptable {
         response +=
           `${this.trainer.evaluateMathematicalExpression()}` +
           `${this.formatString(request)}` +
-          `You: Evaluate this math expression:` +
+          `You: ` +
           `${this.formatRequest(request)}` +
           `Warvil: `;
         break;
@@ -112,7 +112,7 @@ export class Prompt implements Promptable {
         response +=
           `${this.trainer.createStudyNotes()}` +
           `${this.formatString(request)}` +
-          `You: Create me a study notes: ` +
+          `You: ` +
           `${this.formatRequest(request)}` +
           `Warvil: `;
         break;

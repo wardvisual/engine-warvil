@@ -1,36 +1,21 @@
 export class Trainer {
   public generateQA(): string {
-    return `You: Answer questions based on existing knowledge
-      Warvil: <p>I am a highly intelligent question answering bot. If you ask me a question that is rooted in truth, I will give you the answer. If you ask me a question that is nonsense, trickery, or has no clear answer, I will respond with "Unknown".</p>
+    return `You: I want you to act as a question and answer assistant for any academic subjects. You will provide detailed and accurate answers to any questions asked by the students. Your answers should contain sufficient information and should be organized logically. You should provide references to back up your answers whenever applicable. You must not copy any content verbatim and should focus on helping the students understand the subject matter. Your answers should be concise and clear. My first question is What are the benefits of using algorithms?
+    Warvil: <p>There are several benefits of using algorithms in programming, including:</p>
 
-      You: What is human life expectancy in the United States?
-      Warvil: <p>Human life expectancy in the United States is 78 years.</p>
-      
-      You: Who was president of the United States in 1955?
-      Warvil: <p>Dwight D. Eisenhower was president of the United States in 1955.</p>
-      
-      You: Which party did he belong to?
-      Warvil: <p>He belonged to the Republican Party.</p>
-      
-      You: What is the square root of banana?
-      Warvil: <p>Unknown</p>
-      
-      You: How does a telescope work?
-      Warvil: <p>Telescopes use lenses or mirrors to focus light and make objects appear closer.</p>
-      
-      You: Where were the 1992 Olympics held?
-      Warvil: <p>The 1992 Olympics were held in Barcelona, Spain.</p>
-      
-      You: How many squigs are in a bonk?
-      Warvil: <p>Unknown</p>
-
-      You: How much does the earth weigh?
-      Warvil: <p>The Earth weighs approximately 5.972 × 10^24 kg.</p>
+    <ul>
+      <li><p>1. Efficiency: Algorithms can often solve problems much more quickly and efficiently than humans can, particularly when the problems are large or complex. This can be especially useful in programming, where the speed and accuracy of algorithms can have significant practical implications.      </p></li>
+      <li><p>2. Accuracy: Algorithms are often more accurate and consistent than humans, as they do not suffer from the same kinds of biases or errors that humans do. This can be especially important in programming, where even small errors can have serious consequences.      </p></li>
+      <li><p>3. Reusability: Algorithms can be written once and then reused in multiple programs, saving time and effort for programmers. This can be especially useful in cases where the same problem or task needs to be solved repeatedly.      </p></li>
+      <li><p>4. Debugging: Algorithms can often be easier to debug than human-written code, as they are more structured and follow a set of predetermined rules. This can save time and effort for programmers, and can help to improve the overall quality and reliability of programs.      </p></li>
+      <li><p>5. Automation: Algorithms can be used to automate many tasks in programming, freeing up programmers to focus on other, more complex or creative tasks. This can help to improve productivity and efficiency, and can allow programmers to use their skills more effectively.      </p></li>
+    </ul>
     `;
   }
 
   public generateCode(): string {
-    return `You: Code a program based on this: Create a 3D array in Java and find the duplicate elements.
+    return `You: I want you to act as a code generator. You will be given an input, including certain programming language, data structure, or other instructions, and you will generate a piece of code based on these inputs. Your generated code should be up to standard for the language being used and should be free of errors or typos. Your code should meet the requirements specified in the input, and should be optimized for readability or efficiency. You should also include comments or explanations in the generated code to make it easier for readers to understand.
+      Create a 3D array in Java and find the duplicate elements.
       Warvil: <p>To create a 3D array in Java, you can use the following syntax:</p> <pre> <code> int[][][] array = new int[x][y][z];</code></pre>
         <p>\nThis will create a 3D array with dimensions x, y, and z, where x is the number of layers, y is the number of rows in each layer, and z is the number of columns in each row.</p><p>To find the duplicate elements in a 3D array, you can use a nested loop structure to iterate over the elements of the array and store the values in a separate data structure, such as a HashSet. The HashSet class does not allow duplicate elements, so if you try to add a value that is already present in the set, it will return false. You can use this property to identify duplicate elements in the array.</p><p>Here is an example of how you might implement this in Java:</p>
         <pre>
@@ -129,23 +114,42 @@ export class Trainer {
     `;
   }
 
+  public train(): string {
+    return `You: I want you to act as prompt generator. Firstly, I will give you a little like this: "Act as an English Pronunciation Helper." Then you give me a prompt like this: "I want you to act as an English pronunciation assistant for Turkish speaking people. I will write your sentences, and you will only answer their pronunciations, and nothing else. The replies must not be translations of my sentences but only pronunciations. Pronunciations should use Turkish Latin letters for phonetics. Do not write an explanation on replies. My first sentence is "How is the weather in Istanbul?"."(You should adapt the sample prompt according to the title I gave. The prompt should be self-explanatory and appropriate to the title, don't refer to the example I gave you.). My first title is "act as Code Review Helper" (Give me prompt only)
+    Warvil:`;
+  }
+
   public correctGrammar(): string {
-    return `You: Correct this to standard English "She no went to the market". 
-    Warvil: <p>She did not go to the market.</p> `;
+    return `You: I want you to act as a grammar corrector. You will receive a piece of text and you must detect any errors in the text and provide corrections. You should use the rules of Standard English and explain the corrections made. Do not write an explanation on replies. My first sentence is "I have been living here for five yeads.”. 
+    Warvil: <p>✔ "I have been living here for five years."</p> 
+
+    <p>I made the following correction:</p>
+
+    <p>▶ Changed "yeads" to "years" to correct the spelling</p>
+    `;
   }
 
   public paraphrase(): string {
-    return `You: Paraphrase this:\n\nExploring the Role of Markets in Social Change
-      Warvil: <p>Exploring the Role of Markets in Social Change</p>
+    return `You: I want you to act as a text paraphraser for students. I will write sentences or short paragraphs, and you will rewrite them in a way that maintains the original meaning but uses different words and phrasing. Do not provide explanations for your responses. My first sentence is: "The sun was shining brightly in the sky."
+      Warvil: <p>✔ "The sun was shining brightly in the sky."</p> 
+        <p>Here are a few revised versions of this sentence: </p>
+        <ul>
+          <li><p>1. "The sun was beaming brightly in the sky."</p></li>
+          <li><p>2. "The sun was radiant in the sky."</p></li>
+          <li> <p>3. "The sun was shining brightly in the clear blue sky."</p></li>
+        </ul>
     `;
   }
 
   public summarize(): string {
-    return `You: Translates difficult text into simpler concepts: Jupiter is the fifth planet from the Sun and the largest in the Solar System. It is a gas giant with a mass one-thousandth that of the Sun, but two-and-a-half times that of all the other planets in the Solar System combined. Jupiter is one of the brightest objects visible to the naked eye in the night sky, and has been known to ancient civilizations since before recorded history. It is named after the Roman god Jupiter.[19] When viewed from Earth, Jupiter can be bright enough for its reflected light to cast visible shadows,[20] and is on average the third-brightest natural object in the night sky after the Moon and Venus."
+    return `You: I want you to act as a text summarizer for English documents. You will read the original English documents and summarize the main points in concise and clear sentences. The summaries should only include important information, and all unnecessary details should be omitted. The summary should be as brief and precise as possible without omitting any essential information.
+      "Jupiter is the fifth planet from the Sun and the largest in the Solar System. It is a gas giant with a mass one-thousandth that of the Sun, but two-and-a-half times that of all the other planets in the Solar System combined. Jupiter is one of the brightest objects visible to the naked eye in the night sky, and has been known to ancient civilizations since before recorded history. It is named after the Roman god Jupiter.[19] When viewed from Earth, Jupiter can be bright enough for its reflected light to cast visible shadows,[20] and is on average the third-brightest natural object in the night sky after the Moon and Venus."
       Warvil: <p>Jupiter is the fifth planet from the Sun and is very big and bright. It can be seen with our eyes in the night sky and it has been known since ancient times. Its name comes from the Roman god Jupiter. It is usually the third brightest object in the night sky after the Moon and Venus.</p>
     `;
   }
 
+  // Updated:
+  // I want you to act as a language translator, capable of translating text based on provided input. You will be provided with original documents in English, and you will translate them into another language as instructed. Your translations should be accurate and should preserve the original meaning as much as possible. You should also pay special attention to grammar, syntax, and correct spelling in the resulting translations.
   public englishToOther(): string {
     return `You: Translates English text. Translate this into all different languages: "Hello".
       Warvil: Arabic: مرحبا
@@ -171,7 +175,8 @@ export class Trainer {
 
   public explainProgrammingCode(): string {
     return `
-    You: console.log(true)
+    You: I want you to act as an explainer for programming code based on input. You will be given a programming code, and you will explain the purpose of that code and how it works step-by-step. Your explanations should be clear and concise, suitable for people of all levels of technical understanding. You should also be able to answer any questions related to the code that might arise during your explanation. 
+    "console.log(true)"
     Warvil: <p>The code console.log(true) is a very simple piece of code. It is used to log the boolean value true to the JavaScript console. This is typically used for debugging purposes, as it allows you to quickly and easily see what values are being returned from certain functions or operations.
     Essentially, this code takes the boolean value true and passes it to the console.log() function. This function then prints out the value, allowing you to view it in the console window of your browser or JavaScript runtime environment.</p>
     
@@ -214,7 +219,8 @@ export class Trainer {
   }
 
   public evaluateMathematicalExpression() {
-    return `You: Evaluate this math expression: (4 + 2) * (7 - 3) = 18
+    return `You: I want you to act as an evaluator for mathematical expressions. You will be given a mathematical expression, and you will evaluate it, giving the resulting numerical value. Your calculations should be accurate and precise, and you should be able to explain the steps that you have taken in order to arrive at your answer.
+    Evaluate this math expression: (4 + 2) * (7 - 3) = 18
       Warvil: To evaluate the math expression (4 + 2) * (7 - 3) = 18, we need to follow the order of operations as specified by the parentheses.
 
       First, we start by evaluating the expressions within the parentheses:
@@ -233,17 +239,17 @@ export class Trainer {
   }
 
   public createStudyNotes() {
-    return `You: Create study notes based on this concept: "I have a test coming up and I need to review a lot of material. Can you help me organize my notes in a way that will be most effective for studying?"
-      Warvil: <p>Sure, here are some tips for creating study notes that will be effective for studying:</p>
-      <p>1. Start by gathering all of your materials, including any textbooks, notes, and handouts.</p>
-      <p>2. Read through the material and take notes on the most important information. It can be helpful to use headings and subheadings to organize your notes and highlight the main ideas.</p>
-      <p>3. Use abbreviations and symbols to save space and make your notes easier to read.</p>
-      <p>4. Use different colors and formatting, such as bold or italic, to highlight key concepts and make them easier to find later.</p>
-      <p>5. Create summaries or concept maps to visually organize the information and help you understand the relationships between different concepts.</p>
-      <p>6. Review your notes regularly, starting a few days before the test. This will help you retain the information and identify any areas where you need to spend more time studying.</p>
-      <p>7. Practice recalling the information from memory. This can help you better understand the material and improve your retention.</p>
-      
-      <p>By following these tips, you should be able to create study notes that will be effective for reviewing and retaining the material you need to know for your test.</p>
+    return `You: I want you to act as a study notes maker for a specific subject. You will read the material, summarize it, and present it in a concise and organized way. The notes should contain relevant concepts, definitions, examples, and diagrams as applicable. You must not copy any content verbatim and should take into account the level of understanding of the students. Your notes should be clear and easy to follow. My first subject is Algorithms.
+      Here's my first Subject Math with algorithm
+      Warvil: <p>Here are a few suggestions for how to create effective study notes on this topic:</p>
+
+      <ul>
+        <li><p>1. Understand the material: Before you begin creating your notes, it is important to make sure you understand the material you are studying. This may involve reading the relevant chapters in a textbook, watching online lectures or video tutorials, or working through practice problems.</p></li>
+        <li><p>2. Identify key concepts: As you study, look for the main ideas and concepts that are being covered. These are the topics that you will want to include in your notes.</p></li>
+        <li><p>3. Define key terms: Algorithms often involve specialized vocabulary and terminology. Make sure to include clear definitions of any important terms in your notes.</p></li>
+        <li><p>4. Include examples and diagrams: To help illustrate and clarify the concepts you are studying, include examples and diagrams in your notes. These can be particularly helpful when learning about algorithms, which often involve visual representations of data and processes.        </p></li>
+        <li><p>5. Use a clear and organized format: To make your notes easy to follow and study from, use a clear and organized format. This might involve using headings, bullet points, or tables to organize your information.        </p></li>
+      </ul>
     `;
   }
 }
