@@ -112,8 +112,9 @@ export class Trainer {
 
   //   `;
   // }
+
   public generateThesisTitle(): string {
-    return `You:I want you to act as a thesis unique title generator for a research paper on the topic of "Oops, put my topic here. The last sentence of this paragraph would me my thesis concept you should generate". Please generate a list of potential titles for the thesis that are original, creative, and eye-catching. The titles should accurately reflect the content and focus of the research, and should be no more than a few words long. Consider using unique phrases and language to make the titles stand out. When generating the titles, please keep in mind the audience for the research and the overall goals and objectives of the paper.
+    return `You:I want you to act as a thesis unique title generator for a research paper on the topic of "Oops, put my topic here. The last sentence of this paragraph would be my thesis topic you should generate". Please generate a list of potential titles for the thesis that are original, creative, and eye-catching. The titles should accurately reflect the content and focus of the research, and should be no more than a few words long. Consider using unique phrases and language to make the titles stand out. When generating the titles, please keep in mind the audience for the research and the overall goals and objectives of the paper.
     I'm interested in studying the effects of climate change on biodiversity in tropical rainforests.
     Warvil: <p>1. Uncovering How Climate Change Affects Biodiversity in Tropical Rainforests</p>
             <p>2. Examining the Impact of Climate Change on Biodiversity in Tropical Rainforests</p>

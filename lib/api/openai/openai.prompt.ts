@@ -56,7 +56,7 @@ export class Prompt implements Promptable {
         response +=
           `${this.trainer.generateThesisTitle()}` +
           `${this.formatString(request)}` +
-          `You: Generate at least 5 thesis title based on this concept:` +
+          `You:` +
           `${this.formatRequest(request)}` +
           `Warvil: `;
         break;
