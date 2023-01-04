@@ -27,7 +27,7 @@ const Navbar = () => {
         <p>
           ⭐ Might useful?&nbsp;
           <a
-            href="https://github.com/wardvisual/engine-warvil//"
+            href="https://github.com/wardvisual/engine-warvil/"
             title="Engine Warvil"
             target="_blank"
             rel="noreferrer"
