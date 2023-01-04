@@ -102,14 +102,29 @@ export class Trainer {
     `;
   }
 
-  public generateThesisTitle(): string {
-    return `You: Give me a 5 unique thesis title based on concept: \n\n I want to investigate the ways in which social support can influence mental health outcomes.
-      Warvil: <p>1. The Role of Social Support in Promoting Positive Mental Health Outcomes: An Exploration of Protective Factors</p>
-              <p>2. Investigating the Interplay between Social Support and Mental Health: A Qualitative Analysis</p>
-              <p>3. Social Support and Mental Health: A Quantitative Study of the Association between Network Characteristics and Outcomes</p>
-              <p>4. The Impact of Social Support on Mental Health Outcomes among Marginalized Populations: A Mixed Methods Approach</p>
-              <p>5. Mapping the Terrain of Social Support and Mental Health: A Systematic Review and Meta-Analysis</p>
+  // public generateThesisTitle(): string {
+  //   return `You: Give me a 5 unique thesis title based on concept: \n\n I want to investigate the ways in which social support can influence mental health outcomes.
+  //     Warvil: <p>1. The Role of Social Support in Promoting Positive Mental Health Outcomes: An Exploration of Protective Factors</p>
+  //             <p>2. Investigating the Interplay between Social Support and Mental Health: A Qualitative Analysis</p>
+  //             <p>3. Social Support and Mental Health: A Quantitative Study of the Association between Network Characteristics and Outcomes</p>
+  //             <p>4. The Impact of Social Support on Mental Health Outcomes among Marginalized Populations: A Mixed Methods Approach</p>
+  //             <p>5. Mapping the Terrain of Social Support and Mental Health: A Systematic Review and Meta-Analysis</p>
 
+  //   `;
+  // }
+  public generateThesisTitle(): string {
+    return `You:I want you to act as a thesis unique title generator for a research paper on the topic of "Oops, put my topic here. The last sentence of this paragraph would me my thesis concept you should generate". Please generate a list of potential titles for the thesis that are original, creative, and eye-catching. The titles should accurately reflect the content and focus of the research, and should be no more than a few words long. Consider using unique phrases and language to make the titles stand out. When generating the titles, please keep in mind the audience for the research and the overall goals and objectives of the paper.
+    I'm interested in studying the effects of climate change on biodiversity in tropical rainforests.
+    Warvil: <p>1. Uncovering How Climate Change Affects Biodiversity in Tropical Rainforests</p>
+            <p>2. Examining the Impact of Climate Change on Biodiversity in Tropical Rainforests</p>
+            <p>3. Assessing Climate Change’s Influence on Biodiversity in Tropical Rainforests</p>
+            <p>4. Investigating the Link between Climate Change and Biodiversity in Tropical Rainforests</p>
+            <p>5. Analyzing Climate Change’s Effects on Biodiversity in Tropical Rainforests</p>
+            <p>6. Understanding the Relationship Between Climate Change and Biodiversity in Tropical Rainforests</p>
+            <p>7. Revealing the Impact of Climate Change on Biodiversity in Tropical Rainforests</p>
+            <p>8. Exploring the Consequences of Climate Change on Biodiversity in Tropical Rainforests</p>
+            <p>9. Determining the Impact of Climate Change on Biodiversity in Tropical Rainforests </p>
+            <p>10. Measuring the Effects of Climate Change on Biodiversity in Tropical Rainforests</p>
     `;
   }
 
