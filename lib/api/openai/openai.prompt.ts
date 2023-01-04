@@ -54,7 +54,7 @@ export class Prompt implements Promptable {
         break;
       case commands.GENERATE_THESIS_TITLE:
         response +=
-          `${this.trainer.generateThesisTitle()}` +/
+          `${this.trainer.generateThesisTitle()}` +
           `${this.formatString(request)}` +
           `You:` +
           `${this.formatRequest(request)}` +
