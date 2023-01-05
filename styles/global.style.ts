@@ -83,6 +83,10 @@ const GlobalStyle = createGlobalStyle`
       line-height: 1.8;
     }
 
+    p, span, a {
+        font-size: clamp(.8rem,4vw, 1rem);
+    }
+
     * {
         padding: 0;
         margin: 0;
@@ -181,9 +185,11 @@ const GlobalStyle = createGlobalStyle`
         padding: 1em;
         font-size: 1em;
         width: 100%;
-        max-height: 1.4em;
+        max-height: 4em;
+        height: 100%;
         max-width: 70em;
         resize: none;
+        overflow: hidden;
     } 
 
     h1 {
