@@ -44,6 +44,7 @@ const Wrapper = {
     flex-direction: column;
     justify-content: space-between;
     position: relative;
+
     @media screen and (max-width: 992px) {
       min-height: 45em;
     }
@@ -145,34 +146,48 @@ const Wrapper = {
 
     > div {
       display: flex;
-      align-items: center;
-      gap: .8em;
-      
-      >div:first-child {
+      align-items: flex-end;
+      /* gap: 1em; */
+
+      > div:first-child {
+        background-color: var(--color-black-400);
+        border: 1px var(--color-black-200) solid;
+
+        border-radius: 5px;
+
         width: 100%;
-        padding: .3em;
-        background: var(--color-black-400);
+
+        padding-top: 0.4em;
+
+        textarea {
+          width: 100%;
+          padding: 0.7em 0.7em 0.7em 1em; // trbl
+        }
       }
 
-      > div {
-        padding: 0 2em 0 0;
+      > div:last-child {
+        position: absolute;
+        right: 0;
+        padding: 0 2em 0.7em 0;
         display: flex;
         gap: 1.2em;
-    }
 
-      button {
-        all: unset;
-      }
-
-      i {
-        font-size: 1.8rem;
-        &:hover {
-          cursor: pointer;
-          color: var(--color-blue-400);
-        &:active {
-          transform: scale(0.95);
+        button {
+          all: unset;
         }
-    }    
+
+        i {
+          font-size: 1.8rem;
+          &:hover {
+            cursor: pointer;
+            color: var(--color-blue-400);
+            &:active {
+              transform: scale(0.95);
+            }
+          }
+        }
+      }
+    }
   `,
 
   MessageBoxContainer: styled.div`
