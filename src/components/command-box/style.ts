@@ -86,6 +86,7 @@ const Wrapper = {
       }
 
       > div.mobile {
+        margin: unset;
         display: flex;
         justify-content: space-between;
         align-items: center;
