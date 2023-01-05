@@ -25,7 +25,7 @@ const Navbar = () => {
           </a>
         </p>
         <p>
-          ⭐ Might useful?&nbsp;
+          ⭐ Was it useful?&nbsp;
           <a
             href="https://github.com/wardvisual/engine-warvil/"
             title="Engine Warvil"
