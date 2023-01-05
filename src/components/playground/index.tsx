@@ -8,6 +8,7 @@ import MessageBox from '../message-box';
 import Typing from '../typing';
 import { content } from 'lib/data/data.content';
 import { onInputNewLine } from '../../../lib/helpers/key-event';
+import TextArea from '../textarea';
 
 const Playground: NextPage<Playgroundable> = (
   prop: Playgroundable
@@ -73,7 +74,20 @@ const Playground: NextPage<Playgroundable> = (
 
       <Wrapper.UserArea onSubmit={prop.submitRequest}>
         <div>
-          <textarea
+          <div>
+            <TextArea
+              value={prop.userInput}
+              onChange={prop.getUserInput}
+              placeholder="What's on your mind?"
+              name="userRequest"
+              required={true}
+              autoFocus={true}
+              disabled={prop.loading}
+              ref={prop.inputBoxRef}
+              onSubmit={prop.submitRequest}
+            />
+          </div>
+          {/* <textarea
             placeholder="What's on your mind?"
             name="userRequest"
             onChange={prop.getUserInput}
@@ -83,7 +97,8 @@ const Playground: NextPage<Playgroundable> = (
             disabled={prop.loading}
             ref={prop.inputBoxRef}
             onKeyDown={(event) => onInputNewLine(event, prop.submitRequest)}
-          ></textarea>
+          ></textarea> */}
+
           <div>
             <button type="submit" disabled={prop.loading} title="Send">
               <i className="fas fa-paper-plane"> </i>
