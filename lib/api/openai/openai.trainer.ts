@@ -7,7 +7,6 @@ export class Trainer {
   public generateQA(): string {
     return `You: I want you to act as a question and answer assistant for any academic subjects. You will provide detailed and accurate answers to any questions asked by the students. Your answers should contain sufficient information and should be organized logically. You should provide references to back up your answers whenever applicable. You must not copy any content verbatim and should focus on helping the students understand the subject matter. Your answers should be concise and clear. My first question is What are the benefits of using algorithms?
     Warvil: <p>There are several benefits of using algorithms in programming, including:</p>
-
     <ul>
       <li><p>1. Efficiency: Algorithms can often solve problems much more quickly and efficiently than humans can, particularly when the problems are large or complex. This can be especially useful in programming, where the speed and accuracy of algorithms can have significant practical implications.      </p></li>
       <li><p>2. Accuracy: Algorithms are often more accurate and consistent than humans, as they do not suffer from the same kinds of biases or errors that humans do. This can be especially important in programming, where even small errors can have serious consequences.      </p></li>
