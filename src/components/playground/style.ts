@@ -142,32 +142,28 @@ const Wrapper = {
   UserArea: styled.form`
     border-radius: var(--radius-15);
     background-color: var(--color-black-300);
-    padding: 1em;
+    z-index: 2;
+    padding: 0.5em !important;
 
     > div {
       display: flex;
       align-items: flex-end;
-      /* gap: 1em; */
+      background-color: var(--color-black-400);
+      border: 1px var(--color-black-200) solid;
+      gap: 1em;
+      border-radius: 5px;
 
       > div:first-child {
-        background-color: var(--color-black-400);
-        border: 1px var(--color-black-200) solid;
-
-        border-radius: 5px;
-
         width: 100%;
 
         padding-top: 0.4em;
 
         textarea {
-          width: 100%;
           padding: 0.7em 0.7em 0.7em 1em; // trbl
         }
       }
 
       > div:last-child {
-        position: absolute;
-        right: 0;
         padding: 0 2em 0.7em 0;
         display: flex;
         gap: 1.2em;
