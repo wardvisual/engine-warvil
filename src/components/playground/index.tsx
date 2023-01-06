@@ -87,18 +87,6 @@ const Playground: NextPage<Playgroundable> = (
               onSubmit={prop.submitRequest}
             />
           </div>
-          {/* <textarea
-            placeholder="What's on your mind?"
-            name="userRequest"
-            onChange={prop.getUserInput}
-            value={prop.userInput}
-            required
-            autoFocus={true}
-            disabled={prop.loading}
-            ref={prop.inputBoxRef}
-            onKeyDown={(event) => onInputNewLine(event, prop.submitRequest)}
-          ></textarea> */}
-
           <div>
             <button type="submit" disabled={prop.loading} title="Send">
               <i className="fas fa-paper-plane"> </i>
