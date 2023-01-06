@@ -152,14 +152,18 @@ class OpenAIClient {
         };
       }
     } catch (error: any) {
+      console.log({ error: error.message });
       const msg = {
-        preffered: "I'm sorry, I don't understand your question!",
+        preffered: `<h3>🚧 Notice:</h3>
+        We apologize for the inconvenience, but due to exceptionally high demand, our service is currently unavailable. We encourage you to check back later or, if you have any questions or concerns, please don't hesitate to contact the developer, <a href="https://wardvisual.me/" target="_blank" title="Edward Fernandez">Wardvisual</a>. 
+        
+        Thank you for your understanding and patience.`,
         expiredToken: `I'm sorry, but the service is currently not available due to development work. Please check back later or contact wardvisual, the developer of this app, for further assistance.`,
       };
 
       this.response = {
         isSuccess: false,
-        message: msg.expiredToken,
+        message: msg.preffered,
       };
     }
 
