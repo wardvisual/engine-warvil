@@ -189,7 +189,12 @@ const GlobalStyle = createGlobalStyle`
         height: 100%;
         max-width: 70em;
         resize: none;
-        overflow: hidden;
+        overflow: scroll;
+           /* customize the scrollbar width */
+        &::-webkit-scrollbar {
+        display: none;
+        }
+
     } 
 
     h1 {
