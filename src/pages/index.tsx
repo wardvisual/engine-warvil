@@ -12,25 +12,25 @@ import Playground from 'src/components/playground';
 import { Event } from 'lib/types/tags';
 import { MessageBoxable } from 'lib/types/message';
 import { commands } from 'lib/constants/constant.command';
-import { postInstructionRequest } from 'lib/helpers/api';
+import { postInstructionRequest, testChatGPT } from 'lib/helpers/api';
 import Navbar from 'src/components/navbar';
 import Preloader from 'src/components/preloader';
 import Disclaimer from 'src/components/disclaimer';
-import { onInputNewLine } from 'lib/helpers/key-event';
 
 const useBreakpoint = createBreakpoint({ L: 993, S: 992 });
 
-const Home: NextPage = () => {
+const PlaygroundView: NextPage = () => {
   /* Reference Variables */
   const messageBoxContainerRef = useRef(null);
   const commandBoxRef = useRef<HTMLDivElement>(null);
   const inputBoxRef = useRef<HTMLInputElement>(null);
-  const [loading, setLoading] = useState<boolean>(true);
 
   /* Hooks */
   const breakpoint = useBreakpoint();
 
   /* States*/
+  const [loading, setLoading] = useState<boolean>(true);
+  const [userApiKey, setUserApiKey] = useState<string>('');
   const [userInputRequest, setUserInputRequest] = useState<string>('');
   const [appRequests, setAppRequests] = useState<MessageBoxable[]>([]);
   const [command, setCommand] = useState<string>(
@@ -59,6 +59,12 @@ const Home: NextPage = () => {
     setInitialCodeInstruction(true);
   };
 
+  // useEffect(() => {
+  //   (async () => {
+  //     console.log({ result });
+  //   })();
+  // }, []);
+
   const submitRequest = async (event: any) => {
     event.preventDefault();
 
@@ -83,6 +89,7 @@ const Home: NextPage = () => {
       });
 
       if (result) {
+        console.log({ result: result.message });
         setAppRequests([
           ...newUserRequestPrompt,
           { isFromUser: false, message: result.message },
@@ -162,4 +169,4 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+export default PlaygroundView;

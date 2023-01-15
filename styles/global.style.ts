@@ -19,10 +19,11 @@ export const HomeOverlay = styled.div`
   position: absolute;
   height: 100vh;
   width: 100vw;
-  background: url('./assets/bg.svg') no-repeat;
+  background: url('./assets/overlay.svg') no-repeat;
   background-size: cover;
   z-index: -1;
-  opacity: 20%;
+
+  display: none;
 `;
 
 const GlobalStyle = createGlobalStyle`
@@ -133,7 +134,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     button {
-        background-color: var(--color-blue-300);
+        background-color: var(--color-blue-400);
         color: var(--color-black-400);
         cursor: pointer;
         font-weight: 700;
@@ -148,7 +149,8 @@ const GlobalStyle = createGlobalStyle`
         }
 
         &:hover {
-            background-color: var(--color-blue-400);
+            /* background-color: var(--color-blue-400); */
+            opacity: 95%;
         }
         &:active {
                 transform: scale(0.99);

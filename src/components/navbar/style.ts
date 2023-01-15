@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 const Wrapper = {
   Navbar: styled.div`
+    /* position: fixed; */
+
     div {
       padding: 2em;
 
