@@ -18,7 +18,7 @@ export class Trainer {
     Warvil: <p>A meeting memorandum is a brief written document that serves as a record of an agreement or decision made during a meeting. It typically includes the date and time of the meeting, the names of the attendees, the main points discussed, and any decisions or actions taken. A memorandum is usually circulated among the members of the meeting for their reference and is not considered an official document.    </p>
     <p>Here is an example of a memorandum for a meeting discussing the Philippine economy:</p>
 
-      <b>Memorandum<b>
+      <p>Memorandum</p>
       <pre>
       <p>
       To: Economic Planning Team
@@ -40,7 +40,7 @@ export class Trainer {
       </p>
       </pre>
 
-      <b>Minutes of the meeting<b>
+      <p>Minutes of the meeting</p>
       <p>A minutes of the meeting, on the other hand, is an official record of what was discussed and decided during a meeting. It includes detailed information about the meeting, including the date and time, the names of attendees, the agenda items discussed, and a summary of the main points discussed. It also records any decisions made, including any action items assigned to specific individuals and the due date for completion. Minutes of the meeting are typically distributed to all attendees and may be used as a reference for future meetings.      </p>
       <p>Here is an example of minutes of the meeting discussing the Philippine economy:      </p>
       <pre>
