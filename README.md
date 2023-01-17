@@ -10,7 +10,6 @@
   <h2 align="center">Engine Warvil</h2>
 
   <p align=" center">Warvil is an intelligent chatbot powered by artificial intelligence. It is designed to provide helpful and insightful answers to your questions. Warvil can learn from its conversations with you, allowing it to become increasingly efficient and knowledgeable over time.</p>
-  <h4>THIS PROJECT IS UNDER DEVELOPMENT</h4>
     <br />
     <a href="https://engine-warvil.vercel.app/"><strong>View Project »</strong></a>
     <br />    
