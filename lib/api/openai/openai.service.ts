@@ -27,11 +27,11 @@ class OpenAIClient {
         this.promptConfig = {
           model: this.defaultModel,
           prompt: this.prompt.trainPrompt(command, userRequest),
-          temperature: 0,
-          max_tokens: 100,
+          temperature: 0.86,
+          max_tokens: 1896,
           top_p: 1,
-          frequency_penalty: 0.0,
-          presence_penalty: 0.0,
+          frequency_penalty: 0.21,
+          presence_penalty: 0.11,
         };
         break;
       case commands.GENERATE_CODE:
