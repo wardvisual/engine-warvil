@@ -14,6 +14,71 @@ export class Trainer {
       <li><p>4. Debugging: Algorithms can often be easier to debug than human-written code, as they are more structured and follow a set of predetermined rules. This can save time and effort for programmers, and can help to improve the overall quality and reliability of programs.      </p></li>
       <li><p>5. Automation: Algorithms can be used to automate many tasks in programming, freeing up programmers to focus on other, more complex or creative tasks. This can help to improve productivity and efficiency, and can allow programmers to use their skills more effectively.      </p></li>
     </ul>
+    You: Give me the information in the meeting memorandum and minutes, with an example from the Philippine economy. 
+    Warvil: <p>A meeting memorandum is a brief written document that serves as a record of an agreement or decision made during a meeting. It typically includes the date and time of the meeting, the names of the attendees, the main points discussed, and any decisions or actions taken. A memorandum is usually circulated among the members of the meeting for their reference and is not considered an official document.    </p>
+    <p>Here is an example of a memorandum for a meeting discussing the Philippine economy:</p>
+
+      <b>Memorandum<b>
+      <pre>
+      <p>
+      To: Economic Planning Team
+      From: Maria Reyes, Director of Economic Planning
+      Date: January 12, 2023
+      Subject: Meeting to Discuss Q1 Economic Forecast
+      
+      I would like to remind the economic planning team that there will be a meeting on January 15th at 10:00 am to discuss the Q1 economic forecast for the Philippines. The meeting will take place in the conference room on the 5th floor.
+      
+      Agenda items for the meeting include:
+      - Review of Q4 economic performance
+      - Discussion of Q1 economic forecast
+      - Presentation of departmental plans for Q1
+      - Any other business
+      
+      Please come prepared to present your department's plans for Q1 and be ready to discuss any challenges or opportunities that you foresee for the Philippine economy.
+      
+      Thank you.
+      </p>
+      </pre>
+
+      <b>Minutes of the meeting<b>
+      <p>A minutes of the meeting, on the other hand, is an official record of what was discussed and decided during a meeting. It includes detailed information about the meeting, including the date and time, the names of attendees, the agenda items discussed, and a summary of the main points discussed. It also records any decisions made, including any action items assigned to specific individuals and the due date for completion. Minutes of the meeting are typically distributed to all attendees and may be used as a reference for future meetings.      </p>
+      <p>Here is an example of minutes of the meeting discussing the Philippine economy:      </p>
+      <pre>
+      <p>
+        Minutes of the Meeting
+        Date: January 15, 2023
+        Time: 10:00 am - 11:30 am
+        Location: Conference Room, 5th Floor
+        Attendees: Maria Reyes (Director of Economic Planning), Juan Dela Cruz (Finance Secretary), etc.
+        
+        Agenda Items:
+        - Review of Q4 economic performance
+        - Discussion of Q1 economic forecast
+        - Presentation of departmental plans for Q1
+        - Any other business
+        
+        1. Review of Q4 economic Performance:
+        - The Philippines' Q4 economic performance was discussed. The country's GDP grew by 6.8percent, which was higher than the projected growth rate of 6.5 percent.
+
+        However, it was noted that inflation had risen to 4.7 percent, which is above the government's target range of 2-4 percent.
+        Discussion of Q1 Economic Forecast:
+        The Q1 economic forecast for the Philippines was discussed. The forecast projects a GDP growth rate of 6.2 percent and an inflation rate of 4.5 percent.
+        It was noted that the forecast is subject to change depending on the global economic conditions and the government's response to it.
+        Presentation of Departmental Plans for Q1:
+        Each department presented its plans for Q1.
+        The Department of Finance will focus on implementing measures to address inflation.
+        The Department of Trade and Industry will focus on promoting exports and attracting foreign investment.
+        The Department of Agriculture will focus on increasing agricultural productivity.
+        Any other business:
+        There was no other business to discuss.
+        Action Items:
+        
+        The Department of Finance will present a plan to address inflation to the next meeting.
+        The Department of Trade and Industry will hold a meeting with foreign investors next month.
+        The Department of Agriculture will implement a program to increase agricultural productivity by the end of Q1.
+        The meeting was adjourned at 11:30 am.        
+        </p>
+    </pre>
     `;
   }
 
