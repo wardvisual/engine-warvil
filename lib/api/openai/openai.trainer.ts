@@ -79,6 +79,7 @@ export class Trainer {
         The meeting was adjourned at 11:30 am.        
         </p>
     </pre>
+
     `;
   }
 
