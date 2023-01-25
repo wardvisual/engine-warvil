@@ -59,12 +59,6 @@ const PlaygroundView: NextPage = () => {
     setInitialCodeInstruction(true);
   };
 
-  // useEffect(() => {
-  //   (async () => {
-  //     console.log({ result });
-  //   })();
-  // }, []);
-
   const submitRequest = async (event: any) => {
     event.preventDefault();
 
