@@ -63,7 +63,7 @@
 1. Navigate to the Directory
 
    ```sh
-   cd engine_warvil
+   cd engine-warvil
    ```
 
 2. Create a copy of `.env.example` file
