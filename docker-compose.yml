@@ -10,10 +10,11 @@ services:
     ports:
       - 3000:3000
     volumes:
-      - ./src:/app/src
-      - ./public:/app/public
-      - ./lib:/app/lib
-      - ./styles:/app/styles
-      - ./docker-entrypoint.sh:/app/docker-entrypoint.sh
-      - ./next.config.js:/app/next.config.js
-      - ./.next:/.next
+      - ./src/pages:/app/src/pages
+      - ./src/components:/app/src/components
+      - ./public:/app/public/
+      - ./lib:/app/lib/
+      - ./styles:/app/styles/
+      - ./docker-entrypoint.sh:/app/docker-entrypoint.sh/
+      - ./next.config.js:/app/next.config.js/
+      - ./.next:/.next/
