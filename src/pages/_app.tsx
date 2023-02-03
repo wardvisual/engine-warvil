@@ -11,7 +11,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="author" content="Edward Fernandez" />
         <meta
           name="description"
-          content="Engine Warvil is an intelligent chatbot powered by artificial intelligence. It is designed to provide helpful and insightful answers to your questions. Warvil can learn from its conversations with you, allowing it to become increasingly efficient and knowledgeable over time."
+          content="Engine-warvil is a comprehensive language tool that can answer questions, generate code, titles, and grammatically correct text, as well as paraphrase, summarize, translate, explain programming code, evaluate mathematical expressions, and create study notes. It is ideal for students, developers, researchers, and anyone in need of language-related assistance.
+
+          "
         />
         {/* Twitter */}
         <meta name="twitter:handle" content="@wardvisual" />
