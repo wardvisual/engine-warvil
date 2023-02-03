@@ -38,6 +38,13 @@
 - [Typescript](https://www.typescriptlang.org/)
 - [OpenAI](https://openai.com/)
 
+### Prerequisites
+
+- Docker installed on your machine
+- Node.js and npm installed on your machine
+- A code editor of your choice
+- Familiarity with terminal or command prompt
+
 <!-- INSTALLATION -->
 
 ### Installation
@@ -48,25 +55,35 @@
    git clone https://github.com/wardvisual/engine-warvil.git
    ```
 
-2. Install NPM packages
-
-   ```sh
-   cd engine-warvil && npm install
-   ```
-
 ### Setup
 
-1. Create a copy of `.env.example` file
+1. Navigate to the Directory
+
+   ```sh
+   cd engine_warvil
+   ```
+
+2. Create a copy of `.env.example` file
 
    ```sh
    cp .env.example .env
    ```
 
-2. Enter your OpenAI API Key in `.env` file
+3. Enter your OpenAI API Key in `.env` file
 
    ```sh
    OPENAI_API_KEY = 'ENTER YOUR OpenAI API KEY'
    ```
+
+4. Build the Docker Image
+
+   ```sh
+   docker compose up --build --force-recreate
+   ```
+
+5. Access the Application
+
+   You can now access the Engine Warvil application by visiting `http://localhost:3000` in your web browser.
 
 <hr />
 
