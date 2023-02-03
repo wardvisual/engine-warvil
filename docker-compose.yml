@@ -7,6 +7,8 @@ services:
       dockerfile: Dockerfile
     container_name: engine_warvil
     restart: always
+    ports:
+      - 3000:3000
     volumes:
       - ./src:/app/src
       - ./public:/app/public
@@ -14,5 +16,4 @@ services:
       - ./styles:/app/styles
       - ./docker-entrypoint.sh:/app/docker-entrypoint.sh
       - ./next.config.js:/app/next.config.js
-    ports:
-      - 3000:3000
+      - ./.next:/.next
