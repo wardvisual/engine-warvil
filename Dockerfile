@@ -21,3 +21,5 @@ EXPOSE 3000
 RUN chmod +x ./docker-entrypoint.sh
 
 ENTRYPOINT ["./docker-entrypoint.sh"]
+
+CMD [ "npm", "run", "dev" ]
