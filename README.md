@@ -9,7 +9,9 @@
   <br />
   <h2 align="center">Engine Warvil</h2>
 
-  <p align="start">Engine-warvil is a comprehensive language tool that is designed to answer basic questions, generate code, titles, and grammatically correct text. The engine also includes features for paraphrasing text, summarizing, translating to other languages, explaining programming code, evaluating mathematical expressions, and creating study notes. With its versatile and diverse functionality, Engine-warvil is an ideal tool for students, developers, researchers, and anyone in need of language-related assistance. Whether you're looking to quickly translate text, generate code or improve your writing, Engine-warvil has you covered.
+  <p align="start">Engine-warvil is a comprehensive language tool that is designed to answer basic questions, generate code, titles, and grammatically correct text. The engine also includes features for paraphrasing text, summarizing, translating to other languages, explaining programming code, evaluating mathematical expressions, and creating study notes. 
+  
+  With its versatile and diverse functionality, Engine-warvil is an ideal tool for students, developers, researchers, and anyone in need of language-related assistance. Whether you're looking to quickly translate text, generate code or improve your writing, Engine-warvil has you covered.
 </p>
     <br />
     <a href="https://engine-warvil.vercel.app/"><strong>View Project »</strong></a>
