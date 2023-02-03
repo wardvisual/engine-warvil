@@ -14,7 +14,6 @@
     "prettier": "prettier --write ."
   },
   "dependencies": {
-    "chatgpt": "^3.3.10",
     "isomorphic-dompurify": "^0.24.0",
     "next": "12.3.0",
     "openai": "^3.0.0",
