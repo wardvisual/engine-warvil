@@ -75,7 +75,7 @@
    OPENAI_API_KEY = 'ENTER YOUR OpenAI API KEY'
    ```
 
-4. Make the `docker-entrypoint.sh` script executable by running the following command:
+4. Make the `docker-entrypoint.sh` script executable
 
    ```sh
    chmod +x docker-entrypoint.sh
