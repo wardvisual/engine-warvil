@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  engine_warvil:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: engine_warvil
+    restart: always
+    volumes:
+      - ./src:/app/src
+      - ./public:/app/public
+      - ./lib:/app/lib
+      - ./styles:/app/styles
+      - ./docker-entrypoint.sh:/app/docker-entrypoint.sh
+      - ./next.config.js:/app/next.config.js
+    ports:
+      - 3000:3000
