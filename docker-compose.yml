@@ -17,4 +17,5 @@ services:
       - ./styles:/app/styles/
       - ./docker-entrypoint.sh:/app/docker-entrypoint.sh/
       - ./next.config.js:/app/next.config.js/
-      - ./.next:/.next/
+      - ./.next:/app.next/
+      - ./.env:/app.env/
