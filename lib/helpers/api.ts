@@ -22,23 +22,3 @@ export async function postInstructionRequest(store: any) {
     return err;
   }
 }
-
-export async function testChatGPT(store: any) {
-  try {
-    const response = await fetch('api/openai/chatgpt', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        userRequest: store.userInputRequest,
-      }),
-    });
-
-    const data = await response.json();
-
-    return data;
-  } catch (err) {
-    return err;
-  }
-}
