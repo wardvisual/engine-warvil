@@ -1,4 +1,5 @@
 #! /bin/sh
 
 npm run dev
-echo "Hello warvil!"
+
+echo "Hello Warvil!"
