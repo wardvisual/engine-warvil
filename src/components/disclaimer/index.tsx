@@ -14,6 +14,7 @@ const Disclaimer = () => {
       display={showDisclaimer}
       handleOnClose={handleOnClose}
       customStyle={{ width: '85%' }}
+      onBgClose={false}
     >
       <p>
         This application is utilizing a free trial of{' '}

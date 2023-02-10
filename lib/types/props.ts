@@ -25,6 +25,7 @@ export interface Modalable {
   children: ReactNode;
   title: string;
   display: boolean;
+  onBgClose?: boolean;
   handleOnClose: () => void;
   customStyle?: {
     width: string;

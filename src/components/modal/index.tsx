@@ -9,7 +9,7 @@ const Modal: NextPage<Modalable> = (prop: Modalable) => {
     <>
       {prop.display && (
         <>
-          <Wrapper.Overlay  />
+        {prop.onBgClose ? (<Wrapper.Overlay onClick={prop.handleOnClose} />) : (<Wrapper.Overlay />) }
           <Wrapper.Modal
             style={{
               ...prop.customStyle,

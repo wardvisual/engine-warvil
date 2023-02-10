@@ -193,6 +193,7 @@ const CommandBox: NextPage<CommandBoxable> = (prop: CommandBoxable) => {
         title={showUnavailableModal.command}
         display={showUnavailableModal.isShow}
         handleOnClose={handleUnavailableModalClose}
+        onBgClose={true}
       >
         <p>This command is currently not available</p>
       </Modal>
