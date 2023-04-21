@@ -4,18 +4,12 @@ services:
   engine_warvil:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: ./Dockerfile
     container_name: engine_warvil
-    restart: always
     ports:
       - 3000:3000
+    stdin_open: true
+    tty: true
     volumes:
-      - ./src/pages:/app/src/pages
-      - ./src/components:/app/src/components
-      - ./public:/app/public/
-      - ./lib:/app/lib/
-      - ./styles:/app/styles/
-      - ./docker-entrypoint.sh:/app/docker-entrypoint.sh/
-      - ./next.config.js:/app/next.config.js/
-      - ./.next:/app/.next/
-      - ./.env:/app/.env/
+      - ./:/app
+      - /app/node_modules
