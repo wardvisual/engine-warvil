@@ -75,19 +75,13 @@
    OPENAI_API_KEY = 'ENTER YOUR OpenAI API KEY'
    ```
 
-4. Make the `docker-entrypoint.sh` script executable
-
-   ```sh
-   chmod +x docker-entrypoint.sh
-   ```
-
-5. Build the Docker Image
+4. Start the container
 
    ```sh
    docker compose up --build --force-recreate
    ```
 
-6. Access the Application
+5. Access the Application
 
    You can now access the Engine Warvil application by visiting `http://localhost:3000` in your web browser.
 
