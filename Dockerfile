@@ -2,7 +2,7 @@ FROM node:16-buster-slim
 
 WORKDIR /app
 
-COPY package.json pnpm-lock.yaml ./
+COPY package.json pnpm-lock.yaml .env ./
 
 RUN npm i -g pnpm@7.17.0
 
