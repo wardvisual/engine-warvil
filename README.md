@@ -91,8 +91,6 @@
 
 ### Key Features
 
-Some of these features may not respond correctly while they are being developed.
-
 <details>
   <summary>Answer Basic Questions </summary>
     Warvil is able to answer basic questions about a variety of topics using artificial intelligence.
